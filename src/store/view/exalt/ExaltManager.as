@@ -36,7 +36,7 @@ package store.view.exalt
          return _instance;
       }
       
-      public function getCanWishBeadData() : BagInfo
+      public function getCanExaltData() : BagInfo
       {
          var _loc1_:InventoryItemInfo = null;
          var _loc2_:InventoryItemInfo = null;
@@ -64,17 +64,21 @@ package store.view.exalt
          return _loc4_;
       }
       
-      public function getWishBeadItemData() : BagInfo
+      public function getExaltItemData() : BagInfo
       {
          var _loc1_:InventoryItemInfo = null;
          var _loc2_:DictionaryData = PlayerManager.Instance.Self.PropBag.items;
          var _loc3_:BagInfo = new BagInfo(BagInfo.PROPBAG,21);
          for each(_loc1_ in _loc2_)
          {
-            if(_loc1_.TemplateID == EquipType.WISHBEAD_ATTACK || _loc1_.TemplateID == EquipType.WISHBEAD_DEFENSE || _loc1_.TemplateID == EquipType.WISHBEAD_AGILE)
-            {
-               _loc3_.addItem(_loc1_);
-            }
+			if(_loc1_.getRemainDate() <= 0)
+			{
+				continue;
+			}
+			if(_loc1_.CategoryID == 11 && _loc1_.Property1 == "45")
+			{
+				_loc3_.addItem(_loc1_);
+			}
          }
          return _loc3_;
       }

@@ -76,6 +76,11 @@ package store.forge.wishBead
          var _loc3_:BagInfo = new BagInfo(BagInfo.PROPBAG,21);
          for each(_loc1_ in _loc2_)
          {
+			if(_loc1_.getRemainDate() <= 0)
+			{
+				continue;
+			}
+			 
             if(_loc1_.TemplateID == EquipType.WISHBEAD_ATTACK || _loc1_.TemplateID == EquipType.WISHBEAD_DEFENSE || _loc1_.TemplateID == EquipType.WISHBEAD_AGILE)
             {
                _loc3_.addItem(_loc1_);

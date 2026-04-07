@@ -1,114 +1,111 @@
 package store.view.exalt
 {
-   import bagAndInfo.cell.CellContentCreator;
-   import bagAndInfo.cell.DragEffect;
-   import baglocked.BaglockedManager;
+   import bagAndInfo.cell.BagCell;
+   import com.pickgliss.events.InteractiveEvent;
+   import com.pickgliss.ui.ComponentFactory;
+   import com.pickgliss.utils.DoubleClickManager;
    import com.pickgliss.utils.ObjectUtils;
-   import ddt.data.BagInfo;
-   import ddt.data.EquipType;
-   import ddt.data.StoneType;
    import ddt.data.goods.InventoryItemInfo;
    import ddt.data.goods.ItemTemplateInfo;
-   import ddt.manager.DragManager;
-   import ddt.manager.LanguageMgr;
-   import ddt.manager.MessageTipManager;
-   import ddt.manager.PlayerManager;
-   import ddt.manager.SocketManager;
-   import ddt.view.tips.GoodTipInfo;
-   import flash.events.Event;
-   import store.view.strength.StreangthItemCell;
+   import ddt.manager.SoundManager;
+   import flash.display.DisplayObject;
    
-   public class ExaltItemCell extends StreangthItemCell
+   public class ExaltItemCell extends BagCell
    {
        
       
-      public function ExaltItemCell(param1:int)
+      public function ExaltItemCell(param1:int, param2:ItemTemplateInfo = null, param3:Boolean = true, param4:DisplayObject = null, param5:Boolean = true)
       {
-         super(param1);
+         super(param1,param2,param3,param4,param5);
       }
       
-      override public function dragDrop(param1:DragEffect) : void
+      override protected function createChildren() : void
       {
-         if(PlayerManager.Instance.Self.bagLocked)
+         super.createChildren();
+         if(Boolean(_tbxCount))
          {
-            BaglockedManager.Instance.show();
-            return;
+            ObjectUtils.disposeObject(_tbxCount);
          }
-         var _loc2_:InventoryItemInfo = param1.data as InventoryItemInfo;
-         if(Boolean(_loc2_) && param1.action != DragEffect.SPLIT)
-         {
-            param1.action = DragEffect.NONE;
-            if(_loc2_.getRemainDate() <= 0)
-            {
-               MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.fusion.AccessoryDragInArea.overdue"));
-            }
-            else if(_loc2_.CanStrengthen && this.isAdaptToStone(_loc2_))
-            {
-               SocketManager.Instance.out.sendMoveGoods(_loc2_.BagType,_loc2_.Place,BagInfo.STOREBAG,index,1);
-               _actionState = true;
-               param1.action = DragEffect.NONE;
-               DragManager.acceptDrag(this);
-               reset();
-            }
-         }
+         _tbxCount = ComponentFactory.Instance.creat("wishBeadMainView.itemCell.countTxt");
+         _tbxCount.mouseEnabled = false;
+         addChild(_tbxCount);
       }
       
-      override protected function isAdaptToStone(param1:InventoryItemInfo) : Boolean
+      override protected function initEvent() : void
       {
-         if(param1.StrengthenLevel >= 15)
-         {
-            MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warningI"));
-            return false;
-         }
-         if(_stoneType == "")
-         {
-            return true;
-         }
-         if(_stoneType == StoneType.STRENGTH && param1.RefineryLevel <= 0)
-         {
-            return true;
-         }
-         if(_stoneType == StoneType.STRENGTH_1 && param1.RefineryLevel > 0)
-         {
-            return true;
-         }
-         return false;
+         super.initEvent();
+         addEventListener(InteractiveEvent.CLICK,this.__clickHandler);
+         addEventListener(InteractiveEvent.DOUBLE_CLICK,this.__doubleClickHandler);
+         DoubleClickManager.Instance.enableDoubleClick(this);
+         ExaltManager.instance.addEventListener(ExaltManager.ITEM_MOVE,this.itemMoveHandler);
+		 ExaltManager.instance.addEventListener(ExaltManager.ITEM_MOVE2,this.itemMoveHandler2);
       }
       
-      override public function set info(param1:ItemTemplateInfo) : void
+      private function itemMoveHandler(param1:ExaltEvent) : void
       {
-         if(_info == param1 && !_info)
+         var _loc2_:ExaltEvent = null;
+         if(info == param1.info)
          {
             return;
          }
-         if(Boolean(_info))
+         if(Boolean(info))
          {
-            clearCreatingContent();
-            ObjectUtils.disposeObject(_pic);
-            _pic = null;
-            clearLoading();
-            _tipData = null;
-            locked = false;
+            _loc2_ = new ExaltEvent(ExaltManager.ITEM_MOVE2);
+            _loc2_.info = info as InventoryItemInfo;
+            _loc2_.moveType = 3;
+			ExaltManager.instance.dispatchEvent(_loc2_);
          }
-         _info = param1;
-         if(Boolean(_info))
+         info = param1.info;
+      }
+      
+      private function itemMoveHandler2(param1:ExaltEvent) : void
+      {
+         if(info != param1.info || param1.moveType != 2)
          {
-            if(_showLoading)
-            {
-               createLoading();
-            }
-            _pic = new CellContentCreator();
-            _pic.info = _info;
-            _pic.loadSync(createContentComplete);
-            addChild(_pic);
-            if(_info.CategoryID != EquipType.CARDEQUIP)
-            {
-               tipStyle = "ddtstore.ExaltTips";
-               _tipData = new GoodTipInfo();
-               GoodTipInfo(_tipData).itemInfo = info;
-            }
+            return;
          }
-         dispatchEvent(new Event(Event.CHANGE));
+         info = null;
+      }
+      
+      protected function __doubleClickHandler(param1:InteractiveEvent) : void
+      {
+         if(!info)
+         {
+            return;
+         }
+         SoundManager.instance.play("008");
+         var _loc2_:ExaltEvent = new ExaltEvent(ExaltManager.ITEM_MOVE2);
+         _loc2_.info = info as InventoryItemInfo;
+         _loc2_.moveType = 2;
+		 ExaltManager.instance.dispatchEvent(_loc2_);
+      }
+      
+      override protected function removeEvent() : void
+      {
+         super.removeEvent();
+         removeEventListener(InteractiveEvent.CLICK,this.__clickHandler);
+         removeEventListener(InteractiveEvent.DOUBLE_CLICK,this.__doubleClickHandler);
+         DoubleClickManager.Instance.disableDoubleClick(this);
+		 ExaltManager.instance.removeEventListener(ExaltManager.ITEM_MOVE,this.itemMoveHandler);
+		 ExaltManager.instance.removeEventListener(ExaltManager.ITEM_MOVE2,this.itemMoveHandler2);
+      }
+      
+      protected function __clickHandler(param1:InteractiveEvent) : void
+      {
+         SoundManager.instance.play("008");
+         dragStart();
+      }
+      
+      public function clearInfo() : void
+      {
+         var _loc1_:ExaltEvent = null;
+         if(Boolean(info))
+         {
+            _loc1_ = new ExaltEvent(ExaltManager.ITEM_MOVE2);
+            _loc1_.info = info as InventoryItemInfo;
+            _loc1_.moveType = 2;
+			ExaltManager.instance.dispatchEvent(_loc1_);
+         }
       }
    }
 }

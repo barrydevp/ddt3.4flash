@@ -1,23 +1,40 @@
 package store.view.exalt
 {
-   import bagAndInfo.cell.BagCell;
-   import baglocked.BaglockedManager;
    import com.greensock.TweenMax;
    import com.pickgliss.events.FrameEvent;
+   import com.pickgliss.ui.AlertManager;
    import com.pickgliss.ui.ComponentFactory;
    import com.pickgliss.ui.LayerManager;
    import com.pickgliss.ui.UICreatShortcut;
    import com.pickgliss.ui.controls.BaseButton;
    import com.pickgliss.ui.controls.SelectedCheckButton;
    import com.pickgliss.ui.controls.SimpleBitmapButton;
+   import com.pickgliss.ui.controls.alert.BaseAlerFrame;
    import com.pickgliss.ui.core.Disposeable;
    import com.pickgliss.ui.image.Image;
+   import com.pickgliss.ui.image.ScaleFrameImage;
    import com.pickgliss.ui.text.FilterFrameText;
    import com.pickgliss.utils.ObjectUtils;
+   
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.MovieClip;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
+   import flash.utils.Dictionary;
+   import flash.utils.getTimer;
+   import flash.utils.setTimeout;
+   
+   import bagAndInfo.cell.BagCell;
+   
+   import baglocked.BaglockedManager;
+   
    import ddt.command.QuickBuyFrame;
    import ddt.data.BagInfo;
    import ddt.data.EquipType;
-   import ddt.data.StoneType;
    import ddt.data.goods.InventoryItemInfo;
    import ddt.events.BagEvent;
    import ddt.events.CellEvent;
@@ -27,169 +44,518 @@ package store.view.exalt
    import ddt.manager.SocketManager;
    import ddt.manager.SoundManager;
    import ddt.utils.PositionUtils;
-   import flash.display.Bitmap;
-   import flash.display.MovieClip;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.events.TimerEvent;
-   import flash.geom.Point;
-   import flash.utils.Dictionary;
-   import flash.utils.Timer;
-   import flash.utils.getTimer;
-   import flash.utils.setTimeout;
+   
    import store.HelpFrame;
-   import store.IStoreViewBG;
-   import store.StoneCell;
-   import store.StoreCell;
-   import store.StoreDragInArea;
+   import store.StoreBagBgWHPoint;
    import store.StrengthDataManager;
    import store.data.StoreEquipExperience;
    import store.events.StoreIIEvent;
-   import store.forge.wishBead.WishBeadBagListView;
-   import store.view.strength.StrengthStone;
    
-   public class StoreExaltBG extends Sprite implements IStoreViewBG
+   public class StoreExaltBG extends Sprite implements Disposeable
    {
+	  public static const INTERVAL:int = 1400;
       
-      public static const INTERVAL:int = 1400;
-       
+//      private var _bg:Bitmap;
       
-      private var _buyBtn:SimpleBitmapButton;
+      private var _bagList:ExaltBagListView;
       
-      private var _exaltBtn:BaseButton;
+      private var _proBagList:ExaltBagListView;
       
-      private var _progressBar:store.view.exalt.StoreExaltProgressBar;
+      private var _leftDrapSprite:ExaltLeftDragSprite;
       
-      private var _equipmentCellBg:Image;
+      private var _rightDrapSprite:ExaltRightDragSprite;
+	  
+	  private var _equipCellBg:Image;
+	  
+	  private var _itemCellBg:Bitmap;
+	  
+	  private var _equipCellText:FilterFrameText;
+	  
+	  private var _rockText:FilterFrameText;
       
-      private var _goodCellBg:Bitmap;
+      private var _itemCell:ExaltItemCell;
       
-      private var _equipmentCellText:FilterFrameText;
+      private var _equipCell:ExaltEquipCell;
       
-      private var _rockText:FilterFrameText;
+      private var _continuousBtn:SelectedCheckButton;
       
-      private var _pointArray:Vector.<Point>;
+      private var _doBtn:BaseButton;
+	  
+	  private var _buyBtn:SimpleBitmapButton;
+	  
+	  private var _quick:QuickBuyFrame;
       
-      private var _area:StoreDragInArea;
-      
-      private var _items:Array;
-      
-      private var _quick:QuickBuyFrame;
-      
-      private var _continuous:SelectedCheckButton;
-      
-      private var _timer:Timer;
+	  private var _progressBar:store.view.exalt.StoreExaltProgressBar;
+	  
+//      private var _tip:ExaltTips;
+	  
+	  private var _movieI:MovieClip;
+	  
+	  private var _movieII:MovieClip;
+	  
+	  private var _luckyText:FilterFrameText;
       
       private var _helpBtn:BaseButton;
       
-      private var _movieI:MovieClip;
-      
-      private var _movieII:MovieClip;
-      
-      private var _luckyText:FilterFrameText;
-      
-      private var _bagList:WishBeadBagListView;
-      
-      private var _proBagList:WishBeadBagListView;
+      private var _isDispose:Boolean = false;
       
       private var _equipBagInfo:BagInfo;
       
-      private var _bg:Bitmap;
+//      public var msg_txt:ScaleFrameImage;
       
-      private var _lastExaltTime:int = 0;
+      private var bagBg:ScaleFrameImage;
       
-      private var _aler:store.view.exalt.ExaltSelectNumAlertFrame;
+      private var _bgShape:Shape;
+      
+      private var _bgPoint:StoreBagBgWHPoint;
+	  
+	  private var _lastDoAt:int = 0;
       
       public function StoreExaltBG()
       {
          super();
-         this.init();
+         this.mouseEnabled = false;
+         this.initView();
          this.initEvent();
+         this.createAcceptDragSprite();
       }
       
-      private function init() : void
+      private function initView() : void
       {
-         var _loc1_:int = 0;
-         var _loc2_:StoreCell = null;
-         _loc1_ = 0;
-         _loc2_ = null;
-         this._bg = ComponentFactory.Instance.creatBitmap("asset.wishBead.leftViewBg");
-         this._buyBtn = UICreatShortcut.creatAndAdd("ddt.store.view.exalt.buyBtn",this);
-         this._exaltBtn = UICreatShortcut.creatAndAdd("ddt.store.view.exalt.exaltBtn",this);
-         this._progressBar = UICreatShortcut.creatAndAdd("store.view.exalt.storeExaltProgressBar",this);
-         this._progressBar.progress(0,0);
-         this._helpBtn = UICreatShortcut.creatAndAdd("ddtstore.HelpButton",this);
-         this._continuous = UICreatShortcut.creatAndAdd("ddt.store.view.exalt.SelectedCheckButton",this);
-         this._continuous.selected = false;
-         this._bagList = new WishBeadBagListView(BagInfo.EQUIPBAG,7,21);
+         this.bagBg = ComponentFactory.Instance.creatComponentByStylename("store.bagBG");
+         this._bgPoint = ComponentFactory.Instance.creatCustomObject("store.bagBGWHPoint");
+         this._bgShape = new Shape();
+         this.bagBg.addChild(this._bgShape);
+         this.bagBg.x = 368;
+         this.bagBg.y = 15;
+         addChild(this.bagBg);
+         this._bgShape.graphics.clear();
+         this._bgShape.graphics.beginFill(int(this._bgPoint.pointArr[0]));
+         this._bgShape.graphics.drawRect(Number(this._bgPoint.pointArr[1]),Number(this._bgPoint.pointArr[2]),Number(this._bgPoint.pointArr[3]),Number(this._bgPoint.pointArr[4]));
+         this._bgShape.graphics.drawRect(Number(this._bgPoint.pointArr[5]),Number(this._bgPoint.pointArr[6]),Number(this._bgPoint.pointArr[7]),Number(this._bgPoint.pointArr[8]));
+//         this._bg = ComponentFactory.Instance.creatBitmap("asset.wishBead.leftViewBg");
+		 this._buyBtn = UICreatShortcut.creatAndAdd("ddt.store.view.exalt.buyBtn",this);
+		 this._progressBar = UICreatShortcut.creatAndAdd("store.view.exalt.storeExaltProgressBar",this);
+		 this._progressBar.progress(0,0);
+//         this.msg_txt = ComponentFactory.Instance.creatComponentByStylename("store.bagMsg1");
+//         this.msg_txt.x = 452;
+//         this.msg_txt.y = 17;
+//         addChild(this.msg_txt);
+//         this.msg_txt.setFrame(1);
+         this._bagList = new ExaltBagListView(BagInfo.EQUIPBAG,7,21);
          PositionUtils.setPos(this._bagList,"wishBeadMainView.bagListPos");
          this.refreshBagList();
-         this._proBagList = new WishBeadBagListView(BagInfo.PROPBAG,7,21);
+		 addChild(this._bagList);
+         this._proBagList = new ExaltBagListView(BagInfo.PROPBAG,7,21);
          PositionUtils.setPos(this._proBagList,"wishBeadMainView.proBagListPos");
-         this._proBagList.setData(ExaltManager.instance.getWishBeadItemData());
-         this._equipmentCellBg = UICreatShortcut.creatAndAdd("ddtstore.StoreIIStrengthBG.stoneCellBg",this);
-         PositionUtils.setPos(this._equipmentCellBg,"ddtstore.StoreIIStrengthBG.EquipmentCellBgPos");
-         this._equipmentCellText = UICreatShortcut.creatTextAndAdd("ddtstore.StoreIIStrengthBG.StrengthenEquipmentCellText",LanguageMgr.GetTranslation("store.Strength.StrengthenCurrentEquipmentCellText"),this);
-         PositionUtils.setPos(this._equipmentCellText,"ddtstore.StoreIIStrengthBG.StrengthenEquipmentCellTextPos");
-         this._goodCellBg = UICreatShortcut.creatAndAdd("asset.ddtstore.GoodPanel",this);
-         PositionUtils.setPos(this._goodCellBg,"ddtstore.StoreIIStrengthBG.StrengthCellBg1Point");
-         this._rockText = UICreatShortcut.creatTextAndAdd("ddtstore.StoreIIStrengthBG.GoodCellText",LanguageMgr.GetTranslation("store.Strength.GoodPanelText.StoreExaltRock"),this);
-         PositionUtils.setPos(this._rockText,"ddtstore.StoreIIStrengthBG.StrengthStoneText1Point");
-         this.getCellsPoint();
-         this._items = new Array();
-         this._area = new StoreDragInArea(this._items);
-         addChildAt(this._area,0);
-         _loc1_ = 0;
-         while(_loc1_ < this._pointArray.length)
-         {
-            switch(_loc1_)
-            {
-               case 0:
-                  _loc2_ = new StrengthStone([StoneType.EXALT,StoneType.EXALT_1],_loc1_);
-                  break;
-               case 1:
-                  _loc2_ = new ExaltItemCell(_loc1_);
-                  break;
-            }
-            _loc2_.addEventListener(Event.CHANGE,this.__itemInfoChange);
-            this._items[_loc1_] = _loc2_;
-            _loc2_.x = this._pointArray[_loc1_].x;
-            _loc2_.y = this._pointArray[_loc1_].y;
-            addChild(_loc2_);
-            _loc1_++;
-         }
+         this._proBagList.setData(ExaltManager.instance.getExaltItemData());
+		 
+		 this._equipCellBg = UICreatShortcut.creatAndAdd("ddtstore.StoreIIStrengthBG.stoneCellBg",this);
+		 PositionUtils.setPos(this._equipCellBg,"ddtstore.StoreIIStrengthBG.EquipmentCellBgPos");
+		 this._equipCellText = UICreatShortcut.creatTextAndAdd("ddtstore.StoreIIStrengthBG.StrengthenEquipmentCellText",LanguageMgr.GetTranslation("store.Strength.StrengthenCurrentEquipmentCellText"),this);
+		 PositionUtils.setPos(this._equipCellText,"ddtstore.StoreIIStrengthBG.StrengthenEquipmentCellTextPos");
+		 this._equipCell = new ExaltEquipCell(0,null,true,new Bitmap(new BitmapData(60,60,true,0)),false);
+         this._equipCell.BGVisible = false;
+         PositionUtils.setPos(this._equipCell,"store.view.exalt.StoreExaltBG.point1");
+         this._equipCell.setContentSize(68,68);
+         this._equipCell.PicPos = new Point(-3,-5);
+		 
+		 this._itemCellBg = UICreatShortcut.creatAndAdd("asset.ddtstore.GoodPanel",this);
+		 PositionUtils.setPos(this._itemCellBg,"ddtstore.StoreIIStrengthBG.StrengthCellBg1Point");
+		 this._rockText = UICreatShortcut.creatTextAndAdd("ddtstore.StoreIIStrengthBG.GoodCellText",LanguageMgr.GetTranslation("store.Strength.GoodPanelText.StoreExaltRock"),this);
+		 PositionUtils.setPos(this._rockText,"ddtstore.StoreIIStrengthBG.StrengthStoneText1Point");
+         this._itemCell = new ExaltItemCell(0,null,true,new Bitmap(new BitmapData(60,60,true,0)),false);
+         PositionUtils.setPos(this._itemCell,"store.view.exalt.StoreExaltBG.point0");
+         this._itemCell.BGVisible = false;
+		 
+		 this._continuousBtn = UICreatShortcut.creatAndAdd("ddt.store.view.exalt.SelectedCheckButton",this);
+		 this._continuousBtn.selected = false;
+         this._doBtn = ComponentFactory.Instance.creatComponentByStylename("ddt.store.view.exalt.exaltBtn");
+         this._doBtn.enable = false;
+		 addChild(this._doBtn);
+		 this._helpBtn = UICreatShortcut.creatAndAdd("ddtstore.HelpButton",this);
+//         addChild(this._bg);
+         addChild(this._proBagList);
+         addChild(this._equipCell);
+         addChild(this._itemCell);
+         
+//         this._tip = ComponentFactory.Instance.creat("store.forge.wishBead.WishTip");
+//         LayerManager.Instance.getLayerByType(LayerManager.STAGE_TOP_LAYER).addChild(this._tip);
+
+      }
+      
+      public function hide() : void
+      {
+         this.visible = false;
       }
       
       private function refreshBagList() : void
       {
-         this._equipBagInfo = ExaltManager.instance.getCanWishBeadData();
+         this._equipBagInfo = ExaltManager.instance.getCanExaltData();
          this._bagList.setData(this._equipBagInfo);
       }
       
       private function initEvent() : void
       {
-         this._exaltBtn.addEventListener(MouseEvent.CLICK,this.__onExaltClick);
-         this._buyBtn.addEventListener(MouseEvent.CLICK,this.__onBuyClick);
-         this._continuous.addEventListener(MouseEvent.CLICK,this.__continuousClick);
-         this._helpBtn.addEventListener(MouseEvent.CLICK,this.__helpClick);
-         StrengthDataManager.instance.addEventListener(StoreIIEvent.EXALT_FINISH,this.__exaltFinish);
-         StrengthDataManager.instance.addEventListener(StoreIIEvent.EXALT_FAIL,this.__exaltFail);
          this._bagList.addEventListener(CellEvent.ITEM_CLICK,this.cellClickHandler,false,0,true);
          this._bagList.addEventListener(CellEvent.DOUBLE_CLICK,this.__cellDoubleClick,false,0,true);
-         PlayerManager.Instance.Self.StoreBag.addEventListener(BagEvent.UPDATE_Exalt,this.__updateStoreBag);
+         this._equipCell.addEventListener(Event.CHANGE,this.itemEquipChangeHandler,false,0,true);
+         this._proBagList.addEventListener(CellEvent.ITEM_CLICK,this.cellClickHandler,false,0,true);
+         this._proBagList.addEventListener(CellEvent.DOUBLE_CLICK,this.__cellDoubleClick,false,0,true);
+         this._itemCell.addEventListener(Event.CHANGE,this.itemEquipChangeHandler,false,0,true);
+         this._doBtn.addEventListener(MouseEvent.CLICK,this.doHandler,false,0,true);
+		 StrengthDataManager.instance.addEventListener(StoreIIEvent.EXALT_FINISH,this.__exaltFinish);
+		 StrengthDataManager.instance.addEventListener(StoreIIEvent.EXALT_FAIL,this.__exaltFail);
+         PlayerManager.Instance.Self.PropBag.addEventListener(BagEvent.UPDATE,this.propInfoChangeHandler);
+         PlayerManager.Instance.Self.Bag.addEventListener(BagEvent.UPDATE,this.bagInfoChangeHandler);
+		 this._buyBtn.addEventListener(MouseEvent.CLICK,this.__onBuyClick);
+         this._helpBtn.addEventListener(MouseEvent.CLICK,this.__clickHelp,false,0,true);
       }
       
-      private function __updateStoreBag(param1:BagEvent) : void
+      private function bagInfoChangeHandler(param1:BagEvent) : void
       {
-         this.refreshData(param1.changedSlots);
+         var _loc2_:InventoryItemInfo = null;
+         var _loc3_:InventoryItemInfo = null;
+         var _loc4_:BagInfo = null;
+         var _loc5_:Dictionary = param1.changedSlots;
+         for each(_loc3_ in _loc5_)
+         {
+            _loc2_ = _loc3_;
+         }
+         if(Boolean(_loc2_) && !PlayerManager.Instance.Self.Bag.items[_loc2_.Place])
+         {
+            if(Boolean(this._equipCell.info) && (this._equipCell.info as InventoryItemInfo).Place == _loc2_.Place)
+            {
+               this._equipCell.info = null;
+            }
+            else
+            {
+               this.refreshBagList();
+            }
+         }
+         else
+         {
+            _loc4_ = ExaltManager.instance.getCanExaltData();
+            if(_loc4_.items.length != this._equipBagInfo.items.length)
+            {
+               this._equipBagInfo = _loc4_;
+               this._bagList.setData(this._equipBagInfo);
+            }
+         }
+         var _loc6_:InventoryItemInfo = this._equipCell.itemInfo;
+         if(Boolean(_loc6_) && _loc6_.isGold)
+         {
+            this._equipCell.info = null;
+            this._equipCell.info = _loc6_;
+         }
+      }
+	  
+	  protected function __onBuyClick(param1:MouseEvent) : void
+	  {
+		  SoundManager.instance.playButtonSound();
+		  this.buyRock();
+	  }
+      
+	  private function buyRock() : void
+	  {
+		  if(PlayerManager.Instance.Self.bagLocked)
+		  {
+			  BaglockedManager.Instance.show();
+			  return;
+		  }
+		  this._quick = ComponentFactory.Instance.creatCustomObject("core.QuickFrame");
+		  this._quick.setTitleText(LanguageMgr.GetTranslation("tank.view.store.matte.goldQuickBuy"));
+		  this._quick.itemID = EquipType.EXALT_ROCK;
+		  LayerManager.Instance.addToLayer(this._quick,LayerManager.GAME_TOP_LAYER,true,LayerManager.BLCAK_BLOCKGOUND);
+	  }
+	  
+      private function __clickHelp(param1:MouseEvent) : void
+      {
+		  SoundManager.instance.playButtonSound();
+		  var _loc2_:MovieClip = ComponentFactory.Instance.creatCustomObject("store.view.exalt.HelpBG");
+		  var _loc3_:HelpFrame = ComponentFactory.Instance.creat("ddtstore.HelpFrame");
+		  _loc3_.height = 482;
+		  _loc3_.setView(_loc2_);
+		  _loc3_.titleText = LanguageMgr.GetTranslation("store.StoreExaltBG.say");
+		  _loc3_.setButtonPos(165,439);
+		  _loc3_.addEventListener(FrameEvent.RESPONSE,this.__frameEvent);
+		  LayerManager.Instance.addToLayer(_loc3_,LayerManager.GAME_TOP_LAYER,true,LayerManager.BLCAK_BLOCKGOUND,true);
+	  }
+	  
+	  protected function __frameEvent(param1:FrameEvent) : void
+	  {
+		  SoundManager.instance.playButtonSound();
+		  var _loc2_:Disposeable = param1.target as Disposeable;
+		  _loc2_.dispose();
+		  _loc2_ = null;
+	  }
+      
+      private function propInfoChangeHandler(param1:BagEvent) : void
+      {
+         var _loc2_:InventoryItemInfo = null;
+         var _loc3_:InventoryItemInfo = null;
+         var _loc4_:InventoryItemInfo = null;
+         var _loc5_:Dictionary = param1.changedSlots;
+         for each(_loc3_ in _loc5_)
+         {
+            _loc2_ = _loc3_;
+         }
+         if(Boolean(_loc2_) && !PlayerManager.Instance.Self.PropBag.items[_loc2_.Place])
+         {
+            if(Boolean(this._itemCell.info) && (this._itemCell.info as InventoryItemInfo).Place == _loc2_.Place)
+            {
+               this._itemCell.info = null;
+            }
+            else
+            {
+               this._proBagList.setData(ExaltManager.instance.getExaltItemData());
+            }
+         }
+         else
+         {
+            if(!this._itemCell || !this._itemCell.info)
+            {
+               return;
+            }
+            _loc4_ = this._itemCell.info as InventoryItemInfo;
+            if(!PlayerManager.Instance.Self.PropBag.items[_loc4_.Place])
+            {
+               this._itemCell.info = null;
+            }
+            else
+            {
+               this._itemCell.setCount(_loc4_.Count);
+            }
+         }
       }
       
-      private function cellClickHandler(param1:CellEvent) : void
+      private function judgeAgain() : void
+      {
+         if(this._isDispose)
+         {
+            return;
+         }
+         if(this._continuousBtn.selected)
+         {
+            if(!this._itemCell.info || this._itemCell.itemInfo.Count <= 0)
+            {
+			   MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warning"));
+			   this.judgeDoBtnStatus();
+               return;
+            }
+			setTimeout(this.exaltHandler,INTERVAL);
+         }
+         else
+         {
+            this.judgeDoBtnStatus();
+         }
+      }
+	  
+	  
+	  private function doHandler(param1:MouseEvent) : void
+	  {
+		  this.exaltHandler()
+	  }
+      
+      private function exaltHandler() : void
+      {
+         var _loc2_:BaseAlerFrame = null;
+         SoundManager.instance.play("008");
+         if(PlayerManager.Instance.Self.bagLocked)
+         {
+            BaglockedManager.Instance.show();
+            return;
+         }
+		 var nowAt:int = getTimer();
+		 if(nowAt - this._lastDoAt < INTERVAL)
+		 {
+			 MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.storeIIStrength.startStrengthClickTimerMsg"));
+			 return;
+		 }
+		 this._lastDoAt = nowAt;
+         if(!this._equipCell.info || !this._itemCell.info || this._itemCell.itemInfo.Count <= 0)
+         {
+			MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warning"));
+            return;
+         }
+		 if(this._equipCell.itemInfo.StrengthenLevel >= 15)
+		 {
+			 MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warningI"));
+			 return;
+		 }
+		 if(int(this._itemCell.info.Property3) != 0)
+		 {
+			 if(this._equipCell.itemInfo.StrengthenLevel - 11 == int(this._itemCell.info.Property3))
+			 {
+				 return;
+			 }
+			 MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warningII"));
+			 return;
+		 }
+         if(!this._equipCell.itemInfo.IsBinds)
+         {
+            _loc2_ = AlertManager.Instance.simpleAlert(LanguageMgr.GetTranslation("AlertDialog.Info"),LanguageMgr.GetTranslation("tank.view.bagII.BagIIView.BindsInfo"),LanguageMgr.GetTranslation("ok"),LanguageMgr.GetTranslation("cancel"),true,true,true,LayerManager.BLCAK_BLOCKGOUND);
+            _loc2_.moveEnable = false;
+            _loc2_.addEventListener(FrameEvent.RESPONSE,this.__confirm,false,0,true);
+         }
+         else
+         {
+            this.sendMess();
+         }
+      }
+      
+      private function __confirm(param1:FrameEvent) : void
       {
          SoundManager.instance.play("008");
-         var _loc2_:BagCell = param1.data as BagCell;
-         _loc2_.dragStart();
+         var _loc2_:BaseAlerFrame = param1.currentTarget as BaseAlerFrame;
+         _loc2_.removeEventListener(FrameEvent.RESPONSE,this.__confirm);
+         if(param1.responseCode == FrameEvent.SUBMIT_CLICK || param1.responseCode == FrameEvent.ENTER_CLICK)
+         {
+            this.sendMess();
+         }
+      }
+      
+      private function sendMess() : void
+      {
+         this._doBtn.enable = false;
+         var _loc1_:InventoryItemInfo = this._equipCell.itemInfo;
+         var _loc2_:InventoryItemInfo = this._itemCell.itemInfo;
+		 this.showExaltMovie();
+         SocketManager.Instance.out.sendItemExalt(_loc1_.Place,_loc1_.BagType,_loc2_.Place,_loc2_.BagType);
+      }
+	  
+	  private function showSuccessMovie() : void
+	  {
+		  if(Boolean(this._movieI))
+		  {
+			  this._movieI.stop();
+		  }
+		  ObjectUtils.disposeObject(this._movieI);
+		  this._movieI = null;
+		  this._movieI = UICreatShortcut.creatAndAdd("asset.ddtstore.exalt.movieI",this);
+		  this._movieI.gotoAndPlay(1);
+		  this._movieI.addFrameScript(this._movieI.totalFrames - 1,this.disposeSuccessMovie);
+	  }
+	  
+	  private function disposeSuccessMovie() : void
+	  {
+		  if(Boolean(this._movieI))
+		  {
+			  this._movieI.stop();
+		  }
+		  ObjectUtils.disposeObject(this._movieI);
+		  this._movieI = null;
+	  }
+	  
+	  private function showExaltMovie() : void
+	  {
+		  if(Boolean(this._movieII))
+		  {
+			  this._movieII.stop();
+		  }
+		  else
+		  {
+			  this._movieII = UICreatShortcut.creatAndAdd("asset.ddtstore.exalt.movieII",this);
+		  }
+		  this._movieII.gotoAndPlay(1);
+		  this._movieII.addFrameScript(this._movieII.totalFrames - 1,this.disposeExaltMovie);
+	  }
+	  
+	  private function disposeExaltMovie() : void
+	  {
+		  if(Boolean(this._movieII))
+		  {
+			  this._movieII.stop();
+		  }
+		  ObjectUtils.disposeObject(this._movieII);
+		  this._movieII = null;
+	  }
+      
+      private function itemEquipChangeHandler(param1:Event) : void
+      {
+		 var _loc2_:ExaltEquipCell = null;
+		 var _loc3_:InventoryItemInfo = null;
+		 var _loc4_:int = 0;
+		 if(param1.currentTarget is ExaltEquipCell)
+		 {
+			 _loc2_ = param1.currentTarget as ExaltEquipCell;
+			 _loc3_ = _loc2_.itemInfo;
+			 if(Boolean(_loc3_))
+			 {
+				 _loc4_ = int(StoreEquipExperience.expericence[_loc3_.StrengthenLevel + 1]);
+				 if(_loc4_ == 0)
+				 {
+					 this._progressBar.progress(0,0);
+				 }
+				 else
+				 {
+					 this._progressBar.progress(_loc3_.StrengthenExp,_loc4_);
+				 }
+			 }
+			 else
+			 {
+				 this._progressBar.progress(0,0);
+			 }
+			 dispatchEvent(new Event(Event.CHANGE));
+		 }
+		 this.judgeDoBtnStatus();
+      }
+	  
+	  protected function __exaltFinish(param1:StoreIIEvent) : void
+	  {
+		  this._continuousBtn.selected = false;
+		  this.showSuccessMovie();
+		  this.judgeDoBtnStatus();
+	  }
+	  
+	  protected function __exaltFail(param1:StoreIIEvent) : void
+	  {
+		  var _loc3_:int = 0;
+		  var _loc4_:int = 0;
+		  ObjectUtils.disposeObject(this._luckyText);
+		  this._luckyText = null;
+		  this._luckyText = ComponentFactory.Instance.creatComponentByStylename("ddt.store.view.exalt.luckyText");
+		  this._luckyText.text = LanguageMgr.GetTranslation("store.view.exalt.luckyTips",int(param1.data));
+		  var _loc2_:int = this._luckyText.width;
+		  _loc3_ = this._luckyText.height;
+		  _loc4_ = this._luckyText.y;
+		  this._luckyText.width /= 2;
+		  this._luckyText.height /= 2;
+		  this._luckyText.alpha = 0.5;
+		  TweenMax.fromTo(this._luckyText,2,{
+			  "y":_loc4_ - 30,
+			  "alpha":1,
+			  "width":_loc2_,
+			  "height":_loc3_
+		  },{
+			  "y":_loc4_ - 60,
+			  "alpha":0,
+			  "width":0,
+			  "height":0,
+			  "onComplete":this.onComplete
+		  });
+		  addChild(this._luckyText);
+		  SoundManager.instance.play("171");
+		  this.judgeAgain();
+	  }
+	  
+	  private function onComplete() : void
+	  {
+		  ObjectUtils.disposeObject(this._luckyText);
+		  this._luckyText = null;
+	  }
+      
+      private function judgeDoBtnStatus() : void
+      {
+         if(Boolean(this._equipCell.info) && Boolean(this._itemCell.info) && this._itemCell.itemInfo.Count > 0)
+         {
+            this._doBtn.enable = true;
+         }
+         else
+         {
+//			this._continuousBtn.selected = false;
+            this._doBtn.enable = false;
+         }
       }
       
       protected function __cellDoubleClick(param1:CellEvent) : void
@@ -209,520 +575,130 @@ package store.view.exalt
          {
             _loc2_ = ExaltManager.EQUIP_MOVE;
          }
+         var _loc3_:ExaltEvent = new ExaltEvent(_loc2_);
+         var _loc4_:BagCell = param1.data as BagCell;
+         _loc3_.info = _loc4_.info as InventoryItemInfo;
+         _loc3_.moveType = 1;
+		 ExaltManager.instance.dispatchEvent(_loc3_);
+      }
+      
+      private function cellClickHandler(param1:CellEvent) : void
+      {
+         SoundManager.instance.play("008");
+         var _loc2_:BagCell = param1.data as BagCell;
+         _loc2_.dragStart();
+      }
+      
+      private function createAcceptDragSprite() : void
+      {
+         this._leftDrapSprite = new ExaltLeftDragSprite();
+         this._leftDrapSprite.mouseEnabled = false;
+         this._leftDrapSprite.mouseChildren = false;
+         this._leftDrapSprite.graphics.beginFill(0,0);
+         this._leftDrapSprite.graphics.drawRect(0,0,347,404);
+         this._leftDrapSprite.graphics.endFill();
+         PositionUtils.setPos(this._leftDrapSprite,"wishBeadMainView.leftDrapSpritePos");
+         addChild(this._leftDrapSprite);
+         this._rightDrapSprite = new ExaltRightDragSprite();
+         this._rightDrapSprite.mouseEnabled = false;
+         this._rightDrapSprite.mouseChildren = false;
+         this._rightDrapSprite.graphics.beginFill(0,0);
+         this._rightDrapSprite.graphics.drawRect(0,0,374,407);
+         this._rightDrapSprite.graphics.endFill();
+         PositionUtils.setPos(this._rightDrapSprite,"wishBeadMainView.rightDrapSpritePos");
+         addChild(this._rightDrapSprite);
+      }
+      
+      override public function set visible(param1:Boolean) : void
+      {
+         super.visible = param1;
+         if(param1)
+         {
+            if(!this._isDispose)
+            {
+               this.refreshListData();
+               PlayerManager.Instance.Self.PropBag.addEventListener(BagEvent.UPDATE,this.propInfoChangeHandler);
+               PlayerManager.Instance.Self.Bag.addEventListener(BagEvent.UPDATE,this.bagInfoChangeHandler);
+            }
+         }
+         else
+         {
+            this.clearCellInfo();
+            PlayerManager.Instance.Self.PropBag.removeEventListener(BagEvent.UPDATE,this.propInfoChangeHandler);
+            PlayerManager.Instance.Self.Bag.removeEventListener(BagEvent.UPDATE,this.bagInfoChangeHandler);
+         }
+      }
+      
+      public function clearCellInfo() : void
+      {
+         if(Boolean(this._equipCell))
+         {
+            this._equipCell.clearInfo();
+         }
+         if(Boolean(this._itemCell))
+         {
+            this._itemCell.clearInfo();
+         }
+      }
+      
+      public function refreshListData() : void
+      {
+         if(Boolean(this._bagList))
+         {
+            this.refreshBagList();
+         }
+         if(Boolean(this._proBagList))
+         {
+            this._proBagList.setData(ExaltManager.instance.getExaltItemData());
+         }
       }
       
       private function removeEvent() : void
       {
-         var _loc1_:int = 0;
-         while(_loc1_ < this._items.length)
-         {
-            this._items[_loc1_].removeEventListener(Event.CHANGE,this.__itemInfoChange);
-            this._items[_loc1_].dispose();
-            _loc1_++;
-         }
-         this._exaltBtn.removeEventListener(MouseEvent.CLICK,this.__onExaltClick);
-         this._buyBtn.removeEventListener(MouseEvent.CLICK,this.__onBuyClick);
-         this._continuous.removeEventListener(MouseEvent.CLICK,this.__continuousClick);
-         this._helpBtn.removeEventListener(MouseEvent.CLICK,this.__helpClick);
-         StrengthDataManager.instance.removeEventListener(StoreIIEvent.EXALT_FINISH,this.__exaltFinish);
-         StrengthDataManager.instance.removeEventListener(StoreIIEvent.EXALT_FAIL,this.__exaltFail);
-         PlayerManager.Instance.Self.StoreBag.removeEventListener(BagEvent.UPDATE_Exalt,this.__updateStoreBag);
-      }
-      
-      protected function __exaltFinish(param1:StoreIIEvent) : void
-      {
-         this.showSuccessMovie();
-      }
-      
-      protected function __exaltFail(param1:StoreIIEvent) : void
-      {
-         var _loc3_:int = 0;
-         var _loc4_:int = 0;
-         ObjectUtils.disposeObject(this._luckyText);
-         this._luckyText = null;
-         this._luckyText = ComponentFactory.Instance.creatComponentByStylename("ddt.store.view.exalt.luckyText");
-         this._luckyText.text = LanguageMgr.GetTranslation("store.view.exalt.luckyTips",int(param1.data));
-         var _loc2_:int = this._luckyText.width;
-         _loc3_ = this._luckyText.height;
-         _loc4_ = this._luckyText.y;
-         this._luckyText.width /= 2;
-         this._luckyText.height /= 2;
-         this._luckyText.alpha = 0.5;
-         TweenMax.fromTo(this._luckyText,2,{
-            "y":_loc4_ - 30,
-            "alpha":1,
-            "width":_loc2_,
-            "height":_loc3_
-         },{
-            "y":_loc4_ - 60,
-            "alpha":0,
-            "width":0,
-            "height":0,
-            "onComplete":this.onComplete
-         });
-         addChild(this._luckyText);
-         SoundManager.instance.play("171");
-         if(this._continuous.selected)
-         {
-            setTimeout(this.sendExalt,1000);
-         }
-      }
-      
-      private function onComplete() : void
-      {
-         ObjectUtils.disposeObject(this._luckyText);
-         this._luckyText = null;
-      }
-      
-      protected function __helpClick(param1:MouseEvent) : void
-      {
-         SoundManager.instance.playButtonSound();
-         var _loc2_:MovieClip = ComponentFactory.Instance.creatCustomObject("store.view.exalt.HelpBG");
-         var _loc3_:HelpFrame = ComponentFactory.Instance.creat("ddtstore.HelpFrame");
-         _loc3_.height = 482;
-         _loc3_.setView(_loc2_);
-         _loc3_.titleText = LanguageMgr.GetTranslation("store.StoreExaltBG.say");
-         _loc3_.setButtonPos(165,439);
-         _loc3_.addEventListener(FrameEvent.RESPONSE,this.__frameEvent);
-         LayerManager.Instance.addToLayer(_loc3_,LayerManager.GAME_TOP_LAYER,true,LayerManager.BLCAK_BLOCKGOUND,true);
-      }
-      
-      protected function __frameEvent(param1:FrameEvent) : void
-      {
-         SoundManager.instance.playButtonSound();
-         var _loc2_:Disposeable = param1.target as Disposeable;
-         _loc2_.dispose();
-         _loc2_ = null;
-      }
-      
-      protected function __continuousClick(param1:MouseEvent) : void
-      {
-         SoundManager.instance.playButtonSound();
-         if(!this._continuous.selected)
-         {
-            this.disposeTimer();
-         }
-      }
-      
-      private function disposeTimer() : void
-      {
-         if(Boolean(this._timer))
-         {
-            this._timer.stop();
-            this._timer.removeEventListener(TimerEvent.TIMER,this.__onRepeatCount);
-            this._timer = null;
-            this._exaltBtn.enable = true;
-         }
-      }
-      
-      protected function __onRepeatCount(param1:TimerEvent) : void
-      {
-         if(Boolean(this._items))
-         {
-            if(this.isExalt() && this.equipisAdapt(this._items[1].info))
-            {
-               this.sendExalt();
-            }
-            else
-            {
-               this.disposeTimer();
-            }
-         }
-      }
-      
-      protected function __onBuyClick(param1:MouseEvent) : void
-      {
-         SoundManager.instance.playButtonSound();
-         this.buyRock();
-      }
-      
-      protected function __onExaltClick(param1:MouseEvent) : void
-      {
-         SoundManager.instance.playButtonSound();
-         var _loc2_:int = getTimer();
-         if(_loc2_ - this._lastExaltTime > INTERVAL)
-         {
-            this._lastExaltTime = _loc2_;
-            this.sendExalt();
-         }
-         else
-         {
-            MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.storeIIStrength.startStrengthClickTimerMsg"));
-         }
-      }
-      
-      private function sendContinuousExalt() : void
-      {
-         if(this.isExalt())
-         {
-            if(this._continuous.selected)
-            {
-               this._timer = new Timer(INTERVAL);
-               this._timer.addEventListener(TimerEvent.TIMER,this.__onRepeatCount);
-               this._timer.start();
-               this._exaltBtn.enable = false;
-            }
-            else
-            {
-               this.disposeTimer();
-            }
-         }
-      }
-      
-      private function sendExalt() : void
-      {
-         if(this.isExalt())
-         {
-            SocketManager.Instance.out.sendItemExalt();
-            this.showExaltMovie();
-         }
-      }
-      
-      private function isExalt() : Boolean
-      {
-         if(this._items == null)
-         {
-            return false;
-         }
-         if(PlayerManager.Instance.Self.bagLocked)
-         {
-            BaglockedManager.Instance.show();
-            return false;
-         }
-         if(this._items == null)
-         {
-            return false;
-         }
-         if(StrengthStone(this._items[0]).itemInfo == null || ExaltItemCell(this._items[1]).itemInfo == null)
-         {
-            MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warning"));
-            return false;
-         }
-         if(Boolean(this._items[1].info) && this._items[1].info.StrengthenLevel >= 15)
-         {
-            MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warningI"));
-            return false;
-         }
-         if(int(this._items[0].info.Property3) != 0)
-         {
-            if(this._items[1].info.StrengthenLevel - 11 == int(this._items[0].info.Property3))
-            {
-               return true;
-            }
-            MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warningII"));
-            return false;
-         }
-         return true;
-      }
-      
-      private function getCellsPoint() : void
-      {
-         this._pointArray = new Vector.<Point>();
-         var _loc1_:Point = ComponentFactory.Instance.creatCustomObject("store.view.exalt.StoreExaltBG.point0");
-         this._pointArray.push(_loc1_);
-         var _loc2_:Point = ComponentFactory.Instance.creatCustomObject("store.view.exalt.StoreExaltBG.point1");
-         this._pointArray.push(_loc2_);
-      }
-      
-      protected function __itemInfoChange(param1:Event) : void
-      {
-         var _loc2_:ExaltItemCell = null;
-         var _loc3_:InventoryItemInfo = null;
-         var _loc4_:int = 0;
-         if(param1.currentTarget is ExaltItemCell)
-         {
-            _loc2_ = param1.currentTarget as ExaltItemCell;
-            _loc3_ = _loc2_.info as InventoryItemInfo;
-            if(Boolean(_loc3_))
-            {
-               if(ExaltItemCell(this._items[1]).actionState)
-               {
-                  ExaltItemCell(this._items[1]).actionState = false;
-               }
-               _loc4_ = int(StoreEquipExperience.expericence[_loc3_.StrengthenLevel + 1]);
-               if(_loc4_ == 0)
-               {
-                  this._progressBar.progress(0,0);
-               }
-               else
-               {
-                  this._progressBar.progress(_loc3_.StrengthenExp,_loc4_);
-               }
-            }
-            else
-            {
-               this._progressBar.progress(0,0);
-            }
-            dispatchEvent(new Event(Event.CHANGE));
-         }
-      }
-      
-      private function showSuccessMovie() : void
-      {
-         if(Boolean(this._movieI))
-         {
-            this._movieI.stop();
-         }
-         ObjectUtils.disposeObject(this._movieI);
-         this._movieI = null;
-         this._movieI = UICreatShortcut.creatAndAdd("asset.ddtstore.exalt.movieI",this);
-         this._movieI.gotoAndPlay(1);
-         this._movieI.addFrameScript(this._movieI.totalFrames - 1,this.disposeSuccessMovie);
-      }
-      
-      private function showExaltMovie() : void
-      {
-         if(Boolean(this._movieII))
-         {
-            this._movieII.stop();
-         }
-         else
-         {
-            this._movieII = UICreatShortcut.creatAndAdd("asset.ddtstore.exalt.movieII",this);
-         }
-         this._movieII.gotoAndPlay(1);
-         this._movieII.addFrameScript(this._movieII.totalFrames - 1,this.disposeExaltMovie);
-      }
-      
-      private function disposeExaltMovie() : void
-      {
-         if(Boolean(this._movieII))
-         {
-            this._movieII.stop();
-         }
-         ObjectUtils.disposeObject(this._movieII);
-         this._movieII = null;
-      }
-      
-      private function disposeSuccessMovie() : void
-      {
-         if(Boolean(this._movieI))
-         {
-            this._movieI.stop();
-         }
-         ObjectUtils.disposeObject(this._movieI);
-         this._movieI = null;
-      }
-      
-      private function buyRock() : void
-      {
-         if(PlayerManager.Instance.Self.bagLocked)
-         {
-            BaglockedManager.Instance.show();
-            return;
-         }
-         this._quick = ComponentFactory.Instance.creatCustomObject("core.QuickFrame");
-         this._quick.setTitleText(LanguageMgr.GetTranslation("tank.view.store.matte.goldQuickBuy"));
-         this._quick.itemID = EquipType.EXALT_ROCK;
-         LayerManager.Instance.addToLayer(this._quick,LayerManager.GAME_TOP_LAYER,true,LayerManager.BLCAK_BLOCKGOUND);
-      }
-      
-      public function dragDrop(param1:BagCell) : void
-      {
-         var _loc2_:StoreCell = null;
-         if(param1 == null)
-         {
-            return;
-         }
-         var _loc3_:InventoryItemInfo = param1.info as InventoryItemInfo;
-         for each(_loc2_ in this._items)
-         {
-            if(_loc2_.info == _loc3_)
-            {
-               _loc2_.info = null;
-               param1.locked = false;
-               return;
-            }
-         }
-         for each(_loc2_ in this._items)
-         {
-            if(Boolean(_loc2_))
-            {
-               if(_loc2_ is StoneCell)
-               {
-                  if((_loc2_ as StoneCell).types.indexOf(_loc3_.Property1) > -1 && _loc3_.CategoryID == 11)
-                  {
-                     if(this.isAdaptToStone(_loc3_))
-                     {
-                        if(_loc3_.Count == 1)
-                        {
-                           SocketManager.Instance.out.sendMoveGoods(_loc3_.BagType,_loc3_.Place,BagInfo.STOREBAG,_loc2_.index,1,true);
-                        }
-                        else
-                        {
-                           this.showNumAlert(_loc3_,_loc2_.index);
-                        }
-                        return;
-                     }
-                     MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.strength.typeUnpare"));
-                  }
-               }
-               else if(_loc2_ is ExaltItemCell)
-               {
-                  if(_loc3_.getRemainDate() <= 0)
-                  {
-                     MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.fusion.AccessoryDragInArea.overdue"));
-                  }
-                  else if(param1.info.CanStrengthen && this.equipisAdapt(_loc3_))
-                  {
-                     SocketManager.Instance.out.sendMoveGoods(_loc3_.BagType,_loc3_.Place,BagInfo.STOREBAG,_loc2_.index,1);
-                     ExaltItemCell(this._items[1]).actionState = true;
-                     return;
-                  }
-               }
-            }
-         }
-         if(EquipType.isExaltStone(_loc3_))
-         {
-            for each(_loc2_ in this._items)
-            {
-               if(_loc2_ is StoneCell && (_loc2_ as StoneCell).types.indexOf(_loc3_.Property1) > -1 && _loc3_.CategoryID == 11)
-               {
-                  if(this.isAdaptToStone(_loc3_))
-                  {
-                     if(_loc3_.Count == 1)
-                     {
-                        SocketManager.Instance.out.sendMoveGoods(_loc3_.BagType,_loc3_.Place,BagInfo.STOREBAG,_loc2_.index,1,true);
-                     }
-                     else
-                     {
-                        this.showNumAlert(_loc3_,_loc2_.index);
-                     }
-                     return;
-                  }
-                  MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.strength.typeUnpare"));
-               }
-            }
-         }
-      }
-      
-      private function showNumAlert(param1:InventoryItemInfo, param2:int) : void
-      {
-         this._aler = ComponentFactory.Instance.creat("store.view.exalt.exaltSelectNumAlertFrame");
-         this._aler.addExeFunction(this.sellFunction,this.notSellFunction);
-         this._aler.goodsinfo = param1;
-         this._aler.index = param2;
-         this._aler.show(param1.Count);
-      }
-      
-      private function sellFunction(param1:int, param2:InventoryItemInfo, param3:int) : void
-      {
-         SocketManager.Instance.out.sendMoveGoods(param2.BagType,param2.Place,BagInfo.STOREBAG,param3,param1,true);
-         if(Boolean(this._aler))
-         {
-            this._aler.dispose();
-         }
-         if(Boolean(this._aler) && Boolean(this._aler.parent))
-         {
-            removeChild(this._aler);
-         }
-         this._aler = null;
-      }
-      
-      private function notSellFunction() : void
-      {
-         if(Boolean(this._aler))
-         {
-            this._aler.dispose();
-         }
-         if(Boolean(this._aler) && Boolean(this._aler.parent))
-         {
-            removeChild(this._aler);
-         }
-         this._aler = null;
-      }
-      
-      private function isAdaptToStone(param1:InventoryItemInfo) : Boolean
-      {
-         if(this._items[0].info != null && this._items[0].info.Property1 != param1.Property1)
-         {
-            return false;
-         }
-         return true;
-      }
-      
-      private function equipisAdapt(param1:InventoryItemInfo) : Boolean
-      {
-         if(param1.StrengthenLevel >= 15)
-         {
-            MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.view.exalt.warningI"));
-            return false;
-         }
-         return true;
-      }
-      
-      public function refreshData(param1:Dictionary) : void
-      {
-         var _loc2_:* = null;
-         var _loc3_:int = 0;
-         for(_loc2_ in param1)
-         {
-            _loc3_ = int(_loc2_);
-            if(this._items.hasOwnProperty(_loc3_))
-            {
-               this._items[_loc3_].info = PlayerManager.Instance.Self.StoreBag.items[_loc3_];
-            }
-         }
-      }
-      
-      public function updateData() : void
-      {
-         if(Boolean(PlayerManager.Instance.Self.StoreBag.items[0]) && this.isAdaptToStone(PlayerManager.Instance.Self.StoreBag.items[0]))
-         {
-            this._items[0].info = PlayerManager.Instance.Self.StoreBag.items[0];
-         }
-         else
-         {
-            this._items[0].info = null;
-         }
-         if(Boolean(PlayerManager.Instance.Self.StoreBag.items[1]) && EquipType.isStrengthStone(PlayerManager.Instance.Self.StoreBag.items[1]))
-         {
-            this._items[1].info = PlayerManager.Instance.Self.StoreBag.items[1];
-         }
-         else
-         {
-            this._items[1].info = null;
-         }
-      }
-      
-      public function hide() : void
-      {
-         this.visible = false;
-         this._items[0].info = null;
-         this._items[1].info = null;
-         this.disposeTimer();
-      }
-      
-      public function show() : void
-      {
-         this.visible = true;
+         this._bagList.removeEventListener(CellEvent.ITEM_CLICK,this.cellClickHandler);
+         this._bagList.removeEventListener(CellEvent.DOUBLE_CLICK,this.__cellDoubleClick);
+         this._equipCell.removeEventListener(Event.CHANGE,this.itemEquipChangeHandler);
+         this._proBagList.removeEventListener(CellEvent.ITEM_CLICK,this.cellClickHandler);
+         this._proBagList.removeEventListener(CellEvent.DOUBLE_CLICK,this.__cellDoubleClick);
+         this._itemCell.removeEventListener(Event.CHANGE,this.itemEquipChangeHandler);
+         this._doBtn.removeEventListener(MouseEvent.CLICK,this.doHandler);
+		 this._buyBtn.removeEventListener(MouseEvent.CLICK,this.__onBuyClick);
+		 StrengthDataManager.instance.removeEventListener(StoreIIEvent.EXALT_FINISH,this.__exaltFinish);
+		 StrengthDataManager.instance.removeEventListener(StoreIIEvent.EXALT_FAIL,this.__exaltFail);
+         PlayerManager.Instance.Self.PropBag.removeEventListener(BagEvent.UPDATE,this.propInfoChangeHandler);
+         PlayerManager.Instance.Self.Bag.removeEventListener(BagEvent.UPDATE,this.bagInfoChangeHandler);
+         this._helpBtn.removeEventListener(MouseEvent.CLICK,this.__clickHelp);
       }
       
       public function dispose() : void
       {
-         this.disposeTimer();
          this.removeEvent();
-         ObjectUtils.disposeObject(this._buyBtn);
-         this._buyBtn = null;
-         ObjectUtils.disposeObject(this._exaltBtn);
-         this._exaltBtn = null;
-         ObjectUtils.disposeObject(this._progressBar);
-         this._progressBar = null;
-         ObjectUtils.disposeObject(this._equipmentCellBg);
-         this._equipmentCellBg = null;
-         ObjectUtils.disposeObject(this._goodCellBg);
-         this._goodCellBg = null;
-         ObjectUtils.disposeObject(this._equipmentCellText);
-         this._equipmentCellText = null;
-         ObjectUtils.disposeObject(this._rockText);
-         this._rockText = null;
-         ObjectUtils.disposeObject(this._area);
-         this._area = null;
-         ObjectUtils.disposeObject(this._quick);
-         this._quick = null;
-         ObjectUtils.disposeObject(this._continuous);
-         this._continuous = null;
-         this._items = null;
+         ObjectUtils.disposeAllChildren(this);
+//         ObjectUtils.disposeObject(this._tip);
+//         this._tip = null;
+//         this._bg = null;
+         this._bagList = null;
+         this._proBagList = null;
+         this._leftDrapSprite = null;
+         this._rightDrapSprite = null;
+         this._itemCell = null;
+         this._equipCell = null;
+		 this._equipCellBg = null;
+		 this._itemCellBg = null;
+		 this._equipCellText = null;
+		 this._rockText = null;
+         this._continuousBtn = null;
+         this._doBtn = null;
+		 this._buyBtn = null;
+		 ObjectUtils.disposeObject(this._quick);
+		 this._quick = null;
+         this._helpBtn = null;
+         this._equipBagInfo = null;
+         if(Boolean(parent))
+         {
+            parent.removeChild(this);
+         }
+         this._isDispose = true;
       }
    }
 }

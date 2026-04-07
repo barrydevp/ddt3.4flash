@@ -139,7 +139,7 @@ package store.forge
       public function set currentPanelIndex(param1:int) : void
       {
          this._currentPanelIndex = param1;
-         dispatchEvent(new ChoosePanelEvnet(this._currentPanelIndex));
+         dispatchEvent(new ChoosePanelEvnet(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT, this._currentPanelIndex));
       }
       
       public function get currentPanelIndex() : int
@@ -149,6 +149,7 @@ package store.forge
       
       public function changeHandler(param1:Event) : void
       {
+//		  trace("on change forge: ", IsExalt);
          IsExalt = false;
          SocketManager.Instance.out.sendClearStoreBag();
          this._tabVbox.arrange();
@@ -184,20 +185,21 @@ package store.forge
                this.currentPanelIndex = StoreMainView.WISHBEAD;
                break;
             case 1:
-               IsExalt = true;
-               if(this._exaltPanel)
-               {
-                  ObjectUtils.disposeObject(this._exaltPanel);
-                  this._exaltPanel = null;
-               }
-               if(this._exaltPanel == null)
+//               IsExalt = true;
+//               if(this._exaltPanel)
+//               {
+//                  ObjectUtils.disposeObject(this._exaltPanel);
+//                  this._exaltPanel = null;
+//               }
+               if(!this._exaltPanel)
                {
                   this._exaltPanel = new StoreExaltBG();
-                  PositionUtils.setPos(this._exaltPanel,"forgeMainView.exaltPanelPos");
+                  PositionUtils.setPos(this._exaltPanel,"forgeMainView.latentEnergyViewPos");
                   addChild(this._exaltPanel);
                }
                this._exaltPanel.visible = true;
-               this._rightBgView.visible = false;
+			   this._rightBgView.showStoreBagViewText("forgeMainView.latentEnergy.equipTipTxt","forgeMainView.latentEnergy.itemTipTxt");
+			   this._rightBgView.visible = true;
                this.bg.setFrame(1);
                this.currentPanelIndex = StoreMainView.EXALT;
                break;
@@ -212,6 +214,7 @@ package store.forge
                this._rightBgView.showStoreBagViewText("forgeMainView.latentEnergy.equipTipTxt","forgeMainView.latentEnergy.itemTipTxt");
                this._rightBgView.visible = true;
                this.bg.setFrame(1);
+			   this.currentPanelIndex = StoreMainView.LATENT;
                break;
             case 3:
                if(!this._gemstoneFrame)
@@ -224,6 +227,7 @@ package store.forge
                this._gemstoneFrame.visible = true;
                this._rightBgView.visible = false;
                this.bg.setFrame(1);
+			   this.currentPanelIndex = StoreMainView.GEMSTONE;
          }
       }
       
@@ -242,6 +246,11 @@ package store.forge
                this._wishBeadView.clearCellInfo();
                this._wishBeadView.refreshListData();
             }
+			if(this._exaltPanel)
+			{
+				this._exaltPanel.clearCellInfo();
+				this._exaltPanel.refreshListData();
+			}
             if(this._tabSBG)
             {
                this.changeHandler(null);

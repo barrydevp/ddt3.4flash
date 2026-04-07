@@ -1,7 +1,5 @@
 package store.forge.wishBead
 {
-   import bagAndInfo.cell.BagCell;
-   import baglocked.BaglockedManager;
    import com.pickgliss.events.FrameEvent;
    import com.pickgliss.ui.AlertManager;
    import com.pickgliss.ui.ComponentFactory;
@@ -14,6 +12,21 @@ package store.forge.wishBead
    import com.pickgliss.ui.image.ScaleFrameImage;
    import com.pickgliss.ui.text.FilterFrameText;
    import com.pickgliss.utils.ObjectUtils;
+   
+   import flash.display.Bitmap;
+   import flash.display.BitmapData;
+   import flash.display.Shape;
+   import flash.display.Sprite;
+   import flash.events.Event;
+   import flash.events.MouseEvent;
+   import flash.geom.Point;
+   import flash.utils.Dictionary;
+   import flash.utils.getTimer;
+   
+   import bagAndInfo.cell.BagCell;
+   
+   import baglocked.BaglockedManager;
+   
    import ddt.data.BagInfo;
    import ddt.data.goods.InventoryItemInfo;
    import ddt.events.BagEvent;
@@ -25,22 +38,15 @@ package store.forge.wishBead
    import ddt.manager.SocketManager;
    import ddt.manager.SoundManager;
    import ddt.utils.PositionUtils;
-   import flash.display.Bitmap;
-   import flash.display.BitmapData;
-   import flash.display.Shape;
-   import flash.display.Sprite;
-   import flash.events.Event;
-   import flash.events.MouseEvent;
-   import flash.geom.Point;
-   import flash.utils.Dictionary;
+   
    import store.HelpFrame;
    import store.HelpPrompt;
    import store.StoreBagBgWHPoint;
    
    public class WishBeadMainView extends Sprite implements Disposeable
    {
-       
-      
+	  public static const INTERVAL:int = 1400;
+
       private var _bg:Bitmap;
       
       private var _bagList:store.forge.wishBead.WishBeadBagListView;
@@ -74,6 +80,8 @@ package store.forge.wishBead
       private var _bgShape:Shape;
       
       private var _bgPoint:StoreBagBgWHPoint;
+	  
+	  private var _lastDoAt:int = 0;
       
       public function WishBeadMainView()
       {
@@ -289,7 +297,7 @@ package store.forge.wishBead
          }
          if(this._continuousBtn.selected)
          {
-            if((this._itemCell.info as InventoryItemInfo).Count <= 0)
+            if(!this._itemCell.info || (this._itemCell.info as InventoryItemInfo).Count <= 0)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("wishBead.noBead"));
                return;
@@ -311,6 +319,13 @@ package store.forge.wishBead
             BaglockedManager.Instance.show();
             return;
          }
+		 var nowAt:int = getTimer();
+		 if(nowAt - this._lastDoAt < INTERVAL)
+		 {
+			 MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.storeIIStrength.startStrengthClickTimerMsg"));
+			 return;
+		 }
+		 this._lastDoAt = nowAt;
          if(!this._equipCell.info)
          {
             return;

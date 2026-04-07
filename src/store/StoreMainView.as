@@ -41,6 +41,8 @@ package store
       public static const WISHBEAD:int = 7;
       
       public static const LATENT:int = 8;
+	  
+	  public static const GEMSTONE:int = 8;
       
       private static var _instance:store.StoreMainView;
        
@@ -183,7 +185,7 @@ package store
       {
          this._currentPanelIndex = param1;
          this.panelIndex = param1;
-         dispatchEvent(new ChoosePanelEvnet(this._currentPanelIndex));
+         dispatchEvent(new ChoosePanelEvnet(ChoosePanelEvnet.CHOOSEPANELEVENT, this._currentPanelIndex));
       }
       
       public function get currentPanelIndex() : int

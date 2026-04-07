@@ -1,8 +1,10 @@
 package store.forge.wishBead
 {
-   import bagAndInfo.cell.BagCell;
-   import ddt.data.goods.ItemTemplateInfo;
    import flash.display.DisplayObject;
+   
+   import bagAndInfo.cell.BagCell;
+   
+   import ddt.data.goods.ItemTemplateInfo;
    
    public class WishBeadEquipListCell extends BagCell
    {

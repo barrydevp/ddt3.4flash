@@ -2275,7 +2275,17 @@ package ddt.manager
          this.sendPackage(_loc3_);
       }
       
-      public function sendItemExalt() : void
+	  public function sendItemExalt(param1:int, param2:int, param4:int, param5:int) : void
+	  {
+		  var _loc7_:PackageOut = new PackageOut(ePackageType.ITEM_ADVANCE);
+		  _loc7_.writeInt(param1);
+		  _loc7_.writeInt(param2);
+		  _loc7_.writeInt(param4);
+		  _loc7_.writeInt(param5);
+		  this.sendPackage(_loc7_);
+	  }
+	  
+      public function sendItemExalt_OLD() : void
       {
          var _loc1_:PackageOut = new PackageOut(ePackageType.ITEM_ADVANCE);
          this.sendPackage(_loc1_);

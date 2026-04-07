@@ -112,10 +112,16 @@ package store.states
          this._tip = ComponentFactory.Instance.creat("store.storeTip");
          addChild(this._tip);
       }
+	  
+	  public function hide() {
+		  this._storeBag.getBagView().visible = false;
+		  this._storeview.visible = false;
+		  this._forgeview.visible = true;
+		  return;
+	  }
       
       public function showForeView(param1:int = 0) : void
       {
-         ForgeMainView.IsExalt = false;
          if(param1 == 0)
          {
             this._storeBag.getBagView().visible = true;
@@ -129,14 +135,7 @@ package store.states
          }
          this._forgeview.changeHandler(null);
          ForgeMainView.ISFRIST = true;
-         if(ForgeMainView.IsExalt)
-         {
-            this._storeBag.getBagView().visible = true;
-         }
-         else
-         {
-            this._storeBag.getBagView().visible = false;
-         }
+         this._storeBag.getBagView().visible = false;
          this._storeview.visible = false;
          this._forgeview.visible = true;
       }
@@ -158,7 +157,7 @@ package store.states
          this._storeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT,this.refresh);
          this._storeview.addEventListener(StoreIIEvent.EMBED_CLICK,this.embedClickHandler);
          this._storeview.addEventListener(StoreIIEvent.EMBED_INFORCHANGE,this.embedInfoChangeHandler);
-         this._forgeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT,this.refresh);
+         this._forgeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT,this.refresh);
          ConsortiaRateManager.instance.addEventListener(ConsortiaRateManager.CHANGE_CONSORTIA,this._changeConsortia);
       }
       
@@ -179,7 +178,7 @@ package store.states
          this._storeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT,this.refresh);
          this._storeview.removeEventListener(StoreIIEvent.EMBED_CLICK,this.embedClickHandler);
          this._storeview.removeEventListener(StoreIIEvent.EMBED_INFORCHANGE,this.embedInfoChangeHandler);
-         this._forgeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT,this.refresh);
+         this._forgeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT,this.refresh);
          ConsortiaRateManager.instance.removeEventListener(ConsortiaRateManager.CHANGE_CONSORTIA,this._changeConsortia);
       }
       
@@ -206,6 +205,10 @@ package store.states
       private function refresh(param1:ChoosePanelEvnet) : void
       {
          this._model.currentPanel = param1.currentPanle;
+		 if (param1.type == ChoosePanelEvnet.CHOOSEPANELFORGEEVENT) {
+			 this._storeBag.getView().visible = false;
+			 return;
+		 }
          this._storeBag.setList(this._model);
          this._storeBag.changeMsg(this._model.currentPanel + 1);
       }
@@ -223,7 +226,8 @@ package store.states
          var _loc3_:BagCell = param1.data as StoreBagCell;
          if(ForgeMainView.IsExalt)
          {
-            _loc2_ = this._forgeview.exaltPanel;
+//            _loc2_ = this._forgeview.exaltPanel;
+			 return;
          }
          else
          {
@@ -238,7 +242,8 @@ package store.states
          var _loc4_:IStoreViewBG = null;
          if(ForgeMainView.IsExalt)
          {
-            _loc4_ = this._forgeview.exaltPanel;
+//            _loc4_ = this._forgeview.exaltPanel;
+			 return;
          }
          else
          {

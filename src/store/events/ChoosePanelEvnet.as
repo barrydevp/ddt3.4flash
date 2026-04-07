@@ -6,14 +6,15 @@ package store.events
    {
       
       public static const CHOOSEPANELEVENT:String = "ChoosePanelEvent";
+	  public static const CHOOSEPANELFORGEEVENT:String = "ChoosePanelForgeEvent";
        
       
       private var _currentPanel:int;
       
-      public function ChoosePanelEvnet(param1:int)
+      public function ChoosePanelEvnet(event: String, param1:int)
       {
          this._currentPanel = param1;
-         super(CHOOSEPANELEVENT,true);
+         super(event,true);
       }
       
       public function get currentPanle() : int
