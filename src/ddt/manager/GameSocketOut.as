@@ -2947,10 +2947,15 @@ package ddt.manager
          this.sendPackage(_loc2_);
       }
       
-      public function sendEquipGhost() : void
-      {
-         var _loc1_:PackageOut = new PackageOut(ePackageType.EQUIP_GHOST);
-         this.sendPackage(_loc1_);
+      public function sendEquipGhost(param1:int, param2:int, param3:int, param4:int, param5:int) : void
+	  {
+		  var _loc7_:PackageOut = new PackageOut(ePackageType.EQUIP_GHOST);
+		  _loc7_.writeInt(param1);
+		  _loc7_.writeInt(param2);
+		  _loc7_.writeInt(param3);
+		  _loc7_.writeInt(param4);
+		  _loc7_.writeInt(param5);
+         this.sendPackage(_loc7_);
       }
       
       public function sendPetWashBone(param1:int, param2:Boolean, param3:Boolean, param4:Boolean, param5:Boolean, param6:Boolean) : void

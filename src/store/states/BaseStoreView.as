@@ -116,7 +116,7 @@ package store.states
 	  public function hide() {
 		  this._storeBag.getBagView().visible = false;
 		  this._storeview.visible = false;
-		  this._forgeview.visible = true;
+		  this._forgeview.visible = false;
 		  return;
 	  }
       

@@ -677,6 +677,9 @@ package store.view.exalt
 //         ObjectUtils.disposeObject(this._tip);
 //         this._tip = null;
 //         this._bg = null;
+		 this.bagBg = null;
+		 this._bgPoint = null;
+		 this._bgShape = null;
          this._bagList = null;
          this._proBagList = null;
          this._leftDrapSprite = null;

@@ -108,14 +108,16 @@ package ddt.bagStore
 				{
 					this._fineStoreView = new FineStoreView(this._controller,this._controller.selectedIndex["fine_store"]);
 					PositionUtils.setPos(this._fineStoreView,"ddtstore.BagStoreViewPos");
-					this._fineStoreView.x = this._view.x - 5;
-					this._fineStoreView.y = this._view.y - 10;
+					this._fineStoreView.x = this._view.x - 2;
+					this._fineStoreView.y = this._view.y + 10;
 					addToContent(this._fineStoreView);
+				} else {
+					this._fineStoreView.showView(); // just use to refresh
 				}
+				this._view.visible = false;
 				(this._view as BaseStoreView).hide();
 				this._fineStoreView.visible = true;
-				this._view.visible = true;
-				
+				break;
          }
       }
       

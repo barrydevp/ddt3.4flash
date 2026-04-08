@@ -12,7 +12,7 @@ package store.fineStore.view
    import ddt.utils.AssetModuleLoader;
    import ddt.utils.HelpBtnEnable;
    import ddt.utils.PositionUtils;
-   import flash.display.DisplayObject;
+//   import flash.display.DisplayObject;
    import flash.display.Sprite;
    import flash.events.Event;
    import store.FineBringUpController;
@@ -77,6 +77,7 @@ package store.fineStore.view
       private function init() : void
       {
          this._content = new Sprite();
+		 this._content.y -= 6;
          addChild(this._content);
          this._forgeBtn = ComponentFactory.Instance.creatComponentByStylename("ddtstore.fineStore.forgeBtn");
          this._bringUpBtn = ComponentFactory.Instance.creatComponentByStylename("ddtstore.fineStore.bringUpBtn");
@@ -125,7 +126,7 @@ package store.fineStore.view
          AssetModuleLoader.startCodeLoader(this.showView);
       }
       
-      private function showView() : void
+      public function showView() : void
       {
          if(this._forgeView)
          {
@@ -140,24 +141,24 @@ package store.fineStore.view
             ObjectUtils.disposeObject(this._bringUpView);
             this._bringUpView = null;
             FineBringUpController.getInstance().dispose();
-            SocketManager.Instance.out.sendClearStoreBag();
          }
+		 SocketManager.Instance.out.sendClearStoreBag();
          switch(int(this._btnGroup.selectIndex))
          {
             case 0:
                if(!this._forgeView)
                {
-                  this._forgeView = new store.fineStore.view.FineForgeView();
+                  this._forgeView = new FineForgeView();
                   PositionUtils.setPos(this._forgeView,"ddtstore.FineStore.ItemViewPos");
                   this._content.addChild(this._forgeView);
                }
                this._forgeView.visible = true;
                break;
             case 1:
-				SocketManager.Instance.out.sendClearStoreBag();
                if(!this._ghostView)
                {
-                  this._ghostView = new store.fineStore.view.FineGhostView(this._controller);
+//                  this._ghostView = new FineGhostView(this._controller);
+				  this._ghostView = new FineGhostView();
                   PositionUtils.setPos(this._ghostView,"ddtstore.FineStore.ghostViewPos");
                   this._content.addChild(this._ghostView);
                }
@@ -174,7 +175,6 @@ package store.fineStore.view
                   FineBringUpController.getInstance().setup();
                }
                FineBringUpController.getInstance().usingLock = false;
-               SocketManager.Instance.out.sendClearStoreBag();
                this._bringUpView.refreshBagList();
                this._bringUpView.visible = true;
 			}

@@ -2,24 +2,15 @@ package store.view.exalt
 {
    import com.pickgliss.events.InteractiveEvent;
    import com.pickgliss.utils.DoubleClickManager;
-   import com.pickgliss.utils.ObjectUtils;
-   
    import flash.display.DisplayObject;
-   import flash.events.Event;
-   
    import bagAndInfo.cell.BagCell;
-   import bagAndInfo.cell.CellContentCreator;
-   
-   import ddt.data.EquipType;
    import ddt.data.goods.InventoryItemInfo;
    import ddt.data.goods.ItemTemplateInfo;
    import ddt.manager.SoundManager;
-   import ddt.view.tips.GoodTipInfo;
    
    public class ExaltEquipCell extends BagCell
    {
-       
-      
+
       public function ExaltEquipCell(param1:int, param2:ItemTemplateInfo = null, param3:Boolean = true, param4:DisplayObject = null, param5:Boolean = true)
       {
          super(param1,param2,param3,param4,param5);
@@ -101,15 +92,5 @@ package store.view.exalt
 			ExaltManager.instance.dispatchEvent(_loc1_);
          }
       }
-	  
-//	  override public function set info(param1:ItemTemplateInfo) : void
-//	  {
-////		  if(_info == param1 && !_info)
-////		  {
-////			  return;
-////		  }
-//		  super.info = info;
-////		  dispatchEvent(new Event(Event.CHANGE));
-//	  }
    }
 }

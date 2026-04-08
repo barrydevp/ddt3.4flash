@@ -1,5 +1,10 @@
 package store.equipGhost
 {
+   import flash.events.EventDispatcher;
+   import flash.utils.getTimer;
+   
+   import ddt.data.BagInfo;
+   import ddt.data.EquipType;
    import ddt.data.goods.InventoryItemInfo;
    import ddt.data.player.PlayerInfo;
    import ddt.events.CEvent;
@@ -10,9 +15,10 @@ package store.equipGhost
    import ddt.manager.PlayerManager;
    import ddt.manager.SocketManager;
    import ddt.utils.StaticFormula;
-   import flash.events.EventDispatcher;
-   import flash.utils.getTimer;
+   
    import road7th.comm.PackageIn;
+   import road7th.data.DictionaryData;
+   
    import store.equipGhost.data.EquipGhostData;
    import store.equipGhost.data.GhostData;
    import store.equipGhost.data.GhostDataAnalyzer;
@@ -21,7 +27,18 @@ package store.equipGhost
    
    public class EquipGhostManager extends EventDispatcher
    {
-      
+	   public static const EQUIP_MOVE:String = "equipghost_equip_move";
+	   
+	   public static const EQUIP_MOVE2:String = "equipghost_equip_move2";
+	   
+	   public static const ITEM_MOVE:String = "equipghost_item_move";
+	   
+	   public static const ITEM_MOVE2:String = "equipghost_item_move2";
+	   
+	   public static const LUCK_TYPE:String = "117";
+	   
+	   public static const STONE_TYPE:String = "118";
+	   
       private static const _TIME:uint = 1;
       
       private static const _WAIT_TIME:Number = 1000;
@@ -56,6 +73,48 @@ package store.equipGhost
          _instance = _instance || new store.equipGhost.EquipGhostManager(new SingleTon());
          return _instance;
       }
+	  
+	  public static function get instance(): store.equipGhost.EquipGhostManager
+	  {
+		  return EquipGhostManager.getInstance();
+	  }
+	  
+	  public function getCanEquipGhostData() : BagInfo
+	  {
+		  var _loc1_:InventoryItemInfo = null;
+		  var _loc2_:InventoryItemInfo = null;
+		  var _loc3_:DictionaryData = PlayerManager.Instance.Self.Bag.items;
+		  var _loc4_:BagInfo = new BagInfo(BagInfo.EQUIPBAG,21);
+		  
+		  for each(_loc1_ in _loc3_)
+		  {
+			  if(_loc1_.Place < 31 && (_loc1_.CategoryID == EquipType.ARM || _loc1_.CategoryID == EquipType.CLOTH || _loc1_.CategoryID == EquipType.HEAD))
+			  {
+			      _loc4_.addItem(_loc1_);
+			  }
+		  }
+
+		  return _loc4_;
+	  }
+	  
+	  public function getEquipGhostItemData() : BagInfo
+	  {
+		  var _loc1_:InventoryItemInfo = null;
+		  var _loc2_:DictionaryData = PlayerManager.Instance.Self.PropBag.items;
+		  var _loc3_:BagInfo = new BagInfo(BagInfo.PROPBAG,21);
+		  for each(_loc1_ in _loc2_)
+		  {
+			  if(_loc1_.getRemainDate() <= 0)
+			  {
+				  continue;
+			  }
+			  if(_loc1_.CategoryID == 11 && (_loc1_.Property1 == "117" || _loc1_.Property1 == "118"))
+			  {
+				  _loc3_.addItem(_loc1_);
+			  }
+		  }
+		  return _loc3_;
+	  }
       
       private function init() : void
       {
@@ -285,7 +344,14 @@ package store.equipGhost
          }
          else if(this.checkEquipGhost())
          {
-            SocketManager.Instance.out.sendEquipGhost();
+			 var luckyPlace:int = -1;
+			 if (this._luckyMaterial) {
+				 luckyPlace = this._luckyMaterial.Place;
+			 }
+//			 trace(this._equip);
+//			 trace(this._stoneMaterial);
+//			 trace(this._luckyMaterial);
+            SocketManager.Instance.out.sendEquipGhost(this._equip.Place, this._equip.BagType, this._stoneMaterial.Place, luckyPlace, this._stoneMaterial.BagType);
             this._lastTime = getTimer();
          }
       }
