@@ -2,6 +2,8 @@ package ddt.events
 {
    import flash.events.Event;
    import road7th.comm.PackageIn;
+   import flash.utils.describeType;
+   import ddt.data.socket.CrazyTankPackageType;
    
    public class CrazyTankSocketEvent extends Event
    {
@@ -874,6 +876,40 @@ package ddt.events
       public function get cmd() : int
       {
          return this._cmd;
+      }
+
+      private static var _valueToNames:Object;
+	  
+      private static function init():void
+      {
+         _valueToNames = {};
+         
+         var xml:XML = describeType(CrazyTankPackageType);
+         
+         for each (var constant:XML in xml.constant)
+         {
+            var name:String = constant.@name;
+            var value:int = int(CrazyTankPackageType[name]);
+            
+            if (!_valueToNames[value])
+            {
+               _valueToNames[value] = [];
+            }
+            
+            _valueToNames[value].push(name);
+         }
+      }
+      
+      public static function getName(value:int):String
+      {
+         if (!_valueToNames)
+         {
+            init();
+         }
+         
+         var list:Array = _valueToNames[value];
+         
+         return list ? list[0] : ("UNKNOWN(" + value + ")");
       }
    }
 }

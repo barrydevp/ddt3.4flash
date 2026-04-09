@@ -29,6 +29,7 @@ package worldboss
    import worldboss.player.RankingPersonInfo;
    import worldboss.view.WorldBossIcon;
    import worldboss.view.WorldBossRankingFram;
+   import flash.utils.describeType;
    
    public class WorldBossManager extends EventDispatcher
    {
@@ -157,7 +158,7 @@ package worldboss
          this._bossInfo.myPlayerVO = new PlayerVO();
          this._bossInfo.name = param1.pkg.readUTF();
          this._bossInfo.total_Blood = param1.pkg.readLong();
-         this._bossInfo.current_Blood = this._bossInfo.total_Blood;
+         this._bossInfo.current_Blood = param1.pkg.readLong();
          var _loc3_:int = param1.pkg.readInt();
          var _loc4_:int = param1.pkg.readInt();
          this.mapPath = this.getWorldbossResource() + "/map/worldbossMap.swf";
@@ -199,6 +200,8 @@ package worldboss
          this.addshowHallEntranceBtn();
          this.creatEnterIcon(!this._bossInfo.roomClose);
          dispatchEvent(new WorldBossRoomEvent(WorldBossRoomEvent.GAME_INIT));
+         // trace("world boss info:");
+         // trace("name:" + this._bossInfo.name + " total blood:" + this._bossInfo.total_Blood + " current blood:" + this._bossInfo.current_Blood  + " begin time:" + this._bossInfo.begin_time + " end time:" + this._bossInfo.end_time + " fight time:" + this._bossInfo.fight_time + " fight over:" + this._bossInfo.fightOver + " room close:" + this._bossInfo.roomClose);
       }
       
       private function addSocketEvent() : void

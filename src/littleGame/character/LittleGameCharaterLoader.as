@@ -6,41 +6,85 @@ package littleGame.character
    import ddt.view.character.ILayer;
    import flash.display.BitmapData;
    import flash.display.BlendMode;
-   
+   import flash.utils.Dictionary;
+
    public class LittleGameCharaterLoader
    {
-      
+
       private static const HAIR_LAYER:int = 2;
-      
+
       private static const EAR_LAYER:int = 3;
-      
+
       private static var boyCloth:BitmapData;
-      
+
       private static var girlCloth:BitmapData;
-      
+
       private static var effect:BitmapData;
-      
+
       private static var specialHeads:Vector.<BitmapData>;
-       
-      
+
+      private static var defaultLoaderMap:Dictionary = new Dictionary();
+
+      public static function initDefaults(sex:Boolean):void
+      {
+         if (defaultLoaderMap[sex] != null)
+         {
+            return;
+         }
+
+         var defaultStyle:String = ',,,,,,,,,,,,,,,';
+         var defaultColors:String = ',,,,,,,,,,,,,,,';
+         var recordStyle:Array = defaultStyle.split(",");
+         var recordColor:Array = defaultColors.split(",");
+         var hasFaceColor:Boolean = Boolean(recordColor[5]);
+         var hasClothColor:Boolean = Boolean(recordColor[4]);
+
+         var defaultLoaders:Vector.<LittleGameCharacterLayer> = new Vector.<LittleGameCharacterLayer>();
+         defaultLoaders.push(new littleGame.character.LittleGameCharacterLayer(
+                  ItemManager.Instance.getTemplateById(int(recordStyle[4].split("|")[0])),
+                  recordColor[4],
+                  sex,
+                  1
+               ));
+         defaultLoaders.push(new littleGame.character.LittleGameCharacterLayer(
+                  ItemManager.Instance.getTemplateById(int(recordStyle[5].split("|")[0])),
+                  recordColor[5],
+                  sex,
+                  1
+               ));
+         defaultLoaders.push(new littleGame.character.LittleGameCharacterLayer(
+                  ItemManager.Instance.getTemplateById(int(recordStyle[2].split("|")[0])),
+                  recordColor[2],
+                  sex,
+                  1
+               ));
+         defaultLoaders.push(new littleGame.character.LittleGameCharacterLayer(
+                  ItemManager.Instance.getTemplateById(int(recordStyle[3].split("|")[0])),
+                  recordColor[3],
+                  sex,
+                  1
+               ));
+         defaultLoaderMap[sex] = defaultLoaders;
+      }
+
       private var _playerInfo:PlayerInfo;
-      
+
       private var _loaders:Vector.<littleGame.character.LittleGameCharacterLayer>;
-      
+
       private var _recordStyle:Array;
-      
+
       private var _recordColor:Array;
-      
+
       private var _head:BitmapData;
-      
+
       private var _body:BitmapData;
-      
+
       private var hasClothColor:Boolean = false;
-      
+
       private var hasFaceColor:Boolean = false;
-      
+
       private var _callBack:Function;
-      
+
       public function LittleGameCharaterLoader(param1:PlayerInfo, param2:int = 1)
       {
          super();
@@ -50,109 +94,114 @@ package littleGame.character
          this._recordColor = this._playerInfo.Colors.split(",");
          this.hasFaceColor = Boolean(this._recordColor[5]);
          this.hasClothColor = Boolean(this._recordColor[4]);
-         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[4].split("|")[0])),this._recordColor[4],this._playerInfo.Sex,param2));
-         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])),this._recordColor[5],this._playerInfo.Sex,param2));
-         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[2].split("|")[0])),this._recordColor[2],this._playerInfo.Sex,param2));
-         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[3].split("|")[0])),this._recordColor[3],this._playerInfo.Sex,param2));
-         if(effect == null)
+         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(
+                  ItemManager.Instance.getTemplateById(int(this._recordStyle[4].split("|")[0])),
+                  this._recordColor[4],
+                  this._playerInfo.Sex,
+                  param2
+               ));
+         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])), this._recordColor[5], this._playerInfo.Sex, param2));
+         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[2].split("|")[0])), this._recordColor[2], this._playerInfo.Sex, param2));
+         this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[3].split("|")[0])), this._recordColor[3], this._playerInfo.Sex, param2));
+         if (effect == null)
          {
-            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])),this._recordColor[5],this._playerInfo.Sex,param2,EquipType.EFFECT,1));
+            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])), this._recordColor[5], this._playerInfo.Sex, param2, EquipType.EFFECT, 1));
          }
-         if(specialHeads == null || this.hasFaceColor)
+         if (specialHeads == null || this.hasFaceColor)
          {
             specialHeads = new Vector.<BitmapData>();
-            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])),this._recordColor[5],this._playerInfo.Sex,param2,EquipType.FACE,1));
-            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])),this._recordColor[5],this._playerInfo.Sex,param2,EquipType.FACE,2));
-            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])),this._recordColor[5],this._playerInfo.Sex,param2,EquipType.FACE,3));
+            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])), this._recordColor[5], this._playerInfo.Sex, param2, EquipType.FACE, 1));
+            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])), this._recordColor[5], this._playerInfo.Sex, param2, EquipType.FACE, 2));
+            this._loaders.push(new littleGame.character.LittleGameCharacterLayer(ItemManager.Instance.getTemplateById(int(this._recordStyle[5].split("|")[0])), this._recordColor[5], this._playerInfo.Sex, param2, EquipType.FACE, 3));
          }
       }
-      
-      public function load(param1:Function) : void
+
+      public function load(param1:Function):void
       {
          this._callBack = param1;
          var _loc2_:int = 0;
-         while(_loc2_ < this._loaders.length)
+         while (_loc2_ < this._loaders.length)
          {
             this._loaders[_loc2_].load(this.onComplete);
             _loc2_++;
          }
       }
-      
-      private function onComplete(param1:ILayer) : void
+
+      private function onComplete(param1:ILayer):void
       {
          var _loc2_:Boolean = true;
          var _loc3_:int = 0;
-         while(_loc3_ < this._loaders.length)
+         while (_loc3_ < this._loaders.length)
          {
-            if(!this._loaders[_loc3_].isComplete)
+            if (!this._loaders[_loc3_].isComplete)
             {
                _loc2_ = false;
             }
             _loc3_++;
          }
-         if(_loc2_)
+         if (_loc2_)
          {
             this.drawCharacter();
             this.loadComplete();
          }
       }
-      
-      private function drawCharacter() : void
+
+      private function drawCharacter():void
       {
          this._head = this.drawHeadByFace(1);
-         if(this._playerInfo.Sex)
+         if (this._playerInfo.Sex)
          {
-            if(Boolean(boyCloth))
+            if (Boolean(boyCloth))
             {
-               if(!this.hasClothColor)
+               if (!this.hasClothColor)
                {
                   this._body = boyCloth;
                }
                else
                {
-                  this._body = new BitmapData(this._loaders[0].width,this._loaders[0].height,true,0);
-                  this._body.draw(this._loaders[0],null,null,BlendMode.NORMAL);
+                  this._body = new BitmapData(this._loaders[0].width, this._loaders[0].height, true, 0);
+                  this._body.draw(this._loaders[0], null, null, BlendMode.NORMAL);
                }
             }
             else
             {
-               this._body = new BitmapData(this._loaders[0].width,this._loaders[0].height,true,0);
-               this._body.draw(this._loaders[0],null,null,BlendMode.NORMAL);
-               if(!this.hasClothColor)
+               this._body = new BitmapData(this._loaders[0].width, this._loaders[0].height, true, 0);
+               this._body.draw(this._loaders[0], null, null, BlendMode.NORMAL);
+               if (!this.hasClothColor)
                {
                   boyCloth = this._body;
                }
             }
          }
-         else if(Boolean(girlCloth))
+         else if (Boolean(girlCloth))
          {
-            if(!this.hasClothColor)
+            if (!this.hasClothColor)
             {
                this._body = girlCloth;
             }
             else
             {
-               this._body = new BitmapData(this._loaders[0].width,this._loaders[0].height,true,0);
-               this._body.draw(this._loaders[0],null,null,BlendMode.NORMAL);
+               this._body = new BitmapData(this._loaders[0].width, this._loaders[0].height, true, 0);
+               this._body.draw(this._loaders[0], null, null, BlendMode.NORMAL);
             }
          }
          else
          {
-            this._body = new BitmapData(this._loaders[0].width,this._loaders[0].height,true,0);
-            this._body.draw(this._loaders[0],null,null,BlendMode.NORMAL);
-            if(!this.hasClothColor)
+            this._body = new BitmapData(this._loaders[0].width, this._loaders[0].height, true, 0);
+            this._body.draw(this._loaders[0], null, null, BlendMode.NORMAL);
+            if (!this.hasClothColor)
             {
                girlCloth = this._body;
             }
          }
-         if(effect == null)
+         if (effect == null)
          {
-            effect = new BitmapData(this._loaders[4].width,this._loaders[4].height,true,0);
-            effect.draw(this._loaders[4],null,null,BlendMode.NORMAL);
+            effect = new BitmapData(this._loaders[4].width, this._loaders[4].height, true, 0);
+            effect.draw(this._loaders[4], null, null, BlendMode.NORMAL);
          }
-         if(specialHeads.length == 0)
+         if (specialHeads.length == 0)
          {
-            if(!this.hasFaceColor)
+            if (!this.hasFaceColor)
             {
                specialHeads.push(this.drawHeadByFace(this._loaders.length - 3));
                specialHeads.push(this.drawHeadByFace(this._loaders.length - 2));
@@ -160,26 +209,26 @@ package littleGame.character
             }
          }
       }
-      
-      private function drawHeadByFace(param1:int) : BitmapData
+
+      private function drawHeadByFace(param1:int):BitmapData
       {
-         var _loc2_:BitmapData = new BitmapData(this._loaders[param1].width,this._loaders[param1].height,true,0);
          var _loc3_:littleGame.character.LittleGameCharacterLayer = this._loaders[param1];
-         _loc2_.draw(_loc3_.getContent(),null,null,BlendMode.NORMAL);
+         var _loc2_:BitmapData =  new BitmapData(_loc3_.width, _loc3_.height, true, 0);
+         _loc2_.draw(_loc3_.getContent(), null, null, BlendMode.NORMAL);
          _loc3_ = this._loaders[LittleGameCharaterLoader.HAIR_LAYER];
-         _loc2_.draw(_loc3_.getContent(),null,null,BlendMode.NORMAL);
+         _loc2_.draw(_loc3_.getContent(), null, null, BlendMode.NORMAL);
          _loc3_ = this._loaders[LittleGameCharaterLoader.EAR_LAYER];
-         _loc2_.draw(_loc3_.getContent(),null,null,BlendMode.NORMAL);
+         _loc2_.draw(_loc3_.getContent(), null, null, BlendMode.NORMAL);
          return _loc2_;
       }
-      
-      public function getContent() : Vector.<BitmapData>
+
+      public function getContent():Vector.<BitmapData>
       {
          var _loc1_:Vector.<BitmapData> = new Vector.<BitmapData>();
          _loc1_.push(this._head);
          _loc1_.push(this._body);
          _loc1_.push(effect);
-         if(this.hasFaceColor)
+         if (this.hasFaceColor)
          {
             _loc1_.push(this.drawHeadByFace(this._loaders.length - 3));
             _loc1_.push(this.drawHeadByFace(this._loaders.length - 2));
@@ -193,19 +242,19 @@ package littleGame.character
          }
          return _loc1_;
       }
-      
-      private function loadComplete() : void
+
+      private function loadComplete():void
       {
-         if(this._callBack != null)
+         if (this._callBack != null)
          {
             this._callBack();
          }
       }
-      
-      public function dispose() : void
+
+      public function dispose():void
       {
          var _loc1_:littleGame.character.LittleGameCharacterLayer = null;
-         for each(_loc1_ in this._loaders)
+         for each (_loc1_ in this._loaders)
          {
             _loc1_.dispose();
          }

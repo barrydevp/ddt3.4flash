@@ -96,10 +96,10 @@ package worldboss.view
          this._totalContainer.updata_yourSelf_damage();
          this._totalContainer.setTimeCount(this._diff);
          this._buffIcon = ComponentFactory.Instance.creat("worldboss.room.buffIcon");
-         this._buffIcon.x = 9999;
-         this._buffIcon.y = 9999;
+         // this._buffIcon.x = 9999;
+         // this._buffIcon.y = 9999;
          addChild(this._buffIcon);
-         this._buffIcon.visible = !WorldBossManager.Instance.bossInfo.fightOver;
+         this._buffIcon.visible = WorldBossManager.Instance.bossInfo.fightOver;
          this._buffIcon.addEventListener(Event.CHANGE,this.showBuff);
          this._hideBtn = new worldboss.view.WorldBossHideBtn();
          addChild(this._hideBtn);

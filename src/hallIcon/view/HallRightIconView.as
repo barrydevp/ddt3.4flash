@@ -347,7 +347,7 @@ package hallIcon.view
       public function createHallIconPanelIcon(param1:HallIconInfo) : HallIcon
       {
          var _loc2_:String = null;
-//		 trace("CreateHallIconPanle:", param1.icontype);
+		   // trace("CreateHallIconPanle:", param1.icontype);
 		 
          switch(param1.icontype)
          {

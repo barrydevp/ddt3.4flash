@@ -74,6 +74,7 @@ package littleGame
       private function __actived(param1:CrazyTankSocketEvent) : void
       {
          this._actived = param1.pkg.readBoolean();
+         // trace("LittleGameManager actived:" + this._actived);
          dispatchEvent(new LittleGameEvent(LittleGameEvent.ActivedChanged));
       }
       

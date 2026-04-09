@@ -156,7 +156,7 @@ package ddt.manager
             if((main = int((pkg = param1.data).code)) == 356)
             {
             }
-			trace("receive: " + ePackageType.getName(main));
+			   trace("receive: " + ePackageType.getName(main));
             switch(main)
             {
                case ePackageType.RSAKEY:
@@ -917,6 +917,7 @@ package ddt.manager
       {
          var _loc2_:int = param1.readByte();
          var _loc3_:CrazyTankSocketEvent = null;
+         trace("worldboss event: " + WorldBossPackageType.getName(_loc2_));
          switch(_loc2_)
          {
             case WorldBossPackageType.OPEN:

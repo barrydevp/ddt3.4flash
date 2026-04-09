@@ -51,33 +51,32 @@ package store.states
    import store.view.storeBag.StoreBagController;
    import store.view.strength.StoreIIStrengthBG;
    import store.view.transfer.StoreIITransferBG;
-   
+
    public class BaseStoreView extends Sprite implements Disposeable
    {
-       
-      
+
       protected var _controller:StoreController;
-      
+
       protected var _model:StoreModel;
-      
+
       public var _storeview:StoreMainView;
-      
+
       public var _forgeview:ForgeMainView;
-      
+
       protected var _tip:StoreTips;
-      
+
       protected var _storeBag:StoreBagController;
-      
+
       private var _soundTimer:Timer;
-      
+
       protected var _guideEmbed:MovieClip;
-      
+
       private var _type:String;
-      
+
       private var _consortiaManagerBtn:BaseButton;
-      
+
       private var _consortiaBtnEffect:MovieImage;
-      
+
       public function BaseStoreView(param1:StoreController, param2:String)
       {
          super();
@@ -86,10 +85,10 @@ package store.states
          this.init();
          this.initEvent();
          this.type = param2;
-         this._soundTimer = new Timer(7500,1);
+         this._soundTimer = new Timer(7500, 1);
       }
-      
-      private function init() : void
+
+      private function init():void
       {
          var _loc1_:Scale9CornerImage = ComponentFactory.Instance.creatComponentByStylename("store.scale9BG");
          addChild(_loc1_);
@@ -112,20 +111,21 @@ package store.states
          this._tip = ComponentFactory.Instance.creat("store.storeTip");
          addChild(this._tip);
       }
-	  
-	  public function hide() {
-		  this._storeBag.getBagView().visible = false;
-		  this._storeview.visible = false;
-		  this._forgeview.visible = false;
-		  return;
-	  }
-      
-      public function showForeView(param1:int = 0) : void
+
+      public function hide():void
       {
-         if(param1 == 0)
+         this._storeBag.getBagView().visible = false;
+         this._storeview.visible = false;
+         this._forgeview.visible = false;
+         return;
+      }
+
+      public function showForeView(param1:int = 0):void
+      {
+         if (param1 == 0)
          {
             this._storeBag.getBagView().visible = true;
-            if(Boolean(this._forgeview))
+            if (Boolean(this._forgeview))
             {
                this._forgeview.visible = false;
             }
@@ -139,54 +139,54 @@ package store.states
          this._storeview.visible = false;
          this._forgeview.visible = true;
       }
-      
-      protected function initEvent() : void
+
+      protected function initEvent():void
       {
-         this._consortiaManagerBtn.addEventListener(MouseEvent.CLICK,this.assetBtnClickHandler);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_COMPOSE,this.__showTipsIII);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_STRENGTH,this.__showTip);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_FUSION,this.__showTipII);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_TRANSFER,this.__showTipsIII);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_REFINERY,this.__showTipsIII);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_ADVANCE,this.__showExaltTips);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_EMBED,this.__showTipsIII);
-         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.OPEN_FIVE_SIX_HOLE_EMEBED,this.__openHoleComplete);
-         this._storeBag.getView().addEventListener(CellEvent.DOUBLE_CLICK,this.__cellDoubleClick);
-         this._storeBag.getView().addEventListener(StoreDargEvent.START_DARG,this.startShine);
-         this._storeBag.getView().addEventListener(StoreDargEvent.STOP_DARG,this.stopShine);
-         this._storeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT,this.refresh);
-         this._storeview.addEventListener(StoreIIEvent.EMBED_CLICK,this.embedClickHandler);
-         this._storeview.addEventListener(StoreIIEvent.EMBED_INFORCHANGE,this.embedInfoChangeHandler);
-         this._forgeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT,this.refresh);
-         ConsortiaRateManager.instance.addEventListener(ConsortiaRateManager.CHANGE_CONSORTIA,this._changeConsortia);
+         this._consortiaManagerBtn.addEventListener(MouseEvent.CLICK, this.assetBtnClickHandler);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_COMPOSE, this.__showTipsIII);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_STRENGTH, this.__showTip);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_FUSION, this.__showTipII);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_TRANSFER, this.__showTipsIII);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_REFINERY, this.__showTipsIII);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_ADVANCE, this.__showExaltTips);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.ITEM_EMBED, this.__showTipsIII);
+         SocketManager.Instance.addEventListener(CrazyTankSocketEvent.OPEN_FIVE_SIX_HOLE_EMEBED, this.__openHoleComplete);
+         this._storeBag.getView().addEventListener(CellEvent.DOUBLE_CLICK, this.__cellDoubleClick);
+         this._storeBag.getView().addEventListener(StoreDargEvent.START_DARG, this.startShine);
+         this._storeBag.getView().addEventListener(StoreDargEvent.STOP_DARG, this.stopShine);
+         this._storeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT, this.refresh);
+         this._storeview.addEventListener(StoreIIEvent.EMBED_CLICK, this.embedClickHandler);
+         this._storeview.addEventListener(StoreIIEvent.EMBED_INFORCHANGE, this.embedInfoChangeHandler);
+         this._forgeview.addEventListener(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT, this.refresh);
+         ConsortiaRateManager.instance.addEventListener(ConsortiaRateManager.CHANGE_CONSORTIA, this._changeConsortia);
       }
-      
-      protected function removeEvent() : void
+
+      protected function removeEvent():void
       {
-         this._consortiaManagerBtn.removeEventListener(MouseEvent.CLICK,this.assetBtnClickHandler);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_COMPOSE,this.__showTipsIII);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_STRENGTH,this.__showTip);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_FUSION,this.__showTipII);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_TRANSFER,this.__showTipsIII);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_REFINERY,this.__showTipsIII);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_EMBED,this.__showTipsIII);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_ADVANCE,this.__showExaltTips);
-         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.OPEN_FIVE_SIX_HOLE_EMEBED,this.__openHoleComplete);
-         this._storeBag.getView().removeEventListener(CellEvent.DOUBLE_CLICK,this.__cellDoubleClick);
-         this._storeBag.getView().removeEventListener(StoreDargEvent.START_DARG,this.startShine);
-         this._storeBag.getView().removeEventListener(StoreDargEvent.STOP_DARG,this.stopShine);
-         this._storeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT,this.refresh);
-         this._storeview.removeEventListener(StoreIIEvent.EMBED_CLICK,this.embedClickHandler);
-         this._storeview.removeEventListener(StoreIIEvent.EMBED_INFORCHANGE,this.embedInfoChangeHandler);
-         this._forgeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT,this.refresh);
-         ConsortiaRateManager.instance.removeEventListener(ConsortiaRateManager.CHANGE_CONSORTIA,this._changeConsortia);
+         this._consortiaManagerBtn.removeEventListener(MouseEvent.CLICK, this.assetBtnClickHandler);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_COMPOSE, this.__showTipsIII);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_STRENGTH, this.__showTip);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_FUSION, this.__showTipII);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_TRANSFER, this.__showTipsIII);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_REFINERY, this.__showTipsIII);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_EMBED, this.__showTipsIII);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.ITEM_ADVANCE, this.__showExaltTips);
+         SocketManager.Instance.removeEventListener(CrazyTankSocketEvent.OPEN_FIVE_SIX_HOLE_EMEBED, this.__openHoleComplete);
+         this._storeBag.getView().removeEventListener(CellEvent.DOUBLE_CLICK, this.__cellDoubleClick);
+         this._storeBag.getView().removeEventListener(StoreDargEvent.START_DARG, this.startShine);
+         this._storeBag.getView().removeEventListener(StoreDargEvent.STOP_DARG, this.stopShine);
+         this._storeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELEVENT, this.refresh);
+         this._storeview.removeEventListener(StoreIIEvent.EMBED_CLICK, this.embedClickHandler);
+         this._storeview.removeEventListener(StoreIIEvent.EMBED_INFORCHANGE, this.embedInfoChangeHandler);
+         this._forgeview.removeEventListener(ChoosePanelEvnet.CHOOSEPANELFORGEEVENT, this.refresh);
+         ConsortiaRateManager.instance.removeEventListener(ConsortiaRateManager.CHANGE_CONSORTIA, this._changeConsortia);
       }
-      
-      protected function __showExaltTips(param1:CrazyTankSocketEvent) : void
+
+      protected function __showExaltTips(param1:CrazyTankSocketEvent):void
       {
          var _loc2_:int = param1.pkg.readByte();
          var _loc3_:int = param1.pkg.readInt();
-         if(_loc2_ == 0)
+         if (_loc2_ == 0)
          {
             this._tip.showSuccess();
             StrengthDataManager.instance.exaltFinish();
@@ -196,38 +196,39 @@ package store.states
             StrengthDataManager.instance.exaltFail(_loc3_);
          }
       }
-      
-      public function setAutoLinkNum(param1:int) : void
+
+      public function setAutoLinkNum(param1:int):void
       {
          this._model.NeedAutoLink = param1;
       }
-      
-      private function refresh(param1:ChoosePanelEvnet) : void
+
+      private function refresh(param1:ChoosePanelEvnet):void
       {
          this._model.currentPanel = param1.currentPanle;
-		 if (param1.type == ChoosePanelEvnet.CHOOSEPANELFORGEEVENT) {
-			 this._storeBag.getView().visible = false;
-			 return;
-		 }
+         if (param1.type == ChoosePanelEvnet.CHOOSEPANELFORGEEVENT)
+         {
+            this._storeBag.getView().visible = false;
+            return;
+         }
          this._storeBag.setList(this._model);
          this._storeBag.changeMsg(this._model.currentPanel + 1);
       }
-      
-      private function __cellDoubleClick(param1:CellEvent) : void
+
+      private function __cellDoubleClick(param1:CellEvent):void
       {
          var _loc2_:IStoreViewBG = null;
          param1.stopImmediatePropagation();
-         if(PlayerManager.Instance.Self.bagLocked)
+         if (PlayerManager.Instance.Self.bagLocked)
          {
             SoundManager.instance.play("008");
             BaglockedManager.Instance.show();
             return;
          }
          var _loc3_:BagCell = param1.data as StoreBagCell;
-         if(ForgeMainView.IsExalt)
+         if (ForgeMainView.IsExalt)
          {
-//            _loc2_ = this._forgeview.exaltPanel;
-			 return;
+            // _loc2_ = this._forgeview.exaltPanel;
+            return;
          }
          else
          {
@@ -235,21 +236,21 @@ package store.states
          }
          _loc2_.dragDrop(_loc3_);
       }
-      
-      private function autoLink(param1:int, param2:int) : void
+
+      private function autoLink(param1:int, param2:int):void
       {
          var _loc3_:BagCell = null;
          var _loc4_:IStoreViewBG = null;
-         if(ForgeMainView.IsExalt)
+         if (ForgeMainView.IsExalt)
          {
-//            _loc4_ = this._forgeview.exaltPanel;
-			 return;
+            // _loc4_ = this._forgeview.exaltPanel;
+            return;
          }
          else
          {
             _loc4_ = this._storeview.currentPanel;
          }
-         if(param1 == BagInfo.EQUIPBAG)
+         if (param1 == BagInfo.EQUIPBAG)
          {
             _loc3_ = this._storeBag.getEquipCell(param2);
          }
@@ -259,59 +260,59 @@ package store.states
          }
          _loc4_.dragDrop(_loc3_);
       }
-      
-      private function startShine(param1:StoreDargEvent) : void
+
+      private function startShine(param1:StoreDargEvent):void
       {
          var _loc2_:StoreIIStrengthBG = null;
          var _loc3_:StoreIIComposeBG = null;
          var _loc4_:StoreIIFusionBG = null;
          var _loc5_:IStoreViewBG = this._storeview.currentPanel;
-         if(_loc5_ is StoreIIStrengthBG)
+         if (_loc5_ is StoreIIStrengthBG)
          {
             _loc2_ = _loc5_ as StoreIIStrengthBG;
-            if(param1.sourceInfo.CanEquip)
+            if (param1.sourceInfo.CanEquip)
             {
                _loc2_.startShine(5);
             }
-            else if(EquipType.isStrengthStone(param1.sourceInfo))
+            else if (EquipType.isStrengthStone(param1.sourceInfo))
             {
                _loc2_.startShine(0);
                _loc2_.startShine(1);
                _loc2_.startShine(2);
             }
-            else if(param1.sourceInfo.Property1 == StoneType.LUCKY)
+            else if (param1.sourceInfo.Property1 == StoneType.LUCKY)
             {
                _loc2_.startShine(4);
             }
-            else if(param1.sourceInfo.Property1 == StoneType.SOULSYMBOL)
+            else if (param1.sourceInfo.Property1 == StoneType.SOULSYMBOL)
             {
                _loc2_.startShine(3);
             }
          }
-         else if(_loc5_ is StoreIIComposeBG)
+         else if (_loc5_ is StoreIIComposeBG)
          {
             _loc3_ = _loc5_ as StoreIIComposeBG;
-            if(param1.sourceInfo.CanEquip)
+            if (param1.sourceInfo.CanEquip)
             {
                _loc3_.startShine(1);
             }
-            else if(param1.sourceInfo.Property1 == StoneType.COMPOSE)
+            else if (param1.sourceInfo.Property1 == StoneType.COMPOSE)
             {
                _loc3_.startShine(2);
             }
-            else if(param1.sourceInfo.Property1 == StoneType.LUCKY)
+            else if (param1.sourceInfo.Property1 == StoneType.LUCKY)
             {
                _loc3_.startShine(0);
             }
          }
-         else if(_loc5_ is StoreIIFusionBG)
+         else if (_loc5_ is StoreIIFusionBG)
          {
             _loc4_ = _loc5_ as StoreIIFusionBG;
-            if(param1.sourceInfo.Property1 == StoneType.FORMULA)
+            if (param1.sourceInfo.Property1 == StoneType.FORMULA)
             {
                _loc4_.startShine(0);
             }
-            else if(EquipType.isFusion(param1.sourceInfo))
+            else if (EquipType.isFusion(param1.sourceInfo))
             {
                _loc4_.startShine(1);
                _loc4_.startShine(2);
@@ -319,107 +320,107 @@ package store.states
                _loc4_.startShine(4);
             }
          }
-         else if(_loc5_ is StoreEmbedBG)
+         else if (_loc5_ is StoreEmbedBG)
          {
-            if(param1.sourceInfo.CanEquip)
+            if (param1.sourceInfo.CanEquip)
             {
                (_loc5_ as StoreEmbedBG).startShine();
             }
             else
             {
-               if(param1.sourceInfo.Property1 == "31" && param1.sourceInfo.Property2 == "1")
+               if (param1.sourceInfo.Property1 == "31" && param1.sourceInfo.Property2 == "1")
                {
-                  (_loc5_ as StoreEmbedBG).stoneStartShine(1,param1.sourceInfo as InventoryItemInfo);
+                  (_loc5_ as StoreEmbedBG).stoneStartShine(1, param1.sourceInfo as InventoryItemInfo);
                }
-               if(param1.sourceInfo.Property1 == "31" && param1.sourceInfo.Property2 == "2")
+               if (param1.sourceInfo.Property1 == "31" && param1.sourceInfo.Property2 == "2")
                {
-                  (_loc5_ as StoreEmbedBG).stoneStartShine(2,param1.sourceInfo as InventoryItemInfo);
+                  (_loc5_ as StoreEmbedBG).stoneStartShine(2, param1.sourceInfo as InventoryItemInfo);
                }
-               if(param1.sourceInfo.Property1 == "31" && param1.sourceInfo.Property2 == "3")
+               if (param1.sourceInfo.Property1 == "31" && param1.sourceInfo.Property2 == "3")
                {
-                  (_loc5_ as StoreEmbedBG).stoneStartShine(3,param1.sourceInfo as InventoryItemInfo);
+                  (_loc5_ as StoreEmbedBG).stoneStartShine(3, param1.sourceInfo as InventoryItemInfo);
                }
             }
             _loc5_ = null;
          }
       }
-      
-      private function stopShine(param1:StoreDargEvent) : void
+
+      private function stopShine(param1:StoreDargEvent):void
       {
-         if(this._storeview.currentPanel is StoreIIStrengthBG)
+         if (this._storeview.currentPanel is StoreIIStrengthBG)
          {
             (this._storeview.currentPanel as StoreIIStrengthBG).stopShine();
          }
-         else if(this._storeview.currentPanel is StoreIIComposeBG)
+         else if (this._storeview.currentPanel is StoreIIComposeBG)
          {
             (this._storeview.currentPanel as StoreIIComposeBG).stopShine();
          }
-         else if(this._storeview.currentPanel is StoreIIFusionBG)
+         else if (this._storeview.currentPanel is StoreIIFusionBG)
          {
             (this._storeview.currentPanel as StoreIIFusionBG).stopShine();
          }
-         else if(this._storeview.currentPanel is StoreIITransferBG)
+         else if (this._storeview.currentPanel is StoreIITransferBG)
          {
             (this._storeview.currentPanel as StoreIITransferBG).stopShine();
          }
-         else if(this._storeview.currentPanel is StoreEmbedBG)
+         else if (this._storeview.currentPanel is StoreEmbedBG)
          {
             (this._storeview.currentPanel as StoreEmbedBG).stopShine();
          }
       }
-      
-      private function __showTip(param1:CrazyTankSocketEvent) : void
+
+      private function __showTip(param1:CrazyTankSocketEvent):void
       {
          var _loc2_:InventoryItemInfo = null;
          this._tip.isDisplayerTip = true;
          var _loc3_:int = param1.pkg.readByte();
          var _loc4_:Boolean = param1.pkg.readBoolean();
-         if(_loc3_ == 0)
+         if (_loc3_ == 0)
          {
             TaskManager.checkHighLight();
-            this._tip.showStrengthSuccess((this._storeview.currentPanel as StoreIIStrengthBG).getStrengthItemCellInfo(),_loc4_);
-            if(_loc4_)
+            this._tip.showStrengthSuccess((this._storeview.currentPanel as StoreIIStrengthBG).getStrengthItemCellInfo(), _loc4_);
+            if (_loc4_)
             {
                _loc2_ = (this._storeview.currentPanel as StoreIIStrengthBG).getStrengthItemCellInfo();
                this.appearHoleTips(_loc2_);
                this.checkHasStrengthLevelThree(_loc2_);
             }
          }
-         else if(_loc3_ == 1)
+         else if (_loc3_ == 1)
          {
             this._tip.showFail();
          }
-         else if(_loc3_ == 2)
+         else if (_loc3_ == 2)
          {
             this._tip.showFiveFail();
          }
-         else if(_loc3_ == 3)
+         else if (_loc3_ == 3)
          {
             ConsortiaRateManager.instance.reset();
          }
       }
-      
-      private function checkHasStrengthLevelThree(param1:InventoryItemInfo) : void
+
+      private function checkHasStrengthLevelThree(param1:InventoryItemInfo):void
       {
-         if(PlayerManager.Instance.Self.Grade < 15 && this._model.checkEmbeded() && SharedManager.Instance.hasStrength3[PlayerManager.Instance.Self.ID] == undefined && param1.StrengthenLevel == 3)
+         if (PlayerManager.Instance.Self.Grade < 15 && this._model.checkEmbeded() && SharedManager.Instance.hasStrength3[PlayerManager.Instance.Self.ID] == undefined && param1.StrengthenLevel == 3)
          {
             this.matteGuideEmbed();
             SharedManager.Instance.hasStrength3[PlayerManager.Instance.Self.ID] = true;
             SharedManager.Instance.save();
          }
       }
-      
-      private function __showTipsIII(param1:CrazyTankSocketEvent) : void
+
+      private function __showTipsIII(param1:CrazyTankSocketEvent):void
       {
          this._tip.isDisplayerTip = true;
          var _loc2_:int = param1.pkg.readByte();
-         if(_loc2_ == 0)
+         if (_loc2_ == 0)
          {
-            switch(param1.type)
+            switch (param1.type)
             {
                case CrazyTankSocketEvent.ITEM_TRANSFER:
                   this._tip.showSuccess(StoreTips.TRANSFER);
-                  if(this._storeview.currentPanel is StoreIITransferBG)
+                  if (this._storeview.currentPanel is StoreIITransferBG)
                   {
                      (this._storeview.currentPanel as StoreIITransferBG).clearTransferItemCell();
                   }
@@ -431,54 +432,54 @@ package store.states
                   this._tip.showSuccess();
             }
          }
-         else if(_loc2_ == 1)
+         else if (_loc2_ == 1)
          {
             this._tip.showFail();
          }
-         else if(_loc2_ == 3)
+         else if (_loc2_ == 3)
          {
             ConsortiaRateManager.instance.reset();
          }
       }
-      
-      private function __openHoleComplete(param1:CrazyTankSocketEvent) : void
+
+      private function __openHoleComplete(param1:CrazyTankSocketEvent):void
       {
          var _loc2_:StoreEmbedBG = null;
          this._tip.isDisplayerTip = true;
          var _loc3_:int = param1.pkg.readByte();
          var _loc4_:Boolean = param1.pkg.readBoolean();
          var _loc5_:int = param1.pkg.readInt();
-         if(_loc3_ == 0)
+         if (_loc3_ == 0)
          {
             _loc2_ = this._storeview.currentPanel as StoreEmbedBG;
-            if(_loc4_)
+            if (_loc4_)
             {
                SoundManager.instance.pauseMusic();
-               SoundManager.instance.play("063",false,false);
+               SoundManager.instance.play("063", false, false);
                this._soundTimer.reset();
-               this._soundTimer.addEventListener(TimerEvent.TIMER_COMPLETE,this.__soundComplete);
+               this._soundTimer.addEventListener(TimerEvent.TIMER_COMPLETE, this.__soundComplete);
                this._soundTimer.start();
                _loc2_.holeLvUp(_loc5_ - 1);
             }
          }
-         else if(_loc3_ == 1)
+         else if (_loc3_ == 1)
          {
             this._tip.showFail();
          }
       }
-      
-      private function __soundComplete(param1:TimerEvent) : void
+
+      private function __soundComplete(param1:TimerEvent):void
       {
-         this._soundTimer.removeEventListener(TimerEvent.TIMER_COMPLETE,this.__soundComplete);
+         this._soundTimer.removeEventListener(TimerEvent.TIMER_COMPLETE, this.__soundComplete);
          SoundManager.instance.resumeMusic();
          SoundManager.instance.stop("063");
          SoundManager.instance.stop("064");
       }
-      
-      private function __showTipII(param1:CrazyTankSocketEvent) : void
+
+      private function __showTipII(param1:CrazyTankSocketEvent):void
       {
          this._tip.isDisplayerTip = false;
-         if(param1.pkg.readBoolean() == 0)
+         if (param1.pkg.readBoolean() == 0)
          {
             this._tip.showFail();
          }
@@ -488,123 +489,123 @@ package store.states
          }
          StrengthDataManager.instance.fusionFinish();
       }
-      
-      private function appearHoleTips(param1:InventoryItemInfo) : void
+
+      private function appearHoleTips(param1:InventoryItemInfo):void
       {
          SoundManager.instance.play("1001");
          this._storeview.shineEmbedBtn();
       }
-      
-      private function showHoleTip(param1:InventoryItemInfo) : void
+
+      private function showHoleTip(param1:InventoryItemInfo):void
       {
-         if(param1.CategoryID == 1)
+         if (param1.CategoryID == 1)
          {
-            if(param1.StrengthenLevel == 3 || param1.StrengthenLevel == 9 || param1.StrengthenLevel == 12)
+            if (param1.StrengthenLevel == 3 || param1.StrengthenLevel == 9 || param1.StrengthenLevel == 12)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.states.hatOpenProperty"));
             }
-            if(param1.StrengthenLevel == 6)
+            if (param1.StrengthenLevel == 6)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.states.hatOpenDefense"));
             }
          }
-         if(param1.CategoryID == 5)
+         if (param1.CategoryID == 5)
          {
-            if(param1.StrengthenLevel == 3 || param1.StrengthenLevel == 9 || param1.StrengthenLevel == 12)
+            if (param1.StrengthenLevel == 3 || param1.StrengthenLevel == 9 || param1.StrengthenLevel == 12)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.states.clothOpenProperty"));
             }
-            if(param1.StrengthenLevel == 6)
+            if (param1.StrengthenLevel == 6)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.states.clothOpenDefense"));
             }
          }
-         if(param1.CategoryID == 7)
+         if (param1.CategoryID == 7)
          {
-            if(param1.StrengthenLevel == 3)
+            if (param1.StrengthenLevel == 3)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.states.weaponOpenAttack"));
             }
-            if(param1.StrengthenLevel == 6 || param1.StrengthenLevel == 9 || param1.StrengthenLevel == 12)
+            if (param1.StrengthenLevel == 6 || param1.StrengthenLevel == 9 || param1.StrengthenLevel == 12)
             {
                MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("store.states.weaponOpenProperty"));
             }
          }
       }
-      
-      private function assetBtnClickHandler(param1:MouseEvent) : void
+
+      private function assetBtnClickHandler(param1:MouseEvent):void
       {
          SoundManager.instance.play("008");
          this._consortiaBtnEffect.visible = false;
          ConsortionModelControl.Instance.alertManagerFrame();
       }
-      
-      protected function matteGuideEmbed() : void
+
+      protected function matteGuideEmbed():void
       {
          this._guideEmbed = ComponentFactory.Instance.creat("asset.store.TutorialStepAsset");
          this._guideEmbed.gotoAndStop(1);
-         LayerManager.Instance.addToLayer(this._guideEmbed,LayerManager.GAME_TOP_LAYER);
+         LayerManager.Instance.addToLayer(this._guideEmbed, LayerManager.GAME_TOP_LAYER);
       }
-      
-      private function embedClickHandler(param1:StoreIIEvent) : void
+
+      private function embedClickHandler(param1:StoreIIEvent):void
       {
-         if(Boolean(this._guideEmbed))
+         if (Boolean(this._guideEmbed))
          {
             this._guideEmbed.gotoAndStop(6);
          }
       }
-      
-      private function embedInfoChangeHandler(param1:StoreIIEvent) : void
+
+      private function embedInfoChangeHandler(param1:StoreIIEvent):void
       {
          var _loc2_:BaseAlerFrame = null;
-         if(Boolean(this._guideEmbed))
+         if (Boolean(this._guideEmbed))
          {
             this._guideEmbed.gotoAndStop(11);
             param1.stopImmediatePropagation();
-            _loc2_ = AlertManager.Instance.simpleAlert(LanguageMgr.GetTranslation("store.states.embedTitle"),LanguageMgr.GetTranslation("tank.view.store.matteTips"),LanguageMgr.GetTranslation("ok"),LanguageMgr.GetTranslation("cancel"),false,false,true,LayerManager.ALPHA_BLOCKGOUND);
+            _loc2_ = AlertManager.Instance.simpleAlert(LanguageMgr.GetTranslation("store.states.embedTitle"), LanguageMgr.GetTranslation("tank.view.store.matteTips"), LanguageMgr.GetTranslation("ok"), LanguageMgr.GetTranslation("cancel"), false, false, true, LayerManager.ALPHA_BLOCKGOUND);
             _loc2_.info.showCancel = false;
             _loc2_.moveEnable = false;
-            _loc2_.addEventListener(FrameEvent.RESPONSE,this._response);
+            _loc2_.addEventListener(FrameEvent.RESPONSE, this._response);
          }
       }
-      
-      private function _response(param1:FrameEvent) : void
+
+      private function _response(param1:FrameEvent):void
       {
          SoundManager.instance.play("008");
          var _loc2_:BaseAlerFrame = param1.currentTarget as BaseAlerFrame;
-         _loc2_.removeEventListener(FrameEvent.RESPONSE,this._response);
-         if(param1.responseCode == FrameEvent.SUBMIT_CLICK || param1.responseCode == FrameEvent.ENTER_CLICK || param1.responseCode == FrameEvent.CLOSE_CLICK || param1.responseCode == FrameEvent.ESC_CLICK || param1.responseCode == FrameEvent.CANCEL_CLICK)
+         _loc2_.removeEventListener(FrameEvent.RESPONSE, this._response);
+         if (param1.responseCode == FrameEvent.SUBMIT_CLICK || param1.responseCode == FrameEvent.ENTER_CLICK || param1.responseCode == FrameEvent.CLOSE_CLICK || param1.responseCode == FrameEvent.ESC_CLICK || param1.responseCode == FrameEvent.CANCEL_CLICK)
          {
             this.okFunction();
          }
          ObjectUtils.disposeObject(param1.target);
       }
-      
-      private function okFunction() : void
+
+      private function okFunction():void
       {
-         if(Boolean(this._guideEmbed))
+         if (Boolean(this._guideEmbed))
          {
             ObjectUtils.disposeObject(this._guideEmbed);
          }
          this._guideEmbed = null;
       }
-      
-      public function set type(param1:String) : void
+
+      public function set type(param1:String):void
       {
          this._consortiaManagerBtn.visible = this._consortiaBtnEffect.visible = PlayerManager.Instance.Self.ConsortiaID != 0 ? Boolean(true) : Boolean(false);
       }
-      
-      private function _changeConsortia(param1:Event) : void
+
+      private function _changeConsortia(param1:Event):void
       {
          this._consortiaManagerBtn.visible = this._consortiaBtnEffect.visible = PlayerManager.Instance.Self.ConsortiaID != 0 ? Boolean(true) : Boolean(false);
       }
-      
-      override public function set visible(param1:Boolean) : void
+
+      override public function set visible(param1:Boolean):void
       {
          super.visible = param1;
-         if(Boolean(this._storeview))
+         if (Boolean(this._storeview))
          {
-            if(visible)
+            if (visible)
             {
                this._storeview.refreshCurrentPanel();
             }
@@ -614,36 +615,36 @@ package store.states
             }
          }
       }
-      
-      public function dispose() : void
+
+      public function dispose():void
       {
          this.removeEvent();
-         if(Boolean(this._storeview))
+         if (Boolean(this._storeview))
          {
             ObjectUtils.disposeObject(this._storeview);
          }
          this._storeview = null;
-         if(Boolean(this._tip))
+         if (Boolean(this._tip))
          {
             ObjectUtils.disposeObject(this._tip);
          }
          this._tip = null;
-         if(Boolean(this._consortiaManagerBtn))
+         if (Boolean(this._consortiaManagerBtn))
          {
             ObjectUtils.disposeObject(this._consortiaManagerBtn);
          }
          this._consortiaManagerBtn = null;
-         if(Boolean(this._consortiaBtnEffect))
+         if (Boolean(this._consortiaBtnEffect))
          {
             ObjectUtils.disposeObject(this._consortiaBtnEffect);
          }
          this._consortiaBtnEffect = null;
-         if(Boolean(this._guideEmbed))
+         if (Boolean(this._guideEmbed))
          {
             ObjectUtils.disposeObject(this._guideEmbed);
          }
          this._guideEmbed = null;
-         if(Boolean(this._storeBag))
+         if (Boolean(this._storeBag))
          {
             ObjectUtils.disposeObject(this._storeBag);
          }
@@ -652,7 +653,7 @@ package store.states
          this._model.currentPanel = StoreMainView.STRENGTH;
          this._model = null;
          ObjectUtils.disposeAllChildren(this);
-         if(Boolean(parent))
+         if (Boolean(parent))
          {
             parent.removeChild(this);
          }

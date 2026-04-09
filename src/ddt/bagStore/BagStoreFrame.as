@@ -21,27 +21,26 @@ package ddt.bagStore
    import store.fineStore.view.FineStoreView;
    import store.forge.ForgeMainView;
    import store.states.BaseStoreView;
-   
+
    public class BagStoreFrame extends Frame
    {
-       
-      
+
       private var _view:Sprite;
-      
+
       private var _controller:StoreController;
-      
+
       private var _storeBtn:SelectedButton;
-      
+
       private var _forgeBtn:SelectedButton;
-      
+
       private var _fineStoreView:FineStoreView;
-      
+
       private var _fineStoreBtn:SelectedButton;
-      
+
       private var _btnGroup:SelectedButtonGroup;
-      
+
       private var _index:int;
-      
+
       public function BagStoreFrame()
       {
          super();
@@ -50,45 +49,64 @@ package ddt.bagStore
          this.initView();
          this.initEvent();
       }
-      
-      private function initView() : void
+
+      private function initView():void
       {
          this._storeBtn = ComponentFactory.Instance.creatComponentByStylename("newStore.tabStoreBtn");
          this._forgeBtn = ComponentFactory.Instance.creatComponentByStylename("newStore.tabForgeBtn");
          this._fineStoreBtn = ComponentFactory.Instance.creatComponentByStylename("newStore.tabFineStoreBtn");
          addToContent(this._storeBtn);
          addToContent(this._forgeBtn);
-		 addToContent(this._fineStoreBtn);
+         addToContent(this._fineStoreBtn);
          this._btnGroup = new SelectedButtonGroup();
          this._btnGroup.addSelectItem(this._storeBtn);
          this._btnGroup.addSelectItem(this._forgeBtn);
-		 this._btnGroup.addSelectItem(this._fineStoreBtn);
+         this._btnGroup.addSelectItem(this._fineStoreBtn);
          this._btnGroup.selectIndex = 0;
       }
-      
-      private function initEvent() : void
+
+      private function ensureTabOnTop():void
       {
-         this._btnGroup.addEventListener(Event.CHANGE,this.__changeHandler,false,0,true);
-         this._storeBtn.addEventListener(MouseEvent.CLICK,this.__soundPlay,false,0,true);
-         this._forgeBtn.addEventListener(MouseEvent.CLICK,this.__soundPlay,false,0,true);
-         this._fineStoreBtn.addEventListener("click",this.__soundPlay,false,0,true);
+         var container: * = this._container;
+         if (this._storeBtn && container.contains(this._storeBtn))
+         {
+            container.setChildIndex(this._storeBtn, container.numChildren - 1);
+         }
+
+         if (this._forgeBtn && container.contains(this._forgeBtn))
+         {
+            container.setChildIndex(this._forgeBtn, container.numChildren - 1);
+         }
+
+         if (this._fineStoreBtn && container.contains(this._fineStoreBtn))
+         {
+            container.setChildIndex(this._fineStoreBtn, container.numChildren - 1);
+         }
       }
-      
-      private function __changeHandler(param1:Event) : void
+
+      private function initEvent():void
+      {
+         this._btnGroup.addEventListener(Event.CHANGE, this.__changeHandler, false, 0, true);
+         this._storeBtn.addEventListener(MouseEvent.CLICK, this.__soundPlay, false, 0, true);
+         this._forgeBtn.addEventListener(MouseEvent.CLICK, this.__soundPlay, false, 0, true);
+         this._fineStoreBtn.addEventListener("click", this.__soundPlay, false, 0, true);
+      }
+
+      private function __changeHandler(param1:Event):void
       {
          SocketManager.Instance.out.sendClearStoreBag();
-         if(this._fineStoreView)
+         if (this._fineStoreView)
          {
             this._fineStoreView.visible = false;
          }
-         switch(this._btnGroup.selectIndex)
+         switch (this._btnGroup.selectIndex)
          {
             case 0:
                this._view.visible = true;
                (this._view as BaseStoreView).showForeView(0);
                break;
             case 1:
-               if(PlayerManager.Instance.Self.Grade < 20)
+               if (PlayerManager.Instance.Self.Grade < 20)
                {
                   this._btnGroup.selectIndex = 0;
                   MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ShowForeView.NoLevelTip"));
@@ -98,58 +116,61 @@ package ddt.bagStore
                (this._view as BaseStoreView).showForeView(1);
                break;
             case 2:
-				if(PlayerManager.Instance.Self.Grade < 45)
-				{
-					this._btnGroup.selectIndex = 0;
-					MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("FineForeView.NoLevelTip"));
-					return;
-				}
-				if(!this._fineStoreView)
-				{
-					this._fineStoreView = new FineStoreView(this._controller,this._controller.selectedIndex["fine_store"]);
-					PositionUtils.setPos(this._fineStoreView,"ddtstore.BagStoreViewPos");
-					this._fineStoreView.x = this._view.x - 2;
-					this._fineStoreView.y = this._view.y + 10;
-					addToContent(this._fineStoreView);
-				} else {
-					this._fineStoreView.showView(); // just use to refresh
-				}
-				this._view.visible = false;
-				(this._view as BaseStoreView).hide();
-				this._fineStoreView.visible = true;
-				break;
+               if (PlayerManager.Instance.Self.Grade < 45)
+               {
+                  this._btnGroup.selectIndex = 0;
+                  MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("FineForeView.NoLevelTip"));
+                  return;
+               }
+               if (!this._fineStoreView)
+               {
+                  this._fineStoreView = new FineStoreView(this._controller, this._controller.selectedIndex["fine_store"]);
+                  PositionUtils.setPos(this._fineStoreView, "ddtstore.BagStoreViewPos");
+                  this._fineStoreView.x = this._view.x - 2;
+                  this._fineStoreView.y = this._view.y + 4;
+                  addToContent(this._fineStoreView);
+                  this.ensureTabOnTop();
+               }
+               else
+               {
+                  this._fineStoreView.showView(); // just use to refresh
+               }
+               this._view.visible = false;
+               (this._view as BaseStoreView).hide();
+               this._fineStoreView.visible = true;
+               break;
          }
       }
-      
-      private function __soundPlay(param1:MouseEvent) : void
+
+      private function __soundPlay(param1:MouseEvent):void
       {
          SoundManager.instance.play("008");
       }
-      
-      public function set controller(param1:StoreController) : void
+
+      public function set controller(param1:StoreController):void
       {
          this._controller = param1;
       }
-      
-      public function show(param1:String, param2:int) : void
+
+      public function show(param1:String, param2:int):void
       {
          BagStore.instance.isInBagStoreFrame = true;
          this._index = param2;
          this._view = this._controller.getView(this.getStoreType(param1));
          addToContent(this._view);
-         addEventListener(FrameEvent.RESPONSE,this._response);
-         LayerManager.Instance.addToLayer(this,LayerManager.GAME_DYNAMIC_LAYER,false,LayerManager.BLCAK_BLOCKGOUND);
-         if(param1 != StoreState.CONSORTIASTORE)
+         addEventListener(FrameEvent.RESPONSE, this._response);
+         LayerManager.Instance.addToLayer(this, LayerManager.GAME_DYNAMIC_LAYER, false, LayerManager.BLCAK_BLOCKGOUND);
+         if (param1 != StoreState.CONSORTIASTORE)
          {
             this._controller.startupEvent();
          }
       }
-      
-      private function getStoreType(param1:String) : String
+
+      private function getStoreType(param1:String):String
       {
-         if(param1 == BagStore.BAG_STORE)
+         if (param1 == BagStore.BAG_STORE)
          {
-            if(PlayerManager.Instance.Self.ConsortiaID != 0)
+            if (PlayerManager.Instance.Self.ConsortiaID != 0)
             {
                param1 = BagStore.CONSORTIA;
             }
@@ -160,30 +181,30 @@ package ddt.bagStore
          }
          return param1;
       }
-      
-      private function _response(param1:FrameEvent) : void
+
+      private function _response(param1:FrameEvent):void
       {
          SoundManager.instance.play("008");
-         if(param1.responseCode == FrameEvent.CLOSE_CLICK || param1.responseCode == FrameEvent.ESC_CLICK)
+         if (param1.responseCode == FrameEvent.CLOSE_CLICK || param1.responseCode == FrameEvent.ESC_CLICK)
          {
             BagStore.instance._isStoreOpen = false;
             this.dispose();
          }
       }
-      
-      override public function dispose() : void
+
+      override public function dispose():void
       {
          super.dispose();
          ForgeMainView.IsExalt = false;
          ObjectUtils.disposeObject(this._fineStoreView);
          this._fineStoreView = null;
          this._controller.shutdownEvent();
-         removeEventListener(FrameEvent.RESPONSE,this._response);
+         removeEventListener(FrameEvent.RESPONSE, this._response);
          this._view = null;
          this._controller = null;
          BagStore.instance.storeOpenAble = false;
          BagStore.instance.closed();
-         if(parent)
+         if (parent)
          {
             parent.removeChild(this);
          }
