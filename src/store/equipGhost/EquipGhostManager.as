@@ -348,9 +348,6 @@ package store.equipGhost
 			 if (this._luckyMaterial) {
 				 luckyPlace = this._luckyMaterial.Place;
 			 }
-//			 trace(this._equip);
-//			 trace(this._stoneMaterial);
-//			 trace(this._luckyMaterial);
             SocketManager.Instance.out.sendEquipGhost(this._equip.Place, this._equip.BagType, this._stoneMaterial.Place, luckyPlace, this._stoneMaterial.BagType);
             this._lastTime = getTimer();
          }

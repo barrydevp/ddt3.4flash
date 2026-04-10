@@ -200,8 +200,6 @@ package worldboss
          this.addshowHallEntranceBtn();
          this.creatEnterIcon(!this._bossInfo.roomClose);
          dispatchEvent(new WorldBossRoomEvent(WorldBossRoomEvent.GAME_INIT));
-         // trace("world boss info:");
-         // trace("name:" + this._bossInfo.name + " total blood:" + this._bossInfo.total_Blood + " current blood:" + this._bossInfo.current_Blood  + " begin time:" + this._bossInfo.begin_time + " end time:" + this._bossInfo.end_time + " fight time:" + this._bossInfo.fight_time + " fight over:" + this._bossInfo.fightOver + " room close:" + this._bossInfo.roomClose);
       }
       
       private function addSocketEvent() : void
@@ -309,7 +307,8 @@ package worldboss
       
       private function __showRanking(param1:CrazyTankSocketEvent) : void
       {
-         if(param1.pkg.readBoolean())
+         var isEndRanking:Boolean = param1.pkg.readBoolean();
+         if(isEndRanking)
          {
             this.showRankingFrame(param1.pkg);
          }
@@ -357,7 +356,8 @@ package worldboss
          {
             StateManager.setState(StateType.MAIN);
          }
-         if(Boolean(this._entranceBtn.parent))
+         this.creatEnterIcon(false);
+         if(this._entranceBtn && Boolean(this._entranceBtn.parent))
          {
             this._entranceBtn.parent.removeChild(this._entranceBtn);
          }
@@ -446,8 +446,8 @@ package worldboss
          _loc5_ = PlayerManager.Instance.Self.Money >= _loc4_;
          if(!_loc5_)
          {
-            for each(_loc2_ in this._bossInfo.buffArray)
-            {
+            for each(_loc2_ in this._bossInfo.buffArray) // the order decides which buffs we'll try to buy
+            { // if it's in ascending order so that we can buy as much buffs as possible with the money the player has
                if(!this._autoBuyBuffs[_loc2_.ID] && _loc6_ >= _loc2_.price)
                {
                   _loc7_.push(_loc2_.ID);

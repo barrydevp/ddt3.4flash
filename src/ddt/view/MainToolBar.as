@@ -341,7 +341,6 @@ package ddt.view
             this._bagShineEffect.stop();
             this._bagShineEffect = null;
          }
-//		 trace("test");
          BagAndInfoManager.Instance.showBagAndInfo();
       }
       

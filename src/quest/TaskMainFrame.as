@@ -557,7 +557,6 @@ package quest
       
       public function open() : void
       {
-//		  trace("open: " + this._opened);
          if(!this._opened)
          {
             this._show();

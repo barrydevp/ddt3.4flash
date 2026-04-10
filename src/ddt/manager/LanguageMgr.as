@@ -18,7 +18,6 @@ package ddt.manager
       
       public static function setup(param1:LanguageAnalyzer) : void
       {
-//		  trace(param1);
          _dic = param1.languages;
       }
       
@@ -27,8 +26,6 @@ package ddt.manager
          var _loc3_:int = 0;
          var _loc4_:String = null;
          var _loc5_:int = 0;
-//		 trace(_dic);
-//		 trace("here_dict");
          var _loc6_:String = Boolean(_dic[param1]) ? String(_dic[param1]) : "";
          var _loc7_:Object = _reg.exec(_loc6_);
          while(Boolean(_loc7_) && rest.length > 0)

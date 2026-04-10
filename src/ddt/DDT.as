@@ -159,7 +159,6 @@ package ddt
       {
          DesktopManager.Instance.checkIsDesktop();
          PlayerManager.Instance.Self.baiduEnterCode = param6;
-//		 trace("lunch");
          if(!this._loaded)
          {
 			 trace("loaded: " + param2 + " pass: " + param3);

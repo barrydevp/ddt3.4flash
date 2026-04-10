@@ -57,7 +57,6 @@ package hallIcon.view
       
       public function initView() : void
       {
-//		  trace("iconStr: " + this._iconString);
          this._icon = ComponentFactory.Instance.creat(this._iconString);
          addChild(this._icon);
          this._timeTxt = ComponentFactory.Instance.creatComponentByStylename("hallicon.IconTimeTxt");

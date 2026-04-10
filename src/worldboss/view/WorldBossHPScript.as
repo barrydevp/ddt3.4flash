@@ -53,7 +53,7 @@ package worldboss.view
       
       public function refreshBlood() : void
       {
-         trace("blood:" + WorldBossManager.Instance.bossInfo.current_Blood + "/" + WorldBossManager.Instance.bossInfo.total_Blood);
+         // trace("blood:" + WorldBossManager.Instance.bossInfo.current_Blood + "/" + WorldBossManager.Instance.bossInfo.total_Blood);
          this.showBloodText();
          this._bloodStrip["red2_hp"].stop();
          this._scale = this._bloodStrip["red_hp"]["red_mask"].width / WorldBossManager.Instance.bossInfo.total_Blood;

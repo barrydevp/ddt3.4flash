@@ -202,7 +202,6 @@ package ddt.loader
       
       public function start(param1:int) : void
       {
-//		  trace('start');
          this._currentMode = param1;
          this.loadLanguage();
       }
@@ -219,7 +218,6 @@ package ddt.loader
       
       private function __onLoadLanguageComplete(param1:Event) : void
       {
-//		  trace("onLoadLangComplete");
          var _loc2_:QueueLoader = param1.currentTarget as QueueLoader;
          _loc2_.removeEventListener(Event.COMPLETE,this.__onLoadLanguageComplete);
          this.loadExppression();
@@ -402,7 +400,6 @@ package ddt.loader
                _loc2_ = param1.loader.loadErrorMessage + "\n" + param1.loader.analyzer.message;
             }
          }
-//		 trace("error: " + _loc2_);
          var _loc3_:BaseAlerFrame = AlertManager.Instance.simpleAlert(LanguageMgr.GetTranslation("alert"),_loc2_,LanguageMgr.GetTranslation("tank.room.RoomIIView2.affirm"));
          _loc3_.addEventListener(FrameEvent.RESPONSE,this.__onAlertResponse);
       }
@@ -671,7 +668,6 @@ package ddt.loader
       
       private function creatLanguageLoader() : BaseLoader
       {
-//		  trace("createLangLoader, path: " + PathManager.getLanguagePath());
          var _loc1_:BaseLoader = LoaderManager.Instance.creatLoader(PathManager.getLanguagePath(),BaseLoader.TEXT_LOADER);
          _loc1_.loadErrorMessage = "Load Language Error!!!";
          _loc1_.analyzer = new LanguageAnalyzer(LanguageMgr.setup);

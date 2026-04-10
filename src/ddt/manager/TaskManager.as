@@ -141,7 +141,6 @@ package ddt.manager
       
       public static function switchVisible() : void
       {
-//		  trace("switch visible: " + _isShown);
          if(!_isShown)
          {
             MainFrame.open();
