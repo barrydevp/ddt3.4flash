@@ -29,8 +29,8 @@
         <dep id="flash.events:IEventDispatcher" type="s" /> 
         <dep id="farm.analyzer:FoodComposeListAnalyzer" type="s" /> 
         <dep id="Date" type="s" /> 
-        <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="farm.view.compose.vo:FoodComposeListTemplateInfo" type="s" /> 
         <dep id="farm.view.compose.model:ComposeHouseModel" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
@@ -173,8 +173,8 @@
       <script name="totem/view/TotemLeftView" mod="1683796211140" signatureChecksum="2437463168" >
         <def id="totem.view:TotemLeftView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="e" /> 
+        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
@@ -216,8 +216,8 @@
         <dep id="ddt.manager:ItemManager" type="e" /> 
         <dep id="ddt.view.tips:GoodTipInfo" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.view.character:BaseLayer" type="e" /> 
         <dep id="petsBag.event:PetItemEvent" type="e" /> 
         <dep id="ddt.manager:PathManager" type="e" /> 
@@ -345,8 +345,8 @@
         <dep id="cardSystem.data:CardInfo" type="e" /> 
         <dep id="cardSystem.view.cardBag:CardBagView" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.events:CellEvent" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
@@ -465,8 +465,8 @@
         <dep id="vip:VipController" type="e" /> 
         <dep id="ddt.view.character:CharactoryFactory" type="e" /> 
         <dep id="ddt.view.character:RoomCharacter" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
         <dep id="ddt.view.common:LevelIcon" type="s" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="s" /> 
@@ -500,8 +500,8 @@
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
         <dep id="com.greensock:TweenMax" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -684,8 +684,8 @@
         <dep id="com.pickgliss.ui:UICreatShortcut" type="e" /> 
         <dep id="Math" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui.image:Image" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -851,8 +851,8 @@
         <def id="firstRecharge:FirstRechargeManager" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:UIModuleTypes" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="com.pickgliss.loader:UIModuleLoader" type="e" /> 
@@ -1017,8 +1017,8 @@
         <dep id="ddt.states:StateType" type="e" /> 
         <dep id="lottery.cell:ChoosedCardCell" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
-        <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
+        <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="com.pickgliss.ui.core:Disposeable" type="i" /> 
@@ -1338,8 +1338,8 @@
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="eliteGame.info:EliteGameAllScoreRankInfo" type="s" /> 
-        <dep id="com.pickgliss.ui.controls.container:VBox" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
+        <dep id="com.pickgliss.ui.controls.container:VBox" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SelectedCheckButton" type="s" /> 
         <dep id="com.pickgliss.ui.image:CloneImage" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -1559,8 +1559,8 @@
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="ddt.view.caddyII:CaddyFrame" type="s" /> 
         <dep id="ddt.command:QuickBuyFrame" type="s" /> 
-        <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="com.pickgliss.events:UIModuleEvent" type="s" /> 
+        <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
       </script>
@@ -1809,8 +1809,8 @@
       <script name="bagAndInfo/cell/BaseCell" mod="1683796165913" signatureChecksum="3669158480" >
         <def id="bagAndInfo.cell:BaseCell" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
-        <dep id="ddt.manager:DragManager" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="ddt.manager:DragManager" type="e" /> 
         <dep id="flash.display:BitmapData" type="e" /> 
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="ddt.view.tips:GoodTipInfo" type="e" /> 
@@ -1982,8 +1982,8 @@
         <dep id="wonderfulActivity.views:WonderfulRightView" type="e" /> 
         <dep id="wonderfulActivity.views:ActivityLeftView" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="ddt.manager:SharedManager" type="e" /> 
@@ -2246,7 +2246,7 @@
         <dep id="AS3" type="n" /> 
         <dep id="com.pickgliss.ui.core:Component" type="i" /> 
       </script>
-      <script name="bagAndInfo/bag/BagView" mod="1690333460847" signatureChecksum="2431285317" >
+      <script name="bagAndInfo/bag/BagView" mod="1775837646059" signatureChecksum="2431285317" >
         <def id="bagAndInfo.bag:BagView" /> 
         <dep id="road7th.data:DictionaryEvent" type="e" /> 
         <dep id="ddt.view.goods:AddPricePanel" type="e" /> 
@@ -2337,8 +2337,8 @@
         <dep id="com.pickgliss.ui.controls.alert:SimpleAlert" type="s" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="s" /> 
         <dep id="flash.geom:Point" type="s" /> 
-        <dep id="bagAndInfo.ReworkName:ReworkNameConsortia" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
+        <dep id="bagAndInfo.ReworkName:ReworkNameConsortia" type="s" /> 
         <dep id="bagAndInfo.bag:KeySetFrame" type="s" /> 
         <dep id="bagAndInfo.bag:BagEquipListView" type="s" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="s" /> 
@@ -2591,8 +2591,8 @@
         <def id="HappyRecharge:HappyRechargeSpecialItemTip" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="HappyRecharge:HappyRechargeSpecialItemTipInfo" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="HappyRecharge:HappyRechargeSpecialItemTipInfo" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -2715,8 +2715,8 @@
         <def id="ddt.view.tips:FineSuitTipsSimple" /> 
         <dep id="ddt.manager:FineSuitManager" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -2905,8 +2905,8 @@
       <script name="civil/view/CivilRegisterFrame" mod="1683796216575" signatureChecksum="993498605" >
         <def id="civil.view:CivilRegisterFrame" /> 
         <dep id="ddt.utils:FilterWordManager" type="e" /> 
-        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
@@ -2921,8 +2921,8 @@
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui.text:TextArea" type="s" /> 
-        <dep id="flash.events:TextEvent" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
+        <dep id="flash.events:TextEvent" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.controls:TextButton" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
@@ -3500,8 +3500,8 @@
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="setting.controll:SettingController" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
         <dep id="ddt.data:OpitionEnum" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -3955,8 +3955,8 @@
       <script name="roomLoading/view/RoomLoadingViewerItem" mod="1683796213290" signatureChecksum="1582860173" >
         <def id="roomLoading.view:RoomLoadingViewerItem" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="room.view:RoomViewerItem" type="e" /> 
         <dep id="room.model:RoomPlayer" type="e" /> 
@@ -4028,8 +4028,8 @@
       </script>
       <script name="com/pickgliss/ui/controls/BaseButton" mod="1683796165907" signatureChecksum="836379241" >
         <def id="com.pickgliss.ui.controls:BaseButton" /> 
-        <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="flash.display:DisplayObject" type="e" /> 
@@ -4212,8 +4212,8 @@
       <script name="AvatarCollection/view/AvatarCollectionPropertyCell" mod="1683796193189" signatureChecksum="1736631728" >
         <def id="AvatarCollection.view:AvatarCollectionPropertyCell" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="AvatarCollection.data:AvatarCollectionUnitVo" type="s" /> 
@@ -4478,7 +4478,7 @@
         <dep id="AS3" type="n" /> 
         <dep id="church.view.churchScene:SceneMap" type="i" /> 
       </script>
-      <script name="ddt/data/EquipType" mod="1683796221978" signatureChecksum="11468355" >
+      <script name="ddt/data/EquipType" mod="1775837878581" signatureChecksum="11468355" >
         <def id="ddt.data:EquipType" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
@@ -4854,8 +4854,8 @@
         <dep id="ddt.manager:ShopManager" type="e" /> 
         <dep id="ddt.data.goods:ItemPrice" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
-        <dep id="ddt.data.player:PlayerInfo" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
+        <dep id="ddt.data.player:PlayerInfo" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.data:EquipType" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
@@ -4977,8 +4977,8 @@
       <script name="gemstone/views/GemstoneUpView" mod="1683796194341" signatureChecksum="22086691" >
         <def id="gemstone.views:GemstoneUpView" /> 
         <dep id="ddt.events:BagEvent" type="e" /> 
-        <dep id="gemstone.info:GemstnoeSendInfo" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
+        <dep id="gemstone.info:GemstnoeSendInfo" type="e" /> 
         <dep id="firstRecharge.items:FTextButton" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="gemstone.views:GemstoneCriView" type="e" /> 
@@ -5418,8 +5418,8 @@
         <dep id="game.view:DungeonInfoView" type="s" /> 
         <dep id="ddt.events:LivingEvent" type="s" /> 
         <dep id="game.view:VaneView" type="s" /> 
-        <dep id="flash.utils:Dictionary" type="s" /> 
         <dep id="game.model:GameInfo" type="s" /> 
+        <dep id="flash.utils:Dictionary" type="s" /> 
         <dep id="game.objects:GameLocalPlayer" type="s" /> 
         <dep id="room.model:RoomPlayer" type="s" /> 
         <dep id="ddt.events:GameEvent" type="s" /> 
@@ -5431,8 +5431,8 @@
         <dep id="flash.geom:Rectangle" type="s" /> 
         <dep id="game.objects:GameLiving" type="s" /> 
         <dep id="game.view:DungeonHelpView" type="s" /> 
-        <dep id="ddt.data.map:MissionInfo" type="s" /> 
         <dep id="flash.geom:Point" type="s" /> 
+        <dep id="ddt.data.map:MissionInfo" type="s" /> 
         <dep id="game.view.control:LiveState" type="s" /> 
         <dep id="game.view.propContainer:PlayerStateContainer" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -5747,8 +5747,8 @@
       <script name="consortionBattle/view/ConsBatScoreViewListCell" mod="1683796197085" signatureChecksum="18603194" >
         <def id="consortionBattle.view:ConsBatScoreViewListCell" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="com.pickgliss.ui.controls.list:List" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -5943,8 +5943,8 @@
         <def id="inviteFriends:InviteFriendsManager" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:UIModuleTypes" type="e" /> 
         <dep id="overSeasCommunity:OverSeasCommunController" type="e" /> 
         <dep id="com.pickgliss.loader:UIModuleLoader" type="e" /> 
@@ -6057,8 +6057,8 @@
         <dep id="flash.filters:GlowFilter" type="e" /> 
         <dep id="game.view.experience:ExpFriendItem" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
-        <dep id="flash.filters:BlurFilter" type="e" /> 
         <dep id="com.greensock:TweenMax" type="e" /> 
+        <dep id="flash.filters:BlurFilter" type="e" /> 
         <dep id="flash.display:Bitmap" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
@@ -6080,8 +6080,8 @@
         <dep id="ddt.manager:TimeManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="godCardRaise.view:GodCardRaiseScoreView" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="godCardRaise.view:GodCardRaiseExchangeView" type="e" /> 
         <dep id="ddt.utils:HelpFrameUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -6209,8 +6209,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="flash.display:BitmapData" type="e" /> 
         <dep id="cardSystem:CardControl" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.events:CellEvent" type="e" /> 
         <dep id="bagAndInfo.cell:DragEffect" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -6278,8 +6278,8 @@
       <script name="cryptBoss/view/CryptBossSetFrame" mod="1683796205666" signatureChecksum="1542743000" >
         <def id="cryptBoss.view:CryptBossSetFrame" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="bagAndInfo.cell:BaseCell" type="e" /> 
         <dep id="Date" type="e" /> 
@@ -6373,8 +6373,8 @@
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="wonderfulActivity.data:SendGiftInfo" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="bagAndInfo.cell:BagCell" type="e" /> 
@@ -6434,8 +6434,8 @@
         <def id="AvatarCollection.view:AvatarCollectionDelayConfirmFrame" /> 
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="AvatarCollection:AvatarCollectionManager" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -6517,8 +6517,8 @@
         <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="ddt.manager:TimeManager" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.states:StateType" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
@@ -6873,8 +6873,8 @@
       <script name="game/objects/SimpleBox" mod="1683796224025" signatureChecksum="2145242579" >
         <def id="game.objects:SimpleBox" /> 
         <dep id="flash.events:Event" type="e" /> 
-        <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
+        <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
         <dep id="room.model:RoomInfo" type="e" /> 
         <dep id="game.objects:GhostBoxModel" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
@@ -6934,8 +6934,8 @@
       <script name="AvatarCollection/view/AvatarCollectionItemTip" mod="1683796208276" signatureChecksum="3520850977" >
         <def id="AvatarCollection.view:AvatarCollectionItemTip" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:EquipType" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="AvatarCollection.data:AvatarCollectionItemVo" type="e" /> 
@@ -7945,10 +7945,10 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="ddt.manager:TimeManager" type="e" /> 
         <dep id="im:IMEvent" type="e" /> 
-        <dep id="ddt.manager:PlayerTipManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="ddt.manager:PlayerTipManager" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="email.manager:MailManager" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -8031,8 +8031,8 @@
       <script name="store/ShowSuccessRate" mod="1683796203395" signatureChecksum="2889006265" >
         <def id="store:ShowSuccessRate" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.command:StripTip" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -8254,8 +8254,8 @@
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
         <dep id="com.pickgliss.ui.image:MovieImage" type="s" /> 
-        <dep id="ddt.data.quest:QuestItemReward" type="s" /> 
         <dep id="ddt.events:TaskEvent" type="s" /> 
+        <dep id="ddt.data.quest:QuestItemReward" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="ddt.data.goods:ItemTemplateInfo" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -8457,8 +8457,8 @@
       <script name="bagAndInfo/bag/ring/RingSystemSkillTips" mod="1683796225122" signatureChecksum="1094599241" >
         <def id="bagAndInfo.bag.ring:RingSystemSkillTips" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
         <dep id="com.pickgliss.ui.image:Image" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
@@ -8665,8 +8665,8 @@
         <dep id="cardSystem:CardControl" type="e" /> 
         <dep id="ddt.data.goods:QualityType" type="e" /> 
         <dep id="ddt.data.goods:ItemTemplateInfo" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.view.tips:CardsTipPanel" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
@@ -9003,11 +9003,10 @@
         <dep id="AS3" type="n" /> 
         <dep id="bagAndInfo.cell:BaseCell" type="i" /> 
       </script>
-      <script name="worldboss/view/WorldBossRoomView" mod="1775789044068" signatureChecksum="895816076" >
+      <script name="worldboss/view/WorldBossRoomView" mod="1775798031979" signatureChecksum="895816076" >
         <def id="worldboss.view:WorldBossRoomView" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="trace" type="e" /> 
         <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="worldboss.view:WorldBossScneneMap" type="e" /> 
         <dep id="worldboss.view:BuffItem" type="e" /> 
@@ -9015,8 +9014,8 @@
         <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:StateManager" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
-        <dep id="worldboss.view:WorldBossHideBtn" type="e" /> 
         <dep id="church.vo:SceneMapVO" type="e" /> 
+        <dep id="worldboss.view:WorldBossHideBtn" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="worldboss.view:WorldBossResurrectView" type="e" /> 
         <dep id="ddt.view.scenePathSearcher:PathMapHitTester" type="e" /> 
@@ -9239,8 +9238,8 @@
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="bagAndInfo.cell:BagCell" type="s" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -9445,8 +9444,8 @@
         <dep id="vip:VipController" type="e" /> 
         <dep id="tofflist.view:TofflistTwoGradeMenu" type="e" /> 
         <dep id="tofflist:TofflistModel" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
         <dep id="tofflist.data:TofflistConsortiaData" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
@@ -10000,8 +9999,8 @@
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -10042,9 +10041,9 @@
         <dep id="farm:FarmModelController" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="farm.modelx:FramFriendStateInfo" type="e" /> 
-        <dep id="trainer.data:ArrowType" type="e" /> 
-        <dep id="com.greensock.easing:Sine" type="e" /> 
         <dep id="farm.event:FarmEvent" type="e" /> 
+        <dep id="com.greensock.easing:Sine" type="e" /> 
+        <dep id="trainer.data:ArrowType" type="e" /> 
         <dep id="petsBag.data:PetFarmGuildeTaskType" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="petsBag.controller:PetBagController" type="e" /> 
@@ -10224,8 +10223,8 @@
         <def id="roomLoading.view:RoomLoadingBattleFieldItem" /> 
         <dep id="room.model:RoomInfo" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:UIModuleTypes" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="Error" type="e" /> 
@@ -10276,8 +10275,8 @@
         <dep id="farm:FarmModelController" type="e" /> 
         <dep id="farm.event:FarmEvent" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
@@ -10507,8 +10506,8 @@
         <dep id="littleGame.events:LittleLivingEvent" type="s" /> 
         <dep id="road7th.utils:MovieClipWrapper" type="s" /> 
         <dep id="flash.display:BitmapData" type="s" /> 
-        <dep id="flash.display:DisplayObjectContainer" type="s" /> 
         <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.display:DisplayObjectContainer" type="s" /> 
         <dep id="littleGame.data:Grid" type="s" /> 
         <dep id="littleGame.model:LittleSelf" type="s" /> 
         <dep id="littleGame.model:LittleLiving" type="s" /> 
@@ -10589,8 +10588,8 @@
         <dep id="flash.events:Event" type="s" /> 
         <dep id="com.pickgliss.ui.image:MovieImage" type="s" /> 
         <dep id="com.pickgliss.events:ListItemEvent" type="s" /> 
-        <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="ddt.data.goods:ItemTemplateInfo" type="s" /> 
+        <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="ddt.view.caddyII:CaddyEvent" type="s" /> 
@@ -10639,8 +10638,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="shop.view:ShopItemCell" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="e" /> 
@@ -10925,8 +10924,8 @@
         <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="flash.geom:Rectangle" type="s" /> 
-        <dep id="XML" type="s" /> 
         <dep id="FrameByFrameItem" type="s" /> 
+        <dep id="XML" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="BitmapRendItem" type="i" /> 
       </script>
@@ -10938,8 +10937,8 @@
         <dep id="character:CharacterType" type="e" /> 
         <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="FrameByFrameItem" type="e" /> 
-        <dep id="Error" type="e" /> 
         <dep id="character.action:ComplexBitmapAction" type="e" /> 
+        <dep id="Error" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="character:CharacterEvent" type="e" /> 
@@ -11170,8 +11169,8 @@
         <dep id="game.view.experience:ExpResultSeal" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="game.view.experience:ExpExploitItem" type="e" /> 
-        <dep id="com.greensock:TweenMax" type="e" /> 
         <dep id="flash.filters:BlurFilter" type="e" /> 
+        <dep id="com.greensock:TweenMax" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="ddt.events:GameEvent" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
@@ -11259,8 +11258,8 @@
         <dep id="ddt.manager:TaskManager" type="e" /> 
         <dep id="shop.view:ShopItemCell" type="e" /> 
         <dep id="quest:RewardSelectedEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.greensock:TweenLite" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -11290,8 +11289,8 @@
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="ddt.data:ServerInfo" type="s" /> 
         <dep id="com.pickgliss.ui.controls.list:VectorListModel" type="s" /> 
-        <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
         <dep id="com.pickgliss.ui.controls:ComboBox" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
@@ -11390,8 +11389,8 @@
         <dep id="ddt.manager:ShopManager" type="e" /> 
         <dep id="littleGame.view:AwardGoodItem" type="e" /> 
         <dep id="shop.view:ShopGoodItem" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.events:ItemEvent" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="com.pickgliss.ui.image:MutipleImage" type="s" /> 
@@ -11445,8 +11444,8 @@
         <dep id="consortion.view.selfConsortia.consortiaTask:ConsortiaTaskModel" type="e" /> 
         <dep id="consortion.analyze:ConsortionLevelUpAnalyzer" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.manager:BadgeInfoManager" type="e" /> 
         <dep id="consortion.analyze:ConsortionPollListAnalyzer" type="e" /> 
+        <dep id="ddt.manager:BadgeInfoManager" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="ddt.manager:ServerManager" type="e" /> 
@@ -11571,8 +11570,8 @@
         <dep id="flash.events:KeyboardEvent" type="e" /> 
         <dep id="trainer.view:NewHandContainer" type="e" /> 
         <dep id="ddt.view.tips:ToolPropInfo" type="e" /> 
-        <dep id="Math" type="e" /> 
         <dep id="ddt.data.goods:ItemTemplateInfo" type="e" /> 
+        <dep id="Math" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="org.aswing:KeyboardManager" type="e" /> 
         <dep id="ddt.view.tips:ChangeNumToolTipInfo" type="e" /> 
@@ -11943,8 +11942,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="e" /> 
         <dep id="ddt.utils:CoreScrollPanelCell" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.utils:HelpFrameUtils" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="flash.display:Sprite" type="e" /> 
@@ -12832,8 +12831,8 @@
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="civil:CivilController" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
-        <dep id="civil:CivilEvent" type="s" /> 
         <dep id="ddt.data.player:SelfInfo" type="s" /> 
+        <dep id="civil:CivilEvent" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.image:Scale9CornerImage" type="s" /> 
         <dep id="ddt.data.player:CivilPlayerInfo" type="s" /> 
@@ -13533,8 +13532,8 @@
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="consortion.view.selfConsortia:Badge" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -13667,8 +13666,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="ddt.data:FightPropMode" type="e" /> 
         <dep id="flash.events:KeyboardEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="org.aswing:KeyboardManager" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="pet.date:PetSkill" type="e" /> 
@@ -13733,8 +13732,8 @@
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="ddt.data:ConsortiaInfo" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
         <dep id="consortion:ConsortionModel" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -13836,8 +13835,8 @@
         <dep id="conRecharge.view:ConRechargeLeftItem" type="e" /> 
         <dep id="conRecharge.view:ConRechargeRightItem" type="e" /> 
         <dep id="ddt.manager:TimeManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:LeavePageManager" type="e" /> 
@@ -13923,8 +13922,8 @@
         <def id="game.view.prop:PetSkillCell" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.display:BitmapLoaderProxy" type="e" /> 
-        <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="flash.geom:Rectangle" type="e" /> 
+        <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="ddt.view.tips:ToolPropInfo" type="e" /> 
         <dep id="flash.display:Bitmap" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
@@ -13993,8 +13992,8 @@
         <dep id="explorerManual.view.page:ExplorerPageDirectorItemView" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
-        <dep id="flash.events:Event" type="s" /> 
         <dep id="flash.events:TextEvent" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
         <dep id="explorerManual:ExplorerManualController" type="s" /> 
         <dep id="explorerManual.view.page:ExplorerPageView" type="s" /> 
         <dep id="ddt.events:CEvent" type="s" /> 
@@ -14043,8 +14042,8 @@
       <script name="bagAndInfo/tips/CallPropTxtTip" mod="1683798620497" signatureChecksum="2882258076" >
         <def id="bagAndInfo.tips:CallPropTxtTip" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -14060,8 +14059,8 @@
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="newChickenBox.view:NewChickenBoxItem" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -14156,8 +14155,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="farm:FarmModelController" type="e" /> 
         <dep id="ddt.manager:LeavePageManager" type="e" /> 
@@ -14516,8 +14515,8 @@
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="ddt.view.qqTips:QQTipsInfo" type="e" /> 
-        <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:TextEvent" type="e" /> 
+        <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="times:TimesManager" type="e" /> 
         <dep id="flash.external:ExternalInterface" type="e" /> 
@@ -14667,8 +14666,8 @@
       <script name="im/IMLookupView" mod="1683796214429" signatureChecksum="2529790930" >
         <def id="im:IMLookupView" /> 
         <dep id="road7th.data:DictionaryEvent" type="e" /> 
-        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="flash.events:KeyboardEvent" type="e" /> 
@@ -14827,8 +14826,8 @@
         <dep id="ddt.data.analyze:MovingNotificationAnalyzer" type="e" /> 
         <dep id="ddt.data.analyze:ItemTempleteAnalyzer" type="e" /> 
         <dep id="store.data:StoreEquipExperience" type="e" /> 
-        <dep id="bagAndInfo:BagAndInfoManager" type="e" /> 
         <dep id="ddt.data.analyze:SuitTempleteAnalyzer" type="e" /> 
+        <dep id="bagAndInfo:BagAndInfoManager" type="e" /> 
         <dep id="ddt.data.analyze:QuestListAnalyzer" type="e" /> 
         <dep id="ddt.data.analyze:FriendListAnalyzer" type="e" /> 
         <dep id="store.equipGhost:EquipGhostManager" type="e" /> 
@@ -15027,8 +15026,8 @@
         <dep id="Date" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButton" type="s" /> 
         <dep id="email.data:EmailInfoOfSended" type="s" /> 
-        <dep id="ddt.data.player:PlayerInfo" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
+        <dep id="ddt.data.player:PlayerInfo" type="s" /> 
         <dep id="email.data:EmailInfo" type="s" /> 
         <dep id="flash.display:Sprite" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
@@ -15043,8 +15042,8 @@
         <dep id="road7th.data:DictionaryData" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="com.pickgliss.ui.controls:TextButton" type="s" /> 
-        <dep id="email.view:EmailListView" type="s" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="s" /> 
+        <dep id="email.view:EmailListView" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="com.pickgliss.ui.controls:Frame" type="i" /> 
       </script>
@@ -15396,8 +15395,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="Date" type="e" /> 
         <dep id="ddt.data.analyze:CalendarSignAnalyze" type="e" /> 
-        <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="com.pickgliss.events:ComponentEvent" type="e" /> 
+        <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.view:UIModuleSmallLoading" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
@@ -15607,8 +15606,8 @@
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="shop.view:ShopPresentClearingFrame" type="s" /> 
         <dep id="shop.view:ShopCartItem" type="s" /> 
-        <dep id="com.pickgliss.ui.controls:Frame" type="s" /> 
         <dep id="shop:ShopModel" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:Frame" type="s" /> 
         <dep id="ddt.data.goods:ShopCarItemInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
@@ -16243,16 +16242,16 @@
         <dep id="game.objects:BombAsset" type="e" /> 
         <dep id="flash.utils:Dictionary" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
-        <dep id="flash.display:Sprite" type="e" /> 
         <dep id="flash.display:MovieClip" type="e" /> 
+        <dep id="flash.display:Sprite" type="e" /> 
         <dep id="ddt.data.analyze:BallInfoAnalyzer" type="s" /> 
         <dep id="ddt.data:BallInfo" type="s" /> 
         <dep id="game.objects:BombAsset" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="flash.utils:Dictionary" type="s" /> 
-        <dep id="flash.display:Sprite" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
+        <dep id="flash.display:Sprite" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="Object" type="i" /> 
       </script>
@@ -16840,8 +16839,8 @@
         <dep id="com.pickgliss.ui.controls:SelectedCheckButton" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="ddt.command:NumberSelecter" type="s" /> 
-        <dep id="flash.display:Sprite" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
+        <dep id="flash.display:Sprite" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="com.pickgliss.ui.controls:Frame" type="i" /> 
       </script>
@@ -17153,8 +17152,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="flash.display:DisplayObject" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
@@ -17345,8 +17344,8 @@
         <dep id="room.model:RoomInfo" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="game.view.experience:ExpTypeTxt" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="game.view.experience:ExpCountingTxt" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -17929,8 +17928,8 @@
         <dep id="shop.view:ShopItemCell" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
@@ -18075,8 +18074,8 @@
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="flash.events:KeyboardEvent" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
@@ -18095,8 +18094,8 @@
       <script name="store/view/exalt/ExaltSelectNumAlertFrame" mod="1683796203613" signatureChecksum="3366223103" >
         <def id="store.view.exalt:ExaltSelectNumAlertFrame" /> 
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="AS3" type="n" /> 
         <dep id="store.view.strength:StrengthSelectNumAlertFrame" type="i" /> 
@@ -18228,8 +18227,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="ddt.manager:ShopManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="farm.view.compose.event:SelectComposeItemEvent" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="farm.viewx.helper:HelperFerItem" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
@@ -18980,8 +18979,8 @@
         <dep id="flash.display:BitmapData" type="e" /> 
         <dep id="ddt.display:BitmapShape" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.view.tips:ChangeNumToolTipInfo" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
@@ -19045,8 +19044,8 @@
         <dep id="ddt.manager:LeavePageManager" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="petsBag.controller:PetBagController" type="e" /> 
-        <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
+        <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="petsBag.event:PetItemEvent" type="e" /> 
         <dep id="ddt.manager:SharedManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="e" /> 
@@ -19271,8 +19270,8 @@
         <dep id="Math" type="e" /> 
         <dep id="phy.object:PhysicalObj" type="e" /> 
         <dep id="phy.object:Physics" type="e" /> 
-        <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="par.enginees:ParticleEnginee" type="e" /> 
+        <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="flash.utils:Dictionary" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -19530,8 +19529,8 @@
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="ddt.data.player:PlayerInfo" type="s" /> 
         <dep id="flash.net:URLLoader" type="s" /> 
-        <dep id="FrameByFrameItem" type="s" /> 
         <dep id="XML" type="s" /> 
+        <dep id="FrameByFrameItem" type="s" /> 
         <dep id="flash.utils:Dictionary" type="s" /> 
         <dep id="character.action:ComplexBitmapAction" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -19686,8 +19685,8 @@
         <def id="room.view.chooseMap:DungeonMapItem" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -19739,8 +19738,8 @@
       <script name="auctionHouse/view/AuctionHouseView" mod="1683796223457" signatureChecksum="516911133" >
         <def id="auctionHouse.view:AuctionHouseView" /> 
         <dep id="road7th.data:DictionaryEvent" type="e" /> 
-        <dep id="auctionHouse.event:AuctionHouseEvent" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
+        <dep id="auctionHouse.event:AuctionHouseEvent" type="e" /> 
         <dep id="auctionHouse.view:AuctionSellView" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
@@ -19864,8 +19863,8 @@
         <def id="game.view.buff:BuffCell" /> 
         <dep id="ddt.manager:BitmapManager" type="e" /> 
         <dep id="ddt.display:BitmapLoaderProxy" type="e" /> 
-        <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
+        <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="ddt.data:FightContainerBuff" type="e" /> 
         <dep id="ddt.view.tips:PropTxtTipInfo" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
@@ -19875,8 +19874,8 @@
         <dep id="ddt.display:BitmapLoaderProxy" type="s" /> 
         <dep id="ddt.data:FightBuffInfo" type="s" /> 
         <dep id="flash.geom:Matrix" type="s" /> 
-        <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="ddt.display:BitmapObject" type="s" /> 
+        <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="ddt.view.tips:PropTxtTipInfo" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -19997,8 +19996,8 @@
         <dep id="Date" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="godCardRaise:GodCardRaiseManager" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
@@ -20314,8 +20313,8 @@
         <dep id="farm:FarmModelController" type="e" /> 
         <dep id="Date" type="e" /> 
         <dep id="farm.viewx:FarmFieldBlock" type="e" /> 
-        <dep id="trainer.data:ArrowType" type="e" /> 
         <dep id="farm.event:FarmEvent" type="e" /> 
+        <dep id="trainer.data:ArrowType" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
         <dep id="petsBag.data:PetFarmGuildeTaskType" type="e" /> 
@@ -20587,8 +20586,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="hallIcon:HallIconManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.data:UIModuleTypes" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -20681,8 +20680,8 @@
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="consortion.view.club:ClubRecordList" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -21190,8 +21189,8 @@
         <dep id="flash.events:Event" type="s" /> 
         <dep id="com.pickgliss.ui.image:MutipleImage" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
-        <dep id="ddt.data.goods:ItemTemplateInfo" type="s" /> 
         <dep id="bagAndInfo.bag:BankBagListView" type="s" /> 
+        <dep id="ddt.data.goods:ItemTemplateInfo" type="s" /> 
         <dep id="ddt.events:CellEvent" type="s" /> 
         <dep id="ddt.data:BagInfo" type="s" /> 
         <dep id="bagAndInfo.cell:BagCell" type="s" /> 
@@ -21642,8 +21641,8 @@
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="activeEvents:ActiveEventsManager" type="e" /> 
-        <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:TextEvent" type="e" /> 
+        <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderEvent" type="e" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="e" /> 
@@ -21900,8 +21899,8 @@
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
         <dep id="com.greensock:TweenMax" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -22133,8 +22132,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="wonderfulActivity.data:SendGiftInfo" type="e" /> 
         <dep id="carnivalActivity.view:WholePeopleTipSp" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="carnivalActivity:CarnivalActivityManager" type="e" /> 
@@ -22194,8 +22193,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="explorerManual.view.page:PreviewPageView" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="explorerManual.view.page:ManualPuzzlePageView" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
@@ -22363,8 +22362,8 @@
         <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="com.greensock:TweenLite" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.events:TimerEvent" type="s" /> 
@@ -22786,8 +22785,8 @@
         <dep id="im:IMController" type="e" /> 
         <dep id="im.info:PresentRecordInfo" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -23186,8 +23185,8 @@
       <script name="explorerManual/view/ManualMenuItem" mod="1683796225101" signatureChecksum="4014388131" >
         <def id="explorerManual.view:ManualMenuItem" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.display:MovieClip" type="e" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -23351,8 +23350,8 @@
         <dep id="com.pickgliss.loader:LoaderEvent" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderManager" type="e" /> 
         <dep id="flash.display:Bitmap" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
         <dep id="com.pickgliss.ui.image:Scale9CornerImage" type="s" /> 
@@ -23724,8 +23723,8 @@
       <script name="littleGame/ObjectCreator" mod="1683796192496" signatureChecksum="276724435" >
         <def id="littleGame:ObjectCreator" /> 
         <dep id="littleGame.data:LittleObjectType" type="e" /> 
-        <dep id="littleGame.object:BigBoguInhaled" type="e" /> 
         <dep id="littleGame.object:NormalBoguInhaled" type="e" /> 
+        <dep id="littleGame.object:BigBoguInhaled" type="e" /> 
         <dep id="littleGame.object:BoguGiveUp" type="e" /> 
         <dep id="littleGame.interfaces:ILittleObject" type="s" /> 
         <dep id="road7th.comm:PackageIn" type="s" /> 
@@ -24484,8 +24483,8 @@
         <def id="wonderfulActivity.newActivity.AnnouncementAct:AnnouncementActView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="wonderfulActivity.newActivity.AnnouncementAct:AnnouncementDetailView" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:ScrollPanel" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
@@ -24700,8 +24699,8 @@
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="wonderfulActivity.data:SendGiftInfo" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="wonderfulActivity.data:WonderfulActivityTypeData" type="e" /> 
         <dep id="bagAndInfo.cell:BagCell" type="e" /> 
@@ -24797,8 +24796,8 @@
       </script>
       <script name="godCardRaise/analyzer/GodCardListAnalyzer" mod="1683796205685" signatureChecksum="441348392" >
         <def id="godCardRaise.analyzer:GodCardListAnalyzer" /> 
-        <dep id="godCardRaise.info:GodCardListInfo" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
+        <dep id="godCardRaise.info:GodCardListInfo" type="e" /> 
         <dep id="XML" type="e" /> 
         <dep id="flash.utils:Dictionary" type="e" /> 
         <dep id="XML" type="s" /> 
@@ -25352,8 +25351,8 @@
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
-        <dep id="auctionHouse.event:AuctionHouseEvent" type="s" /> 
         <dep id="ddt.data.auctionHouse:AuctionGoodsInfo" type="s" /> 
+        <dep id="auctionHouse.event:AuctionHouseEvent" type="s" /> 
         <dep id="auctionHouse.view:BidMoneyView" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
@@ -25373,8 +25372,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.view.caddyII.bead:QuickBuyItem" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -25431,8 +25430,8 @@
         <dep id="ddt.manager:ShopManager" type="e" /> 
         <dep id="Math" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
@@ -25738,8 +25737,8 @@
         <dep id="vip.view:VIPRechargeAlertFrame" type="s" /> 
         <dep id="ddt.data.player:SelfInfo" type="s" /> 
         <dep id="vip.view:RechargeAlertTxt" type="s" /> 
-        <dep id="ddt.data.analyze:VipSettingAnalyzer" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
+        <dep id="ddt.data.analyze:VipSettingAnalyzer" type="s" /> 
         <dep id="vip.view:VIPHelpFrame" type="s" /> 
         <dep id="com.pickgliss.ui.text:GradientText" type="s" /> 
         <dep id="flash.utils:Dictionary" type="s" /> 
@@ -25855,8 +25854,8 @@
         <dep id="ddt.manager:PathManager" type="e" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
-        <dep id="flash.events:IEventDispatcher" type="s" /> 
         <dep id="consortionBattle.player:ConsortiaBattlePlayerInfo" type="s" /> 
+        <dep id="flash.events:IEventDispatcher" type="s" /> 
         <dep id="flash.geom:Point" type="s" /> 
         <dep id="consortionBattle.player:ConsortiaBattlePlayer" type="s" /> 
         <dep id="Date" type="s" /> 
@@ -25975,8 +25974,8 @@
         <dep id="com.pickgliss.loader:BaseLoader" type="e" /> 
         <dep id="ddt.view:UIModuleSmallLoading" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
-        <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
@@ -26551,8 +26550,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.view.caddyII.bead:QuickBuyItem" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:ShopManager" type="e" /> 
@@ -26986,8 +26985,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
         <dep id="shop.view:ShopCartItem" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -27084,8 +27083,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="bagAndInfo.cell:CellFactory" type="e" /> 
         <dep id="shop.view:ShopItemCell" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="giftSystem.element:ChooseNum" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
@@ -27258,8 +27257,8 @@
         <def id="farm.view.compose.item:ComposeItem" /> 
         <dep id="ddt.data:BagInfo" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="ddt.data.goods:ItemTemplateInfo" type="s" /> 
@@ -27324,8 +27323,8 @@
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
-        <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:TextEvent" type="e" /> 
+        <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
@@ -27461,8 +27460,8 @@
         <def id="farm.viewx.helper:HelperFerItem" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="farm.view.compose.event:SelectComposeItemEvent" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -27614,8 +27613,8 @@
         <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="petsBag.view.item:PetBigItem" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="petsBag.view.item:StarBar" type="e" /> 
         <dep id="petsBag.event:PetsAdvancedEvent" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -27878,8 +27877,8 @@
         <def id="wonderfulActivity.views:WonderfulInfoView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -27958,8 +27957,8 @@
       <script name="auctionHouse/view/AuctionSellView" mod="1683796205329" signatureChecksum="2716985018" >
         <def id="auctionHouse.view:AuctionSellView" /> 
         <dep id="flash.events:Event" type="e" /> 
-        <dep id="auctionHouse.event:AuctionHouseEvent" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
+        <dep id="auctionHouse.event:AuctionHouseEvent" type="e" /> 
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
@@ -27976,8 +27975,8 @@
         <dep id="auctionHouse.view:AuctionRightView" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
         <dep id="auctionHouse.model:AuctionHouseModel" type="s" /> 
-        <dep id="ddt.data.auctionHouse:AuctionGoodsInfo" type="s" /> 
         <dep id="auctionHouse.event:AuctionHouseEvent" type="s" /> 
+        <dep id="ddt.data.auctionHouse:AuctionGoodsInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
@@ -28091,8 +28090,8 @@
         <dep id="bagAndInfo.cell:CellFactory" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="shop.view:ShopPlayerCell" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
         <dep id="ddt.data.goods:ShopCarItemInfo" type="s" /> 
@@ -28120,8 +28119,8 @@
         <dep id="ddt.manager:ShopManager" type="e" /> 
         <dep id="flash.filters:ColorMatrixFilter" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="Error" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -28267,8 +28266,8 @@
       <script name="store/fineStore/view/GhostTips" mod="1775548161980" signatureChecksum="39226801" >
         <def id="store.fineStore.view:GhostTips" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
-        <dep id="store.equipGhost:EquipGhostManager" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
+        <dep id="store.equipGhost:EquipGhostManager" type="e" /> 
         <dep id="store.view.strength:LaterEquipmentView" type="e" /> 
         <dep id="ddt.view.tips:GoodTipInfo" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
@@ -28390,8 +28389,8 @@
         <def id="tryonSystem:TryonModel" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="road7th.data:DictionaryData" type="e" /> 
-        <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="ddt.data.player:PlayerInfo" type="e" /> 
+        <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="ddt.data:EquipType" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="road7th.data:DictionaryData" type="s" /> 
@@ -28424,8 +28423,8 @@
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="store.fineStore.view.pageBringUp:IObserver" type="s" /> 
-        <dep id="com.pickgliss.events:InteractiveEvent" type="s" /> 
         <dep id="flash.display:Shape" type="s" /> 
+        <dep id="com.pickgliss.events:InteractiveEvent" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="bagAndInfo.cell:LockableBagCell" type="i" /> 
       </script>
@@ -28727,8 +28726,8 @@
         <def id="petsBag.petsAdvanced:PetsFormItemsTip" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="petsBag.petsAdvanced:PetsFormItemsTipItem" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
@@ -28741,8 +28740,8 @@
       </script>
       <script name="game/actions/ChangePlayerAction" mod="1683796219873" signatureChecksum="4254069913" >
         <def id="game.actions:ChangePlayerAction" /> 
-        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
+        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="ddt.data:PathInfo" type="e" /> 
         <dep id="org.aswing:KeyboardManager" type="e" /> 
         <dep id="game.objects:GameLiving" type="e" /> 
@@ -29021,8 +29020,8 @@
         <dep id="bagAndInfo:BagAndGiftFrame" type="e" /> 
         <dep id="bagAndInfo:BagAndInfoManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.data.player:PlayerInfo" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
+        <dep id="ddt.data.player:PlayerInfo" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
@@ -29131,8 +29130,8 @@
         <def id="ddt.view.tips:GuildIconTip" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.view.tips:LevelPicCreater" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.view.tips:GuildIconTipInfo" type="e" /> 
         <dep id="ddt.view.tips:GuildRepute" type="s" /> 
@@ -29415,10 +29414,10 @@
       </script>
       <script name="worldboss/player/WorldRoomPlayer" mod="1683796222005" signatureChecksum="2975352480" >
         <def id="worldboss.player:WorldRoomPlayer" /> 
-        <dep id="ddt.view.chat.chatBall:ChatBallPlayer" type="e" /> 
         <dep id="ddt.view:FaceContainer" type="e" /> 
-        <dep id="flash.events:Event" type="e" /> 
+        <dep id="ddt.view.chat.chatBall:ChatBallPlayer" type="e" /> 
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
         <dep id="vip:VipController" type="e" /> 
         <dep id="ddt.view.chat:ChatInputView" type="e" /> 
         <dep id="ddt.manager:ChatManager" type="e" /> 
@@ -29624,8 +29623,8 @@
         <dep id="vip:VipController" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.data.player:PlayerState" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:AcademyManager" type="e" /> 
         <dep id="ddt.view.common:LevelIcon" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -29738,8 +29737,8 @@
         <def id="godCardRaise.view:GodCardRaiseExchangeView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="godCardRaise.view:GodCardRaiseExchangeRightView" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="godCardRaise:GodCardRaiseManager" type="e" /> 
         <dep id="godCardRaise.view:GodCardRaiseExchangeLeftView" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
@@ -30132,8 +30131,8 @@
         <dep id="com.pickgliss.effect:EffectManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="com.pickgliss.ui.controls:ScrollPanel" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="shop.view:ShopPlayerCell" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="com.pickgliss.effect:EffectTypes" type="e" /> 
@@ -30457,9 +30456,9 @@
         <dep id="wonderfulActivity.data:GiftCurInfo" type="s" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="wonderfulActivity.data:GmActivityInfo" type="s" /> 
+        <dep id="flash.events:TimerEvent" type="s" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="wonderfulActivity.data:PlayerCurInfo" type="s" /> 
-        <dep id="flash.events:TimerEvent" type="s" /> 
         <dep id="flash.utils:Dictionary" type="s" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="com.pickgliss.events:UIModuleEvent" type="s" /> 
@@ -30639,8 +30638,8 @@
         <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="bagAndInfo.info:PlayerInfoViewControl" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="e" /> 
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
         <dep id="ddt.view:SimpleItem" type="e" /> 
@@ -30685,8 +30684,8 @@
         <dep id="com.pickgliss.effect:EffectManager" type="e" /> 
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="bagAndInfo.info:PlayerInfoViewControl" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:AcademyManager" type="e" /> 
         <dep id="consortion.view.selfConsortia:Badge" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -30792,8 +30791,8 @@
         <dep id="totem.data:TotemDataVo" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="e" /> 
         <dep id="totem:TotemManager" type="e" /> 
@@ -30834,8 +30833,8 @@
         <dep id="com.pickgliss.ui.controls:ScrollPanel" type="e" /> 
         <dep id="noviceactivity:NoviceActivityRightAwardItem" type="e" /> 
         <dep id="com.pickgliss.ui.controls.container:VBox" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="noviceactivity:NoviceActivityManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -30861,8 +30860,8 @@
         <dep id="ddt.manager:TimeManager" type="e" /> 
         <dep id="ddt.data.goods:QualityType" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="Date" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
@@ -31010,8 +31009,8 @@
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="flash.filters:ColorMatrixFilter" type="e" /> 
         <dep id="ddt.data.player:BasePlayer" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="game.view.playerThumbnail:BloodItem" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="game.view.playerThumbnail:HeadFigure" type="e" /> 
@@ -31058,7 +31057,7 @@
         <dep id="AS3" type="n" /> 
         <dep id="flash.display:Sprite" type="i" /> 
       </script>
-      <script name="_1bd83ed1e2c696d42fceb984389536f85857294ddb5d84b3296b4f48a9be4146_flash_display_Sprite" mod="1775797466524" signatureChecksum="1511029289" >
+      <script name="_1bd83ed1e2c696d42fceb984389536f85857294ddb5d84b3296b4f48a9be4146_flash_display_Sprite" mod="1775837895844" signatureChecksum="1511029289" >
         <def id="_1bd83ed1e2c696d42fceb984389536f85857294ddb5d84b3296b4f48a9be4146_flash_display_Sprite" /> 
         <dep id="flash.system:Security" type="e" /> 
         <dep id="AS3" type="n" /> 
@@ -31114,8 +31113,8 @@
         <dep id="flash.events:KeyboardEvent" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="farm:FarmModelController" type="e" /> 
@@ -31306,8 +31305,8 @@
         <dep id="flash.events:Event" type="e" /> 
         <dep id="flash.display:Sprite" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
-        <dep id="flash.display:Sprite" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
+        <dep id="flash.display:Sprite" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
       </script>
@@ -31381,8 +31380,8 @@
         <def id="church.view.weddingRoom:WeddingRoomMask" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="ddt.view.chat:ChatInputView" type="e" /> 
+        <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="church.view.weddingRoom:WeddingRoomSwitchMovie" type="e" /> 
         <dep id="ddt.view.chat:ChatData" type="e" /> 
@@ -31804,8 +31803,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="room.model:RoomInfo" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -31850,8 +31849,8 @@
         <dep id="Math" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="game.view.buff:BuffCell" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="game.view.propertyWaterBuff:PropertyWaterBuffBar" type="s" /> 
         <dep id="game.view:SpringArrowView" type="s" /> 
@@ -32125,8 +32124,8 @@
         <dep id="ddt.data.goods:InventoryItemInfo" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="godCardRaise.view:GodCardRaiseExchangeRightCard" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="bagAndInfo.cell:BagCell" type="e" /> 
@@ -32335,15 +32334,15 @@
         <def id="im.chatFrame:PrivateChatFrame" /> 
         <dep id="ddt.utils:FilterWordManager" type="e" /> 
         <dep id="flash.ui:Keyboard" type="e" /> 
-        <dep id="flash.events:Event" type="e" /> 
         <dep id="im.chatFrame:PrivateRecordFrame" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.view.common:LevelIcon" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="vip:VipController" type="e" /> 
         <dep id="flash.events:KeyboardEvent" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="road7th.utils:StringHelper" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -32433,8 +32432,8 @@
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
@@ -32506,8 +32505,8 @@
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.events:TimerEvent" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="eliteGame:EliteGameController" type="e" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -32616,8 +32615,8 @@
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="com.greensock:TimelineMax" type="s" /> 
         <dep id="com.greensock.events:TweenEvent" type="s" /> 
-        <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
+        <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
         <dep id="Date" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
@@ -32980,8 +32979,8 @@
         <dep id="flash.events:KeyboardEvent" type="e" /> 
         <dep id="calendar:CalendarEvent" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="calendar.view.goodsExchange:GoodsExchangeCell" type="e" /> 
@@ -33244,9 +33243,9 @@
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="calendar:CalendarManager" type="e" /> 
+        <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
         <dep id="com.greensock:TweenMax" type="e" /> 
@@ -33430,8 +33429,8 @@
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="e" /> 
-        <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="ddt.events:BagEvent" type="s" /> 
+        <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="s" /> 
         <dep id="ddt.events:CellEvent" type="s" /> 
@@ -33440,8 +33439,8 @@
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
-        <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
+        <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="com.pickgliss.ui.image:Scale9CornerImage" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -33835,8 +33834,8 @@
         <dep id="godCardRaise.analyzer:GodCardPointRewardListAnalyzer" type="s" /> 
         <dep id="godCardRaise.analyzer:GodCardListAnalyzer" type="s" /> 
         <dep id="com.pickgliss.ui.controls:Frame" type="s" /> 
-        <dep id="Date" type="s" /> 
         <dep id="godCardRaise.model:GodCardRaiseModel" type="s" /> 
+        <dep id="Date" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="road7th.comm:PackageIn" type="s" /> 
@@ -33884,8 +33883,8 @@
         <def id="wonderfulActivity.items:AccumulativePayView" /> 
         <dep id="wonderfulActivity.items:PrizeListItem" type="e" /> 
         <dep id="wonderfulActivity.data:SendGiftInfo" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
         <dep id="wonderfulActivity.data:WonderfulActivityTypeData" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -33893,8 +33892,8 @@
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
-        <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
+        <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="wonderfulActivity.data:GiftRewardInfo" type="e" /> 
         <dep id="wonderfulActivity.items:AccumulativeItem" type="e" /> 
         <dep id="wonderfulActivity.items:PrizeListItem" type="s" /> 
@@ -34017,8 +34016,8 @@
         <dep id="com.pickgliss.ui.controls:BaseButton" type="e" /> 
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
-        <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="flash.display:InteractiveObject" type="e" /> 
+        <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.utils:Helpers" type="e" /> 
@@ -34136,8 +34135,8 @@
         <dep id="flash.events:Event" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
-        <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="shop.view:ShopItemCell" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -34184,8 +34183,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:MapManager" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -34297,8 +34296,8 @@
         <dep id="flash.events:Event" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
-        <dep id="shop.view:ShopItemCell" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
+        <dep id="shop.view:ShopItemCell" type="s" /> 
         <dep id="com.pickgliss.ui.image:Image" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -34497,13 +34496,13 @@
         <dep id="ddt.manager:VipLevelUpManager" type="e" /> 
         <dep id="catchbeast:CatchBeastManager" type="e" /> 
         <dep id="ddt.manager:StageFocusManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="flash.display:DisplayObjectContainer" type="e" /> 
+        <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
         <dep id="ddt.data:AccountInfo" type="e" /> 
         <dep id="ddt.manager:StateManager" type="e" /> 
         <dep id="ddt.loader:StartupResourceLoader" type="e" /> 
-        <dep id="AvatarCollection:AvatarCollectionManager" type="e" /> 
         <dep id="pyramid:PyramidManager" type="e" /> 
+        <dep id="AvatarCollection:AvatarCollectionManager" type="e" /> 
         <dep id="ddt.utils:CrytoUtils" type="e" /> 
         <dep id="exitPrompt:ExitPromptManager" type="e" /> 
         <dep id="newTitle:NewTitleManager" type="e" /> 
@@ -34662,8 +34661,8 @@
         <dep id="ddt.data:BagInfo" type="e" /> 
         <dep id="ddt.manager:DragManager" type="e" /> 
         <dep id="store.forge.wishBead:WishBeadEvent" type="e" /> 
-        <dep id="bagAndInfo.cell:DragEffect" type="e" /> 
         <dep id="store.forge.wishBead:WishBeadManager" type="e" /> 
+        <dep id="bagAndInfo.cell:DragEffect" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="store.forge.wishBead:WishBeadEvent" type="s" /> 
         <dep id="bagAndInfo.cell:DragEffect" type="s" /> 
@@ -34726,8 +34725,8 @@
       </script>
       <script name="pet/sprite/PetSpriteController" mod="1683801370750" signatureChecksum="3817929351" >
         <def id="pet.sprite:PetSpriteController" /> 
-        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="pet.sprite:PetSpriteModel" type="e" /> 
         <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="ddt.manager:ServerConfigManager" type="e" /> 
@@ -34938,8 +34937,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="HappyRecharge:HappyRechargeManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
@@ -35051,8 +35050,8 @@
         <dep id="com.greensock.easing:Quint" type="e" /> 
         <dep id="room.model:RoomInfo" type="e" /> 
         <dep id="trainer.view:NewHandContainer" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
@@ -35121,8 +35120,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="hallIcon:HallIconManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:StateManager" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="pyramid.model:PyramidModel" type="e" /> 
@@ -35139,8 +35138,8 @@
         <dep id="flash.utils:Dictionary" type="e" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="e" /> 
         <dep id="pyramid.model:PyramidModel" type="s" /> 
-        <dep id="flash.events:Event" type="s" /> 
         <dep id="com.pickgliss.ui.controls:NumberSelecter" type="s" /> 
+        <dep id="flash.events:Event" type="s" /> 
         <dep id="flash.events:IEventDispatcher" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="road7th.comm:PackageIn" type="s" /> 
@@ -35301,10 +35300,10 @@
       </script>
       <script name="cityWide/CityWideFrame" mod="1683796185279" signatureChecksum="3677373575" >
         <def id="cityWide:CityWideFrame" /> 
-        <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
-        <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
+        <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
         <dep id="vip:VipController" type="e" /> 
         <dep id="ddt.view.character:RoomCharacter" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
@@ -35380,9 +35379,9 @@
         <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="flash.display:MovieClip" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
@@ -35540,8 +35539,8 @@
         <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="bagAndInfo.cell:BaseCell" type="s" /> 
         <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
@@ -36016,8 +36015,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="petsBag.data:PetFightPropertyData" type="e" /> 
         <dep id="petsBag.petsAdvanced:PetsAdvancedManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="e" /> 
@@ -36034,8 +36033,8 @@
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="calendar:CalendarModel" type="e" /> 
-        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="calendar:CalendarManager" type="e" /> 
+        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="activeEvents.data:ActiveEventsInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -36214,8 +36213,8 @@
         <dep id="store.fineStore.view:FineForgeView" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="com.pickgliss.ui.core:ITipedDisplay" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.utils:HelpBtnEnable" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="store.fineStore.view:FineGhostView" type="e" /> 
@@ -36274,8 +36273,8 @@
         <dep id="farm.viewx.helper:FertilizerSelect" type="e" /> 
         <dep id="shop.view:ShopItemCell" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -36507,8 +36506,8 @@
         <dep id="ddt.view.character:RoomCharacter" type="e" /> 
         <dep id="tryonSystem:TryonCell" type="e" /> 
         <dep id="equipretrieve.effect:AnimationControl" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.view.character:CharactoryFactory" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -36577,8 +36576,8 @@
         <def id="wonderfulActivity.items:MidAutumnView" /> 
         <dep id="activeEvents.data:ActiveEventsInfo" type="e" /> 
         <dep id="calendar:CalendarManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.utils:setTimeout" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="calendar.view.goodsExchange:SendGoodsExchangeInfo" type="e" /> 
@@ -37073,8 +37072,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="bagAndInfo.cell:CellFactory" type="e" /> 
         <dep id="shop.view:ShopItemCell" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
         <dep id="shop.view:ShopItemCell" type="s" /> 
@@ -37326,8 +37325,8 @@
         <dep id="flash.events:Event" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
-        <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="flash.display:InteractiveObject" type="s" /> 
+        <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.display:Sprite" type="i" /> 
       </script>
@@ -37483,8 +37482,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderEvent" type="e" /> 
@@ -37508,8 +37507,8 @@
         <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
         <dep id="calendar.view.goodsExchange:GoodsExchangeView" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
-        <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="com.pickgliss.ui.controls.container:VBox" type="s" /> 
+        <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="calendar.view:ICalendar" type="i" /> 
@@ -37628,8 +37627,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="flash.events:TextEvent" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -37638,8 +37637,8 @@
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="consortion:ConsortionModelControl" type="e" /> 
-        <dep id="flash.display:MovieClip" type="e" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="e" /> 
+        <dep id="flash.display:MovieClip" type="e" /> 
         <dep id="com.pickgliss.ui.text:TextArea" type="s" /> 
         <dep id="flash.events:TextEvent" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -37833,8 +37832,8 @@
       <script name="labyrinth/view/RankingListItem" mod="1683796210841" signatureChecksum="3661423125" >
         <def id="labyrinth.view:RankingListItem" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="labyrinth.data:RankingInfo" type="e" /> 
         <dep id="com.pickgliss.ui:UICreatShortcut" type="e" /> 
+        <dep id="labyrinth.data:RankingInfo" type="e" /> 
         <dep id="labyrinth.data:RankingInfo" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleFrameImage" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
@@ -37849,8 +37848,8 @@
         <def id="explorerManual.view.page:ExplorerPageDirectorItemView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.events:CEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="explorerManual:ExplorerManualManager" type="e" /> 
         <dep id="flash.events:TextEvent" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -37907,8 +37906,8 @@
       <script name="explorerManual/view/chapter/ManualPropertyView" mod="1683796219755" signatureChecksum="2655691825" >
         <def id="explorerManual.view.chapter:ManualPropertyView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="explorerManual.data:ManualLevelProInfo" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -37944,8 +37943,8 @@
         <dep id="ddt.events:LivingEvent" type="e" /> 
         <dep id="org.aswing:KeyStroke" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="room.model:WeaponInfo" type="e" /> 
         <dep id="com.pickgliss.effect:EffectManager" type="e" /> 
+        <dep id="room.model:WeaponInfo" type="e" /> 
         <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="org.aswing:KeyboardManager" type="e" /> 
         <dep id="ddt.utils:GraphicsUtils" type="e" /> 
@@ -38396,8 +38395,8 @@
         <dep id="store.data:StoreEquipExperience" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="ddt.events:PlayerPropertyEvent" type="e" /> 
         <dep id="ddt.data:BagInfo" type="e" /> 
@@ -38542,9 +38541,9 @@
         <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="times.view:TimesView" type="s" /> 
         <dep id="times.data:TimesStatistics" type="s" /> 
-        <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
         <dep id="com.pickgliss.events:UIModuleEvent" type="s" /> 
+        <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="Object" type="i" /> 
       </script>
@@ -38716,8 +38715,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="explorerManual.view.page:ExplorerPageView" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="explorerManual.view.chapter:ExplorerChapterView" type="e" /> 
         <dep id="ddt.utils:HelpFrameUtils" type="e" /> 
         <dep id="explorerManual.view:ManualLeftMenu" type="e" /> 
@@ -38907,8 +38906,8 @@
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
         <dep id="ddt.data:ChurchRoomInfo" type="s" /> 
-        <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="church.model:ChurchRoomListModel" type="s" /> 
+        <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SelectedIconButton" type="s" /> 
         <dep id="com.pickgliss.ui.controls:TextInput" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -39023,8 +39022,8 @@
         <dep id="consortionBattle:ConsortiaBattleManager" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="ddt.manager:TimeManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="flash.utils:setTimeout" type="e" /> 
         <dep id="ddt.view.sceneCharacter:SceneCharacterDirection" type="e" /> 
@@ -39423,8 +39422,8 @@
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="flash.display:DisplayObjectContainer" type="e" /> 
-        <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="flash.display:InteractiveObject" type="e" /> 
+        <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="flash.display:MovieClip" type="e" /> 
@@ -39496,8 +39495,8 @@
         <def id="fightLib.view:FightLibView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
-        <dep id="ddt.data.player:PlayerInfo" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
+        <dep id="ddt.data.player:PlayerInfo" type="e" /> 
         <dep id="fightLib.view:LessonsView" type="s" /> 
         <dep id="fightLib.view:FightLibPlayerInfoView" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -39583,8 +39582,8 @@
         <dep id="ddt.manager:PathManager" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
         <dep id="flash.utils:ByteArray" type="s" /> 
-        <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="com.pickgliss.loader:LoaderEvent" type="s" /> 
+        <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
@@ -39943,8 +39942,8 @@
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="ddt.manager:ServerConfigManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
         <dep id="petsBag.view.item:PetWashBoneProItem" type="e" /> 
         <dep id="petsBag.view.item:StarBar" type="e" /> 
@@ -40351,13 +40350,13 @@
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="room.model:RoomPlayer" type="e" /> 
         <dep id="room:RoomManager" type="e" /> 
-        <dep id="ddt.data.player:SelfInfo" type="s" /> 
         <dep id="room.model:RoomInfo" type="s" /> 
+        <dep id="ddt.data.player:SelfInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="room.view:RoomPlayerItem" type="s" /> 
         <dep id="room.view.smallMapInfoPanel:ChallengeRoomSmallMapInfoPanel" type="s" /> 
-        <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="ddt.events:RoomEvent" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -40380,8 +40379,8 @@
         <def id="bagAndInfo.bag.ring:RingSystemView" /> 
         <dep id="ConsoleLog" type="e" /> 
         <dep id="bagAndInfo:BagAndInfoManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="bagAndInfo.bag.ring:RingSystemLevel" type="e" /> 
         <dep id="ddt.utils:HelpFrameUtils" type="e" /> 
         <dep id="bagAndInfo.cell:BagCell" type="e" /> 
@@ -40567,8 +40566,8 @@
       <script name="shop/view/SetsShopItem" mod="1683796201185" signatureChecksum="1879023119" >
         <def id="shop.view:SetsShopItem" /> 
         <dep id="flash.events:Event" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SelectedCheckButton" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -40651,8 +40650,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
-        <dep id="farm.view.compose.event:SelectComposeItemEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="farm.view.compose.event:SelectComposeItemEvent" type="e" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="farm.view.compose.vo:FoodComposeListTemplateInfo" type="s" /> 
         <dep id="ddt.data.goods:ItemTemplateInfo" type="s" /> 
@@ -40725,8 +40724,8 @@
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="Error" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
-        <dep id="ddt.manager:LeavePageManager" type="e" /> 
         <dep id="com.greensock.easing:Sine" type="e" /> 
+        <dep id="ddt.manager:LeavePageManager" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="church.events:WeddingRoomEvent" type="e" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="e" /> 
@@ -40885,8 +40884,8 @@
         <dep id="flash.display:MovieClip" type="e" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="times.data:TimesPicInfo" type="s" /> 
-        <dep id="RegExp" type="s" /> 
         <dep id="XML" type="s" /> 
+        <dep id="RegExp" type="s" /> 
         <dep id="flash.display:Loader" type="s" /> 
         <dep id="flash.geom:Point" type="s" /> 
         <dep id="flash.display:Shape" type="s" /> 
@@ -41221,8 +41220,8 @@
       <script name="hallIcon/view/HallIcon" mod="1775775934137" signatureChecksum="1976196331" >
         <def id="hallIcon.view:HallIcon" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="hallIcon.info:HallIconInfo" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
@@ -41401,8 +41400,8 @@
         <dep id="signActivity:SignActivityMgr" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="com.pickgliss.ui.controls.container:VBox" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="wonderfulActivity:WonderfulActivityManager" type="e" /> 
@@ -41756,8 +41755,8 @@
         <dep id="flash.utils:getTimer" type="e" /> 
         <dep id="com.hurlant.crypto.prng:ARC4" type="e" /> 
         <dep id="com.hurlant.crypto.prng:IPRNG" type="s" /> 
-        <dep id="flash.utils:ByteArray" type="s" /> 
         <dep id="flash.text:Font" type="s" /> 
+        <dep id="flash.utils:ByteArray" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="Object" type="i" /> 
       </script>
@@ -41866,8 +41865,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:TimeManager" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.events:TimerEvent" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.events:TimerEvent" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
@@ -41993,8 +41992,8 @@
         <def id="quest:QuestCateTitleView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.filters:ColorMatrixFilter" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ClassUtils" type="e" /> 
         <dep id="flash.display:MovieClip" type="e" /> 
         <dep id="flash.filters:ColorMatrixFilter" type="s" /> 
@@ -42042,8 +42041,8 @@
       <script name="auctionHouse/view/BidMoneyView" mod="1683796206809" signatureChecksum="1797520594" >
         <def id="auctionHouse.view:BidMoneyView" /> 
         <dep id="flash.ui:Keyboard" type="e" /> 
-        <dep id="flash.events:TextEvent" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="flash.events:TextEvent" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:KeyboardEvent" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
@@ -42172,8 +42171,8 @@
         <dep id="ddt.events:TaskEvent" type="e" /> 
         <dep id="flash.net:URLRequest" type="e" /> 
         <dep id="trainer.view:NewHandContainer" type="e" /> 
-        <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="flash.net:navigateToURL" type="e" /> 
+        <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="quest:QuestRewardView" type="e" /> 
         <dep id="flash.utils:setTimeout" type="e" /> 
@@ -42183,8 +42182,8 @@
         <dep id="flash.utils:Timer" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
         <dep id="ddt.states:StateType" type="e" /> 
-        <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
+        <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.view:MainToolBar" type="e" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -42258,8 +42257,8 @@
       <script name="explorerManual/analyzer/ManualItemAnalyzer" mod="1683796191854" signatureChecksum="3872880576" >
         <def id="explorerManual.analyzer:ManualItemAnalyzer" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
-        <dep id="explorerManual.data.model:ManualItemInfo" type="e" /> 
         <dep id="road7th.data:DictionaryData" type="e" /> 
+        <dep id="explorerManual.data.model:ManualItemInfo" type="e" /> 
         <dep id="XML" type="e" /> 
         <dep id="road7th.data:DictionaryData" type="s" /> 
         <dep id="XML" type="s" /> 
@@ -42364,8 +42363,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="ddt.display:BitmapLoaderProxy" type="e" /> 
         <dep id="flash.display:BitmapData" type="e" /> 
-        <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="com.pickgliss.ui:ShowTipManager" type="e" /> 
+        <dep id="flash.geom:Rectangle" type="e" /> 
         <dep id="com.pickgliss.utils:DoubleClickManager" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="bagAndInfo.cell:DragEffect" type="e" /> 
@@ -42452,8 +42451,8 @@
       </script>
       <script name="com/pickgliss/ui/controls/SelectedIconButton" mod="1683796190698" signatureChecksum="4032027265" >
         <def id="com.pickgliss.ui.controls:SelectedIconButton" /> 
-        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.ui.core:Component" type="e" /> 
@@ -43129,8 +43128,8 @@
         <dep id="bagAndInfo.cell:CellFactory" type="e" /> 
         <dep id="shop.view:ShopItemCell" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.manager:MessageTipManager" type="e" /> 
@@ -43223,8 +43222,8 @@
         <dep id="consortion:ConsortionModelControl" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="e" /> 
-        <dep id="com.pickgliss.ui.controls:NumberSelecter" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:NumberSelecter" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="com.pickgliss.ui.controls:TextButton" type="s" /> 
         <dep id="consortion.data:ConsortionSkillInfo" type="s" /> 
@@ -43358,8 +43357,8 @@
         <dep id="times.utils.timerManager:TimerManager" type="e" /> 
         <dep id="AvatarCollection:AvatarCollectionManager" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
-        <dep id="AvatarCollection.data:AvatarCollectionUnitVo" type="s" /> 
         <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="s" /> 
+        <dep id="AvatarCollection.data:AvatarCollectionUnitVo" type="s" /> 
         <dep id="AvatarCollection.view:AvatarCollectionDelayConfirmFrame" type="s" /> 
         <dep id="times.utils.timerManager:TimerJuggler" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -43499,8 +43498,8 @@
       </script>
       <script name="bigBugleRank/BigBugleRankManager" mod="1683796207635" signatureChecksum="2819361534" >
         <def id="bigBugleRank:BigBugleRankManager" /> 
-        <dep id="wonderfulActivity.data:LeftViewInfoVo" type="e" /> 
         <dep id="bigBugleRank.data:BigBugleRankEvent" type="e" /> 
+        <dep id="wonderfulActivity.data:LeftViewInfoVo" type="e" /> 
         <dep id="wonderfulActivity:ActivityType" type="e" /> 
         <dep id="bigBugleRank.data:BigBugleRankVo" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
@@ -43555,8 +43554,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="flash.display:DisplayObject" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -43587,8 +43586,8 @@
         <def id="calendar.view:CalendarFrame" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="calendar:CalendarModel" type="e" /> 
-        <dep id="calendar:CalendarManager" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
+        <dep id="calendar:CalendarManager" type="e" /> 
         <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
@@ -43634,8 +43633,8 @@
       </script>
       <script name="game/view/propContainer/PropShortCutView" mod="1683796206711" signatureChecksum="69637380" >
         <def id="game.view.propContainer:PropShortCutView" /> 
-        <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
+        <dep id="com.pickgliss.ui.controls:SimpleBitmapButton" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
@@ -43835,8 +43834,8 @@
         <def id="farm.viewx.helper:HelperItem" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.events:ListItemEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="ddt.data:BagInfo" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -43882,8 +43881,8 @@
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
-        <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.manager:ServerManager" type="e" /> 
+        <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="roomList:LookupEnumerate" type="e" /> 
         <dep id="road7th.data:DictionaryEvent" type="s" /> 
@@ -43952,8 +43951,8 @@
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="labyrinth:LabyrinthManager" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -44098,8 +44097,8 @@
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="e" /> 
         <dep id="road7th.comm:PackageIn" type="s" /> 
-        <dep id="totem.data:HonorUpDataAnalyz" type="s" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
+        <dep id="totem.data:HonorUpDataAnalyz" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="flash.events:EventDispatcher" type="i" /> 
       </script>
@@ -44230,9 +44229,9 @@
         <dep id="ddt.view.chat:ChatFormats" type="e" /> 
         <dep id="im:IMView" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
-        <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.data:EquipType" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
+        <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.view.chat:ChatEvent" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
         <dep id="ddt.view.tips:CardBoxTipPanel" type="s" /> 
@@ -44328,8 +44327,8 @@
         <dep id="catchbeast:CatchBeastManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="ddt.view.tips:GoodTipInfo" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="ddt.manager:StateManager" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
@@ -44392,8 +44391,8 @@
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="petsBag.view.item:PetWashBoneGrade" type="e" /> 
-        <dep id="bagAndInfo.cell:BagCell" type="s" /> 
         <dep id="bagAndInfo.info:PersonalInfoDragInArea" type="s" /> 
+        <dep id="bagAndInfo.cell:BagCell" type="s" /> 
         <dep id="ddt.data.goods:InventoryItemInfo" type="s" /> 
         <dep id="petsBag.view.item:PetEquipItem" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -44423,8 +44422,8 @@
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:ShopManager" type="e" /> 
@@ -44522,8 +44521,8 @@
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
         <dep id="com.pickgliss.events:ListItemEvent" type="s" /> 
-        <dep id="farm.modelx:FieldVO" type="s" /> 
         <dep id="farm.viewx:ConfirmHelperMoneyAlertFrame" type="s" /> 
+        <dep id="farm.modelx:FieldVO" type="s" /> 
         <dep id="com.pickgliss.ui.controls.list:VectorListModel" type="s" /> 
         <dep id="farm.viewx.helper:HelperBeginFrame" type="s" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="s" /> 
@@ -44534,8 +44533,8 @@
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
         <dep id="Date" type="s" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
-        <dep id="com.pickgliss.ui.controls:TextButton" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:TextButton" type="s" /> 
         <dep id="farm.event:FarmEvent" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="flash.utils:Timer" type="s" /> 
@@ -44990,8 +44989,8 @@
       </script>
       <script name="wonderfulActivity/items/LimitListItem" mod="1690814776379" signatureChecksum="1871769972" >
         <def id="wonderfulActivity.items:LimitListItem" /> 
-        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -45209,8 +45208,8 @@
         <dep id="totem.data:TotemAddInfo" type="e" /> 
         <dep id="totem.data:TotemDataVo" type="e" /> 
         <dep id="ddt.data:Experience" type="e" /> 
-        <dep id="ddt.data:UIModuleTypes" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
+        <dep id="ddt.data:UIModuleTypes" type="e" /> 
         <dep id="ddt.view:UIModuleSmallLoading" type="e" /> 
         <dep id="com.pickgliss.events:UIModuleEvent" type="e" /> 
         <dep id="flash.events:IEventDispatcher" type="s" /> 
@@ -45893,8 +45892,8 @@
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="texpSystem.controller:TexpManager" type="e" /> 
         <dep id="texpSystem.data:TexpType" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="com.pickgliss.ui.image:Scale9CornerImage" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
@@ -46256,8 +46255,8 @@
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="com.pickgliss.ui:LayerManager" type="e" /> 
-        <dep id="com.pickgliss.ui.controls:NumberSelecter" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:NumberSelecter" type="s" /> 
         <dep id="godCardRaise.info:GodCardListInfo" type="s" /> 
         <dep id="com.pickgliss.ui.vo:AlertInfo" type="s" /> 
         <dep id="com.pickgliss.ui.text:FilterFrameText" type="s" /> 
@@ -46335,9 +46334,9 @@
         <def id="game.view:GameCountDownView" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
-        <dep id="flash.events:TimerEvent" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="flash.events:TimerEvent" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="flash.events:TimerEvent" type="s" /> 
@@ -46698,8 +46697,8 @@
         <dep id="com.pickgliss.ui.controls:SelectedCheckButton" type="s" /> 
         <dep id="store.forge.wishBead:WishBeadItemCell" type="s" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="s" /> 
-        <dep id="store.forge.wishBead:WishBeadRightDragSprite" type="s" /> 
         <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
+        <dep id="store.forge.wishBead:WishBeadRightDragSprite" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="com.pickgliss.ui.core:Disposeable" type="i" /> 
         <dep id="flash.display:Sprite" type="i" /> 
@@ -46723,8 +46722,8 @@
         <dep id="ddt.manager:PathManager" type="e" /> 
         <dep id="flash.display:Sprite" type="e" /> 
         <dep id="com.pickgliss.loader:DataAnalyzer" type="s" /> 
-        <dep id="flash.net:URLVariables" type="s" /> 
         <dep id="tofflist.view:TofflistView" type="s" /> 
+        <dep id="flash.net:URLVariables" type="s" /> 
         <dep id="flash.display:DisplayObject" type="s" /> 
         <dep id="com.pickgliss.loader:BaseLoader" type="s" /> 
         <dep id="tofflist.analyze:TofflistListAnalyzer" type="s" /> 
@@ -47051,8 +47050,8 @@
         <dep id="ddt.events:ItemEvent" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="worldboss.view:AwardGoodItem" type="e" /> 
-        <dep id="com.pickgliss.ui.controls:ISelectable" type="s" /> 
         <dep id="com.pickgliss.ui.image:MutipleImage" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:ISelectable" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
@@ -47130,8 +47129,8 @@
         <dep id="ddt.events:RoomEvent" type="e" /> 
         <dep id="bagAndInfo.info:PlayerInfoViewControl" type="e" /> 
         <dep id="ddt.manager:PlayerTipManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="ddt.manager:GameInSocketOut" type="e" /> 
         <dep id="flash.geom:Point" type="e" /> 
@@ -47166,9 +47165,9 @@
         <dep id="flash.display:DisplayObject" type="e" /> 
         <dep id="flash.utils:Timer" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="flash.events:TimerEvent" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="activeEvents.data:ActiveEventsInfo" type="s" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -47311,8 +47310,8 @@
         <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:MapManager" type="e" /> 
         <dep id="game:GameManager" type="e" /> 
         <dep id="com.pickgliss.toplevel:StageReferance" type="e" /> 
@@ -47450,8 +47449,8 @@
         <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
         <dep id="com.pickgliss.ui.controls.alert:BaseAlerFrame" type="s" /> 
-        <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="auctionHouse.view:BrowseLeftMenuView" type="s" /> 
+        <dep id="ddt.events:CrazyTankSocketEvent" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="com.pickgliss.ui.core:Disposeable" type="i" /> 
         <dep id="flash.display:Sprite" type="i" /> 
@@ -47468,8 +47467,8 @@
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="baglocked:BaglockedManager" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderManager" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderEvent" type="e" /> 
@@ -47526,10 +47525,10 @@
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="phy.object:Physics" type="s" /> 
         <dep id="game.model:Living" type="s" /> 
-        <dep id="game.objects:BombAction" type="s" /> 
-        <dep id="phy.maps:Map" type="s" /> 
-        <dep id="game.model:Player" type="s" /> 
         <dep id="game.model:GameInfo" type="s" /> 
+        <dep id="game.objects:BombAction" type="s" /> 
+        <dep id="game.model:Player" type="s" /> 
+        <dep id="phy.maps:Map" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="phy.bombs:BaseBomb" type="i" /> 
@@ -47570,15 +47569,14 @@
         <dep id="AS3" type="n" /> 
         <dep id="Object" type="i" /> 
       </script>
-      <script name="worldboss/view/WorldBossHPScript" mod="1775694031547" signatureChecksum="168469938" >
+      <script name="worldboss/view/WorldBossHPScript" mod="1775798773722" signatureChecksum="168469938" >
         <def id="worldboss.view:WorldBossHPScript" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="worldboss.view:WorldBossCutHpMC" type="e" /> 
         <dep id="worldboss:WorldBossManager" type="e" /> 
-        <dep id="trace" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.states:StateType" type="e" /> 
         <dep id="ddt.manager:StateManager" type="e" /> 
         <dep id="flash.events:Event" type="s" /> 
@@ -47709,8 +47707,8 @@
         <dep id="game.view.smallMap:GameTurnButton" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
         <dep id="game.view:DungeonInfoView" type="s" /> 
-        <dep id="flash.display:DisplayObjectContainer" type="s" /> 
         <dep id="flash.geom:Rectangle" type="s" /> 
+        <dep id="flash.display:DisplayObjectContainer" type="s" /> 
         <dep id="flash.utils:Timer" type="s" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="flash.events:TimerEvent" type="s" /> 
@@ -47944,9 +47942,9 @@
         <dep id="flash.geom:Point" type="s" /> 
         <dep id="ddt.data.box:BoxGoodsTempInfo" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
-        <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
-        <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
         <dep id="surpriseRoulette.manager:SurpriseRouletteTurn" type="s" /> 
+        <dep id="com.pickgliss.ui.controls:BaseButton" type="s" /> 
+        <dep id="com.pickgliss.ui.controls.container:SimpleTileList" type="s" /> 
         <dep id="road7th.comm:PackageIn" type="s" /> 
         <dep id="ddt.view.roulette:RouletteEvent" type="s" /> 
         <dep id="surpriseRoulette.view:SurpriseRouletteCell" type="s" /> 
@@ -47970,8 +47968,8 @@
         <def id="consortion:ConsortionControl" /> 
         <dep id="consortion:ConsortionModel" type="e" /> 
         <dep id="consortion.event:ConsortionEvent" type="e" /> 
-        <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="ddt.view.chat:ChatInputView" type="e" /> 
+        <dep id="ddt.manager:ChatManager" type="e" /> 
         <dep id="consortion.view.club:ClubView" type="e" /> 
         <dep id="consortion.view.selfConsortia:SelfConsortiaView" type="e" /> 
         <dep id="ddt.manager:PlayerManager" type="e" /> 
@@ -48164,8 +48162,8 @@
         <dep id="farm.modelx:FieldVO" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
         <dep id="ddt.manager:ShopManager" type="e" /> 
-        <dep id="farm.view.compose.event:SelectComposeItemEvent" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="farm.view.compose.event:SelectComposeItemEvent" type="e" /> 
         <dep id="farm.viewx.helper:HelperSetItem" type="e" /> 
         <dep id="ddt.data:ShopType" type="e" /> 
         <dep id="ddt.data.goods:ShopItemInfo" type="s" /> 
@@ -48232,8 +48230,8 @@
         <dep id="ddt.manager:TimeManager" type="e" /> 
         <dep id="inviteFriends:InviteFriendsManager" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt:DDT" type="e" /> 
         <dep id="flash.desktop:Clipboard" type="e" /> 
         <dep id="overSeasCommunity:OverSeasCommunController" type="e" /> 
@@ -48366,8 +48364,8 @@
       <script name="consortion/view/club/CreateConsortionFrame" mod="1683796164450" signatureChecksum="142305264" >
         <def id="consortion.view.club:CreateConsortionFrame" /> 
         <dep id="ddt.utils:FilterWordManager" type="e" /> 
-        <dep id="flash.ui:Keyboard" type="e" /> 
         <dep id="flash.events:Event" type="e" /> 
+        <dep id="flash.ui:Keyboard" type="e" /> 
         <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="com.pickgliss.ui:AlertManager" type="e" /> 
         <dep id="flash.events:KeyboardEvent" type="e" /> 
@@ -48658,8 +48656,8 @@
         <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
         <dep id="com.greensock.easing:Linear" type="e" /> 
         <dep id="Math" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.view.caddyII:CaddyModel" type="e" /> 
         <dep id="flash.display:Shape" type="e" /> 
         <dep id="bagAndInfo.cell:BaseCell" type="e" /> 
@@ -48847,8 +48845,8 @@
         <def id="petsBag.view.item:PetHappyTip" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
-        <dep id="petsBag.view:PetHappyBar" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
+        <dep id="petsBag.view:PetHappyBar" type="e" /> 
         <dep id="pet.date:PetInfo" type="e" /> 
         <dep id="flash.display:Sprite" type="e" /> 
         <dep id="com.pickgliss.ui.image:ScaleBitmapImage" type="s" /> 
@@ -48860,8 +48858,8 @@
       </script>
       <script name="game/actions/GameOverAction" mod="1683796197741" signatureChecksum="1798360994" >
         <def id="game.actions:GameOverAction" /> 
-        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="road7th.utils:MovieClipWrapper" type="e" /> 
+        <dep id="ddt.manager:SoundManager" type="e" /> 
         <dep id="room.model:RoomInfo" type="e" /> 
         <dep id="game.view.experience:ExpView" type="e" /> 
         <dep id="game.model:LocalPlayer" type="e" /> 
@@ -49044,8 +49042,8 @@
         <dep id="wonderfulActivity.data:SendGiftInfo" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="ddt.manager:LanguageMgr" type="e" /> 
         <dep id="bagAndInfo.cell:BagCell" type="s" /> 
@@ -49125,8 +49123,8 @@
       </script>
       <script name="farm/player/vo/GiftPacksTips" mod="1683796191007" signatureChecksum="4101265526" >
         <def id="farm.player.vo:GiftPacksTips" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="flash.display:Bitmap" type="s" /> 
         <dep id="flash.display:MovieClip" type="s" /> 
         <dep id="AS3" type="n" /> 
@@ -49480,11 +49478,11 @@
         <dep id="explorerManual.data.model:ManualDebrisInfo" type="s" /> 
         <dep id="explorerManual.analyzer:ChapterItemAnalyzer" type="s" /> 
         <dep id="flash.events:IEventDispatcher" type="s" /> 
-        <dep id="explorerManual.data.model:ManualItemInfo" type="s" /> 
         <dep id="road7th.data:DictionaryData" type="s" /> 
+        <dep id="explorerManual.data.model:ManualItemInfo" type="s" /> 
         <dep id="explorerManual.analyzer:ManualDebrisAnalyzer" type="s" /> 
-        <dep id="explorerManual.analyzer:ManualItemAnalyzer" type="s" /> 
         <dep id="explorerManual.data.model:ManualChapterInfo" type="s" /> 
+        <dep id="explorerManual.analyzer:ManualItemAnalyzer" type="s" /> 
         <dep id="explorerManual.data.model:ManualPageItemInfo" type="s" /> 
         <dep id="explorerManual.analyzer:ManualUpgradeAnalyzer" type="s" /> 
         <dep id="explorerManual.analyzer:ManualPageItemAnalyzer" type="s" /> 
@@ -49535,8 +49533,8 @@
       </script>
       <script name="times/TimesController" mod="1683796221966" signatureChecksum="999485502" >
         <def id="times:TimesController" /> 
-        <dep id="flash.events:Event" type="e" /> 
         <dep id="com.pickgliss.utils:DisplayUtils" type="e" /> 
+        <dep id="flash.events:Event" type="e" /> 
         <dep id="times.utils:TimesUtils" type="e" /> 
         <dep id="com.pickgliss.loader:LoaderManager" type="e" /> 
         <dep id="flash.display:InteractiveObject" type="e" /> 
@@ -49605,8 +49603,8 @@
         <def id="character.action:ComplexBitmapAction" /> 
         <dep id="Math" type="e" /> 
         <dep id="__AS3__.vec:Vector" type="s" /> 
-        <dep id="XML" type="s" /> 
         <dep id="FrameByFrameItem" type="s" /> 
+        <dep id="XML" type="s" /> 
         <dep id="AS3" type="n" /> 
         <dep id="character.action:BaseAction" type="i" /> 
       </script>
@@ -49794,7 +49792,7 @@
         <dep id="AS3" type="n" /> 
         <dep id="Object" type="i" /> 
       </script>
-      <script name="ddt/bagStore/BagStoreFrame" mod="1775664028334" signatureChecksum="3592892051" >
+      <script name="ddt/bagStore/BagStoreFrame" mod="1775836046573" signatureChecksum="3592892051" >
         <def id="ddt.bagStore:BagStoreFrame" /> 
         <dep id="flash.events:Event" type="e" /> 
         <dep id="store.states:BaseStoreView" type="e" /> 
@@ -49803,8 +49801,8 @@
         <dep id="ddt.data.store:StoreState" type="e" /> 
         <dep id="com.pickgliss.ui.controls:SelectedButtonGroup" type="e" /> 
         <dep id="com.pickgliss.events:FrameEvent" type="e" /> 
-        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
+        <dep id="ddt.utils:PositionUtils" type="e" /> 
         <dep id="ddt.bagStore:BagStore" type="e" /> 
         <dep id="com.pickgliss.utils:ObjectUtils" type="e" /> 
         <dep id="flash.events:MouseEvent" type="e" /> 
@@ -49838,8 +49836,8 @@
         <dep id="flash.events:MouseEvent" type="e" /> 
         <dep id="ddt.data:DaylyGiveInfo" type="e" /> 
         <dep id="ddt.manager:ItemManager" type="e" /> 
-        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.utils:PositionUtils" type="e" /> 
+        <dep id="com.pickgliss.ui:ComponentFactory" type="e" /> 
         <dep id="ddt.manager:SocketManager" type="e" /> 
         <dep id="inviteFriends.view:InviteFriendItemCell" type="s" /> 
         <dep id="flash.events:MouseEvent" type="s" /> 
@@ -49904,7 +49902,7 @@
         <dep id="ddt.interfaces:IProcessObject" type="i" /> 
       </script>
       <digests>
-        <digest type="SHA-256" signed="false" value="07c9ce50d6d5c544fa109ffd1ca6ea971b62ec42f8bdf3b6d16ae9411a0fc03f"   />
+        <digest type="SHA-256" signed="false" value="a455778f4bf27e4159dd1347202e9b6ecf98ee7f0badcbeb171536f010e49b24"   />
       </digests>
     </library>
   </libraries>

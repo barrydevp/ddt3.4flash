@@ -1404,7 +1404,13 @@ package bagAndInfo.bag
          {
             return;
          }
+         var itemInfo: InventoryItemInfo = _loc3_.info as InventoryItemInfo;
          if(_loc3_.info.TemplateID == EquipType.WISHBEAD_ATTACK || _loc3_.info.TemplateID == EquipType.WISHBEAD_DEFENSE || _loc3_.info.TemplateID == EquipType.WISHBEAD_AGILE)
+         {
+            BagStore.instance.show(BagStore.FORGE_STORE,1);
+            return;
+         }
+         if(itemInfo.CategoryID == 11 && itemInfo.Property1 == "101") // Latent Energy
          {
             BagStore.instance.show(BagStore.FORGE_STORE,1);
             return;
@@ -1461,7 +1467,7 @@ package bagAndInfo.bag
             this.startupChangeSex(_loc3_.bagType,_loc3_.place);
             return;
          }
-         if(_loc3_.info.TemplateID == 12545)
+         if(_loc3_.info.TemplateID == 12545) // su dung tai' tu luyen (reset texp)
          {
             SocketManager.Instance.out.sendChangeSex(_loc3_.bagType,_loc3_.place);
          }
@@ -1497,6 +1503,23 @@ package bagAndInfo.bag
             UIModuleLoader.Instance.addEventListener(UIModuleEvent.UI_MODULE_COMPLETE,this.__changeColorComplete);
             UIModuleLoader.Instance.addUIModuleImp(UIModuleTypes.CHANGECOLOR);
          }
+         else if(_loc3_.info.TemplateID == EquipType.GEMSTONE)
+         {
+            if(PlayerManager.Instance.Self.Grade < 30)
+            {
+               MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("gemstone.limitLevel.tipTxt"));
+               return;
+            }
+            // if(this is ConsortionBankBagView)
+            // {
+            //    BagStore.instance.isFromConsortionBankFrame = true;
+            // }
+            // else
+            // {
+            //    BagStore.instance.isFromBagFrame = true;
+            // }
+            BagStore.instance.show(BagStore.FORGE_STORE,1);
+         }
          else if(_loc3_.info.TemplateID != EquipType.TRANSFER_PROP)
          {
             if(_loc3_.info.CategoryID == 11 && (int(_loc3_.info.Property1) == 27 || int(_loc3_.info.Property1) == 29))
@@ -1509,11 +1532,11 @@ package bagAndInfo.bag
             }
             else
             {
-               if(PlayerManager.Instance.Self.bagLocked)
-               {
-                  BaglockedManager.Instance.show();
-                  return;
-               }
+               // if(PlayerManager.Instance.Self.bagLocked)
+               // {
+               //    BaglockedManager.Instance.show();
+               //    return;
+               // }
                if(_loc3_.info.CategoryID == 11 && (int(_loc3_.info.Property1) == 100 || int(_loc3_.info.Property1) == 1100))
                {
                   this.useProp(_loc3_.itemInfo);

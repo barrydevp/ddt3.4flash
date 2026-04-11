@@ -164,6 +164,12 @@ package ddt.bagStore
          {
             this._controller.startupEvent();
          }
+         // !TODO: FIX LATER
+         // if (param1 == BagStore.FORGE_STORE) {
+         //    this._forgeBtn.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+         // } else if (param1 == BagStore.FINE_STORE) {
+         //    this._fineStoreBtn.dispatchEvent(new MouseEvent(MouseEvent.CLICK));
+         // }
       }
 
       private function getStoreType(param1:String):String

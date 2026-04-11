@@ -440,29 +440,37 @@ package ddt.data
       
       public static function canBeUsed(param1:ItemTemplateInfo) : Boolean
       {
-         if(param1.CategoryID == 11 && param1.Property1 == "5" && param1.Property2 != "0")
+         if(param1.CategoryID == EquipType.UNFRIGHTPROP)
          {
-            return true;
-         }
-         if(param1.CategoryID == 11 && param1.Property1 == "21")
-         {
-            return true;
-         }
-         if(param1.CategoryID == 11 && param1.Property1 == "100")
-         {
-            return true;
-         }
-         if(param1.CategoryID == 11 && param1.Property1 == "1100")
-         {
-            return true;
-         }
-         if(param1.CategoryID == 11 && param1.Property1 == "37")
-         {
-            return true;
-         }
-         if(param1.CategoryID == 11 && (param1.Property1 == "27" || param1.Property1 == "29"))
-         {
-            return true;
+            if(param1.Property1 == "5" && param1.Property2 != "0") // Loa
+            {
+               return true;
+            }
+            if(param1.Property1 == "21") // EXP yes sir
+            {
+               return true;
+            }
+            if(param1.Property1 == "100") // Xu khoa
+            {
+               return true;
+            }
+            if(param1.Property1 == "1100") // code ga hanh
+            {
+               return true;
+            }
+            if(param1.Property1 == "37") // doi hinh dang vu khi?
+            {
+               return true;
+            }
+            if((param1.Property1 == "27" || param1.Property1 == "29")) // tang sao pet
+            {
+               return true;
+            }
+
+            if(param1.Property1 == "101") // latent energy, kich hoat tiem nang
+            {
+               return true;
+            }
          }
          if(param1.CategoryID == EquipType.CARDBOX)
          {
@@ -684,7 +692,7 @@ package ddt.data
       
       public static function isPackage(param1:ItemTemplateInfo) : Boolean
       {
-         if(param1.CategoryID == 11 && (param1.Property1 == "6" || param1.Property1 == "114"))
+         if(param1.CategoryID == UNFRIGHTPROP && (param1.Property1 == "6" || param1.Property1 == "114"))
          {
             return true;
          }
