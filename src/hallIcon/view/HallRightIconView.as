@@ -1,6 +1,6 @@
 package hallIcon.view
 {
-//   import flash.utils.describeType;
+   // import flash.utils.describeType;
    import GodSyah.SyahManager;
    import HappyRecharge.HappyRechargeManager;
    import accumulativeLogin.AccumulativeManager;
@@ -41,31 +41,30 @@ package hallIcon.view
    import trainer.view.NewHandContainer;
    import wonderfulActivity.WonderfulActivityManager;
    import signActivity.SignActivityMgr;
-   
+
    public class HallRightIconView extends Sprite implements Disposeable
    {
-       
-      
+
       private var _iconBox:HBox;
-      
+
       private var _boxButton:SmallBoxButton;
-      
+
       private var _wonderFulPlay:hallIcon.view.HallIconPanel;
-      
+
       private var _activity:hallIcon.view.HallIconPanel;
-      
+
       private var _lastCreatTime:Number;
-      
+
       private var _showArrowSp:Sprite;
-      
+
       public function HallRightIconView()
       {
          super();
          this.initView();
          this.initEvent();
       }
-      
-      private function initView() : void
+
+      private function initView():void
       {
          this._showArrowSp = new Sprite();
          addChild(this._showArrowSp);
@@ -74,73 +73,73 @@ package hallIcon.view
          addChild(this._iconBox);
          this.updateActivityIcon();
          this.updateWonderfulPlayIcon();
-		 SignActivityMgr.instance.showIcon();
+         // SignActivityMgr.instance.showIcon();
          this.checkShowBossBox();
       }
-      
-      private function initEvent() : void
+
+      private function initEvent():void
       {
-         HallIconManager.instance.model.addEventListener(HallIconEvent.UPDATE_RIGHTICON_VIEW,this.__updateIconViewHandler);
-         HallIconManager.instance.model.addEventListener(HallIconEvent.UPDATE_BATCH_RIGHTICON_VIEW,this.__updateBatchIconViewHandler);
-         HallIconManager.instance.addEventListener(HallIconEvent.CHECK_HALLICONEXPERIENCEOPEN,this.__checkHallIconExperienceOpenHandler);
+         HallIconManager.instance.model.addEventListener(HallIconEvent.UPDATE_RIGHTICON_VIEW, this.__updateIconViewHandler);
+         HallIconManager.instance.model.addEventListener(HallIconEvent.UPDATE_BATCH_RIGHTICON_VIEW, this.__updateBatchIconViewHandler);
+         HallIconManager.instance.addEventListener(HallIconEvent.CHECK_HALLICONEXPERIENCEOPEN, this.__checkHallIconExperienceOpenHandler);
       }
-      
-      private function addChildBox(param1:DisplayObject) : void
+
+      private function addChildBox(param1:DisplayObject):void
       {
          this._iconBox.addChild(param1);
          this._iconBox.arrange();
          this._iconBox.x = -this._iconBox.width;
       }
-      
-      private function __updateBatchIconViewHandler(param1:HallIconEvent) : void
+
+      private function __updateBatchIconViewHandler(param1:HallIconEvent):void
       {
          var _loc2_:HallIconInfo = null;
          var _loc3_:Dictionary = HallIconManager.instance.model.cacheRightIconDic;
-         for each(_loc2_ in _loc3_)
+         for each (_loc2_ in _loc3_)
          {
             this.updateIconView(_loc2_);
          }
       }
-      
-      private function __updateIconViewHandler(param1:HallIconEvent) : void
+
+      private function __updateIconViewHandler(param1:HallIconEvent):void
       {
          var _loc2_:HallIconInfo = HallIconInfo(param1.data);
          this.updateIconView(_loc2_);
       }
-      
-      private function updateIconView(param1:HallIconInfo) : void
+
+      private function updateIconView(param1:HallIconInfo):void
       {
-         if(param1.halltype == HallIcon.WONDERFULPLAY && Boolean(this._wonderFulPlay))
+         if (param1.halltype == HallIcon.WONDERFULPLAY && Boolean(this._wonderFulPlay))
          {
-            this.commonUpdateIconPanelView(this._wonderFulPlay,param1,false);
+            this.commonUpdateIconPanelView(this._wonderFulPlay, param1, false);
          }
-         else if(param1.halltype == HallIcon.ACTIVITY && Boolean(this._activity))
+         else if (param1.halltype == HallIcon.ACTIVITY && Boolean(this._activity))
          {
-            this.commonUpdateIconPanelView(this._activity,param1,true);
+            this.commonUpdateIconPanelView(this._activity, param1, true);
          }
          else
          {
-            switch(param1.icontype)
+            switch (param1.icontype)
             {
                case HallIconType.WONDERFULPLAY:
                   this.updateWonderfulPlayIcon();
                   break;
                case HallIconType.ACTIVITY:
                   this.updateActivityIcon();
-				  SignActivityMgr.instance.showIcon();
+                  // SignActivityMgr.instance.showIcon();
             }
          }
       }
-      
-      private function commonUpdateIconPanelView(param1:hallIcon.view.HallIconPanel, param2:HallIconInfo, param3:Boolean = false) : void
+
+      private function commonUpdateIconPanelView(param1:hallIcon.view.HallIconPanel, param2:HallIconInfo, param3:Boolean = false):void
       {
          var _loc4_:HallIcon = null;
-         if(param2.isopen)
+         if (param2.isopen)
          {
             _loc4_ = param1.getIconByType(param2.icontype) as HallIcon;
-            if(!_loc4_)
+            if (!_loc4_)
             {
-               _loc4_ = param1.addIcon(this.createHallIconPanelIcon(param2),param2.icontype,param2.orderid,param3) as HallIcon;
+               _loc4_ = param1.addIcon(this.createHallIconPanelIcon(param2), param2.icontype, param2.orderid, param3) as HallIcon;
             }
             _loc4_.updateIcon(param2);
          }
@@ -150,15 +149,15 @@ package hallIcon.view
          }
          param1.arrange();
       }
-      
-      private function updateWonderfulPlayIcon() : void
+
+      private function updateWonderfulPlayIcon():void
       {
-         if(HallIconManager.instance.model.wonderFulPlayIsOpen)
+         if (HallIconManager.instance.model.wonderFulPlayIsOpen)
          {
-            if(this._wonderFulPlay == null)
+            if (this._wonderFulPlay == null)
             {
-               this._wonderFulPlay = new hallIcon.view.HallIconPanel("assets.hallIcon.wonderfulPlayIcon",HallIconPanel.BOTTOM,6);
-               this._wonderFulPlay.addEventListener(MouseEvent.CLICK,this.__wonderFulPlayClickHandler);
+               this._wonderFulPlay = new hallIcon.view.HallIconPanel("assets.hallIcon.wonderfulPlayIcon", HallIconPanel.BOTTOM, 6);
+               this._wonderFulPlay.addEventListener(MouseEvent.CLICK, this.__wonderFulPlayClickHandler);
                this.addChildBox(this._wonderFulPlay);
             }
          }
@@ -167,12 +166,12 @@ package hallIcon.view
             this.removeWonderfulPlayIcon();
          }
       }
-      
-      private function checkShowBossBox() : void
+
+      private function checkShowBossBox():void
       {
-         if(BossBoxManager.instance.isShowBoxButton())
+         if (BossBoxManager.instance.isShowBoxButton())
          {
-            if(this._boxButton == null)
+            if (this._boxButton == null)
             {
                this._boxButton = new SmallBoxButton(SmallBoxButton.HALL_POINT);
             }
@@ -183,28 +182,28 @@ package hallIcon.view
             this.removeBossBox();
          }
       }
-      
-      private function __wonderFulPlayClickHandler(param1:MouseEvent) : void
+
+      private function __wonderFulPlayClickHandler(param1:MouseEvent):void
       {
          var _loc2_:HallIcon = null;
-         if(Boolean(this._wonderFulPlay) && param1.target == this._wonderFulPlay.mainIcon)
+         if (Boolean(this._wonderFulPlay) && param1.target == this._wonderFulPlay.mainIcon)
          {
             this.topIndex();
             this.checkNoneActivity(this._wonderFulPlay.count);
             this.checkRightIconTaskClickHandler(HallIcon.WONDERFULPLAY);
             return;
          }
-         if(getTimer() - this._lastCreatTime < 1000)
+         if (getTimer() - this._lastCreatTime < 1000)
          {
             return;
          }
          this._lastCreatTime = getTimer();
-         if(param1.target is HallIcon)
+         if (param1.target is HallIcon)
          {
             _loc2_ = param1.target as HallIcon;
-            if(_loc2_.iconInfo.halltype == HallIcon.WONDERFULPLAY)
+            if (_loc2_.iconInfo.halltype == HallIcon.WONDERFULPLAY)
             {
-               switch(_loc2_.iconInfo.icontype)
+               switch (_loc2_.iconInfo.icontype)
                {
                   case HallIconType.WORLDBOSSENTRANCE1:
                   case HallIconType.WORLDBOSSENTRANCE4:
@@ -213,7 +212,7 @@ package hallIcon.view
                      break;
                   case HallIconType.LITTLEGAMENOTE:
                      SoundManager.instance.play("008");
-                     if(LittleGameManager.Instance.hasActive())
+                     if (LittleGameManager.Instance.hasActive())
                      {
                         StateManager.setState(StateType.LITTLEHALL);
                      }
@@ -224,11 +223,11 @@ package hallIcon.view
                      break;
                   case HallIconType.CONSORTIABATTLE:
                      SoundManager.instance.play("008");
-                     if(ConsortiaBattleManager.instance.isCanEnter)
+                     if (ConsortiaBattleManager.instance.isCanEnter)
                      {
                         GameInSocketOut.sendSingleRoomBegin(4);
                      }
-                     else if(PlayerManager.Instance.Self.ConsortiaID != 0)
+                     else if (PlayerManager.Instance.Self.ConsortiaID != 0)
                      {
                         MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.consortiaBattle.cannotEnterTxt"));
                      }
@@ -238,9 +237,9 @@ package hallIcon.view
                      }
                      break;
                   case HallIconType.CRYPT_BOSS:
-                     if(PlayerManager.Instance.Self.Grade < 30)
+                     if (PlayerManager.Instance.Self.Grade < 30)
                      {
-                        MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.functionLimitTip",30));
+                        MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.functionLimitTip", 30));
                         return;
                      }
                      CryptBossManager.instance.show();
@@ -249,15 +248,15 @@ package hallIcon.view
             }
          }
       }
-      
-      private function updateActivityIcon() : void
+
+      private function updateActivityIcon():void
       {
-         if(HallIconManager.instance.model.activityIsOpen)
+         if (HallIconManager.instance.model.activityIsOpen)
          {
-            if(this._activity == null)
+            if (this._activity == null)
             {
-               this._activity = new hallIcon.view.HallIconPanel("assets.hallIcon.activityIcon",HallIconPanel.BOTTOM,6);
-               this._activity.addEventListener(MouseEvent.CLICK,this.__activityClickHandler);
+               this._activity = new hallIcon.view.HallIconPanel("assets.hallIcon.activityIcon", HallIconPanel.BOTTOM, 6);
+               this._activity.addEventListener(MouseEvent.CLICK, this.__activityClickHandler);
                this.addChildBox(this._activity);
             }
          }
@@ -266,28 +265,28 @@ package hallIcon.view
             this.removeActivityIcon();
          }
       }
-      
-      private function __activityClickHandler(param1:MouseEvent) : void
+
+      private function __activityClickHandler(param1:MouseEvent):void
       {
          var _loc2_:HallIcon = null;
-         if(Boolean(this._activity) && param1.target == this._activity.mainIcon)
+         if (Boolean(this._activity) && param1.target == this._activity.mainIcon)
          {
             this.topIndex();
             this.checkNoneActivity(this._activity.count);
             this.checkRightIconTaskClickHandler(HallIcon.ACTIVITY);
             return;
          }
-         if(getTimer() - this._lastCreatTime < 1000)
+         if (getTimer() - this._lastCreatTime < 1000)
          {
             return;
          }
          this._lastCreatTime = getTimer();
-         if(param1.target is HallIcon)
+         if (param1.target is HallIcon)
          {
             _loc2_ = param1.target as HallIcon;
-            if(_loc2_.iconInfo.halltype == HallIcon.ACTIVITY)
+            if (_loc2_.iconInfo.halltype == HallIcon.ACTIVITY)
             {
-               switch(_loc2_.iconInfo.icontype)
+               switch (_loc2_.iconInfo.icontype)
                {
                   case HallIconType.ACCUMULATIVE_LOGIN:
                      AccumulativeManager.instance.showFrame();
@@ -326,29 +325,29 @@ package hallIcon.view
                      break;
                   case HallIconType.CHICKACTIVATION:
                      SoundManager.instance.play("008");
-                     if(PlayerManager.Instance.Self.Grade < 16)
+                     if (PlayerManager.Instance.Self.Grade < 16)
                      {
-                        MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.functionLimitTip",16));
+                        MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("ddt.functionLimitTip", 16));
                         return;
                      }
                      ChickActivationManager.instance.showFrame();
                      break;
-				 case HallIconType.SIGNACTIVITY:
-					 SocketManager.Instance.out.requestWonderfulActInit(2);
-					 WonderfulActivityManager.Instance.refreshIconStatus();
-					 SoundManager.instance.play("008");
-					 SignActivityMgr.instance.show();
-					 break;
+                  case HallIconType.SIGNACTIVITY:
+                     SocketManager.Instance.out.requestWonderfulActInit(2);
+                     WonderfulActivityManager.Instance.refreshIconStatus();
+                     SoundManager.instance.play("008");
+                     SignActivityMgr.instance.show();
+                     break;
                }
             }
          }
       }
-      
-      public function createHallIconPanelIcon(param1:HallIconInfo) : HallIcon
+
+      public function createHallIconPanelIcon(param1:HallIconInfo):HallIcon
       {
          var _loc2_:String = null;
-		 
-         switch(param1.icontype)
+
+         switch (param1.icontype)
          {
             case HallIconType.ACCUMULATIVE_LOGIN:
                _loc2_ = "assets.hallIcon.accumulativeLoginIcon";
@@ -389,102 +388,102 @@ package hallIcon.view
             case HallIconType.NEWCHICKENBOX:
                _loc2_ = "assets.hallIcon.newChickenBoxIcon";
                break;
-            //case HallIconType.GODCARD:
-               //_loc2_ = "assets.hallIcon.godCard";
-               //break;
+               // case HallIconType.GODCARD:
+               // _loc2_ = "assets.hallIcon.godCard";
+               // break;
             case HallIconType.CATCHBEAST:
                _loc2_ = "asset.hallIcon.catchBeastIcon";
                break;
             case HallIconType.CHICKACTIVATION:
                _loc2_ = "assets.hallIcon.chickActivationIcon";
-			   break;
-		   case HallIconType.SIGNACTIVITY:
-			   _loc2_ = "assets.hallIcon.signActivity";
-			   break;
+               break;
+            case HallIconType.SIGNACTIVITY:
+               _loc2_ = "assets.hallIcon.signActivity";
+               break;
          }
-         return new HallIcon(_loc2_,param1);
+         return new HallIcon(_loc2_, param1);
       }
-      
-      public function getIconByType(param1:int, param2:String) : DisplayObject
+
+      public function getIconByType(param1:int, param2:String):DisplayObject
       {
-         if(param1 == HallIcon.WONDERFULPLAY && Boolean(this._wonderFulPlay))
+         if (param1 == HallIcon.WONDERFULPLAY && Boolean(this._wonderFulPlay))
          {
             return this._wonderFulPlay.getIconByType(param2);
          }
-         if(param1 == HallIcon.ACTIVITY && Boolean(this._activity))
+         if (param1 == HallIcon.ACTIVITY && Boolean(this._activity))
          {
             return this._activity.getIconByType(param2);
          }
          return null;
       }
-      
-      private function topIndex() : void
+
+      private function topIndex():void
       {
-         if(Boolean(this.parent) && this.parent.numChildren > 1)
+         if (Boolean(this.parent) && this.parent.numChildren > 1)
          {
-            this.parent.setChildIndex(this,this.parent.numChildren - 1);
+            this.parent.setChildIndex(this, this.parent.numChildren - 1);
          }
       }
-      
-      private function checkNoneActivity(param1:int) : void
+
+      private function checkNoneActivity(param1:int):void
       {
-         if(param1 <= 0)
+         if (param1 <= 0)
          {
             MessageTipManager.getInstance().show(LanguageMgr.GetTranslation("tank.calendar.NoneActivity"));
          }
       }
-      
-      public function __checkHallIconExperienceOpenHandler(param1:HallIconEvent) : void
+
+      public function __checkHallIconExperienceOpenHandler(param1:HallIconEvent):void
       {
          this.updateRightIconTaskArrow();
       }
-      
-      private function updateRightIconTaskArrow() : void
+
+      private function updateRightIconTaskArrow():void
       {
          var _loc1_:int = 0;
          var _loc2_:int = 0;
          var _loc3_:Object = HallIconManager.instance.model.cacheRightIconTask;
-         if(_loc3_ && !_loc3_.isCompleted && SharedManager.Instance.halliconExperienceStep < 2)
+         if (_loc3_ && !_loc3_.isCompleted && SharedManager.Instance.halliconExperienceStep < 2)
          {
             _loc1_ = SharedManager.Instance.halliconExperienceStep;
             _loc2_ = 1;
-            if(this._iconBox.numChildren == 3)
+            if (this._iconBox.numChildren == 3)
             {
                _loc2_ = 2;
             }
-            else if(this._iconBox.numChildren == 4)
+            else if (this._iconBox.numChildren == 4)
             {
                _loc2_ = 3;
             }
-            else if(this._iconBox.numChildren == 5)
+            else if (this._iconBox.numChildren == 5)
             {
                _loc2_ = 4;
             }
-            if(_loc1_ == 1)
+            if (_loc1_ == 1)
             {
                _loc2_ += 1;
             }
-            NewHandContainer.Instance.showArrow(ArrowType.HALLICON_EXPERIENCE,-90,"hallIcon.hallIconExperiencePos" + _loc2_,"assets.hallIcon.experienceClickTxt","hallIcon.hallIconExperienceTxt" + _loc2_,this._showArrowSp,0,true);
+            NewHandContainer.Instance.showArrow(ArrowType.HALLICON_EXPERIENCE, -90, "hallIcon.hallIconExperiencePos" + _loc2_, "assets.hallIcon.experienceClickTxt", "hallIcon.hallIconExperienceTxt" + _loc2_, this._showArrowSp, 0, true);
          }
-         else if(NewHandContainer.Instance.hasArrow(ArrowType.HALLICON_EXPERIENCE))
+         else if (NewHandContainer.Instance.hasArrow(ArrowType.HALLICON_EXPERIENCE))
          {
             NewHandContainer.Instance.clearArrowByID(ArrowType.HALLICON_EXPERIENCE);
          }
       }
-      
-      private function checkRightIconTaskClickHandler(param1:int) : void
+
+      private function checkRightIconTaskClickHandler(param1:int):void
       {
-         if(!HallIconManager.instance.model.cacheRightIconTask)
+         if (!HallIconManager.instance.model.cacheRightIconTask)
          {
             return;
          }
-         if(param1 == HallIcon.WONDERFULPLAY && SharedManager.Instance.halliconExperienceStep == 0)
+         if (param1 == HallIcon.WONDERFULPLAY && SharedManager.Instance.halliconExperienceStep == 0)
          {
             SharedManager.Instance.halliconExperienceStep = 1;
             this.updateRightIconTaskArrow();
             SharedManager.Instance.save();
          }
-         else if(param1 == HallIcon.ACTIVITY && SharedManager.Instance.halliconExperienceStep == 1)
+         else if (param1 == HallIcon.ACTIVITY && SharedManager.Instance.halliconExperienceStep == 1)
          {
             SharedManager.Instance.halliconExperienceStep = 2;
             this.updateRightIconTaskArrow();
@@ -492,67 +491,67 @@ package hallIcon.view
             SharedManager.Instance.save();
          }
       }
-      
-      private function removeEvent() : void
+
+      private function removeEvent():void
       {
-         HallIconManager.instance.model.removeEventListener(HallIconEvent.UPDATE_RIGHTICON_VIEW,this.__updateIconViewHandler);
-         HallIconManager.instance.model.removeEventListener(HallIconEvent.UPDATE_BATCH_RIGHTICON_VIEW,this.__updateBatchIconViewHandler);
-         HallIconManager.instance.removeEventListener(HallIconEvent.CHECK_HALLICONEXPERIENCEOPEN,this.__checkHallIconExperienceOpenHandler);
+         HallIconManager.instance.model.removeEventListener(HallIconEvent.UPDATE_RIGHTICON_VIEW, this.__updateIconViewHandler);
+         HallIconManager.instance.model.removeEventListener(HallIconEvent.UPDATE_BATCH_RIGHTICON_VIEW, this.__updateBatchIconViewHandler);
+         HallIconManager.instance.removeEventListener(HallIconEvent.CHECK_HALLICONEXPERIENCEOPEN, this.__checkHallIconExperienceOpenHandler);
       }
-      
-      private function removeWonderfulPlayIcon() : void
+
+      private function removeWonderfulPlayIcon():void
       {
-         if(Boolean(this._wonderFulPlay))
+         if (Boolean(this._wonderFulPlay))
          {
-            this._wonderFulPlay.removeEventListener(MouseEvent.CLICK,this.__wonderFulPlayClickHandler);
+            this._wonderFulPlay.removeEventListener(MouseEvent.CLICK, this.__wonderFulPlayClickHandler);
             ObjectUtils.disposeObject(this._wonderFulPlay);
             this._wonderFulPlay = null;
          }
       }
-      
-      private function removeActivityIcon() : void
+
+      private function removeActivityIcon():void
       {
-         if(Boolean(this._activity))
+         if (Boolean(this._activity))
          {
-            this._activity.removeEventListener(MouseEvent.CLICK,this.__activityClickHandler);
+            this._activity.removeEventListener(MouseEvent.CLICK, this.__activityClickHandler);
             ObjectUtils.disposeObject(this._activity);
             this._activity = null;
          }
       }
-      
-      private function removeBossBox() : void
+
+      private function removeBossBox():void
       {
-         if(Boolean(this._boxButton))
+         if (Boolean(this._boxButton))
          {
             ObjectUtils.disposeAllChildren(this._boxButton);
             ObjectUtils.disposeObject(this._boxButton);
             this._boxButton = null;
          }
       }
-      
-      public function dispose() : void
+
+      public function dispose():void
       {
          this.removeEvent();
          this.removeWonderfulPlayIcon();
          this.removeActivityIcon();
          this.removeBossBox();
-         if(NewHandContainer.Instance.hasArrow(ArrowType.HALLICON_EXPERIENCE))
+         if (NewHandContainer.Instance.hasArrow(ArrowType.HALLICON_EXPERIENCE))
          {
             NewHandContainer.Instance.clearArrowByID(ArrowType.HALLICON_EXPERIENCE);
          }
-         if(Boolean(this._showArrowSp))
+         if (Boolean(this._showArrowSp))
          {
             ObjectUtils.disposeAllChildren(this._showArrowSp);
             ObjectUtils.disposeObject(this._showArrowSp);
             this._showArrowSp = null;
          }
-         if(Boolean(this._iconBox))
+         if (Boolean(this._iconBox))
          {
             ObjectUtils.disposeAllChildren(this._iconBox);
             ObjectUtils.disposeObject(this._iconBox);
             this._iconBox = null;
          }
-         if(Boolean(parent))
+         if (Boolean(parent))
          {
             parent.removeChild(this);
          }

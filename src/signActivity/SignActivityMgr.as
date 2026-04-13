@@ -6,6 +6,7 @@ package signActivity
    import ddt.manager.LanguageMgr;
    import ddt.utils.HelperUIModuleLoad;
    import hallIcon.HallIconManager;
+   import hallIcon.HallIconType;
    import signActivity.model.SignActivityModel;
    import signActivity.view.SignActivityFrame;
    import wonderfulActivity.WonderfulActivityManager;
@@ -82,7 +83,7 @@ package signActivity
       
       public function showIcon() : void
       {
-         HallIconManager.instance.updateSwitchHandler("signActivity", true);
+         HallIconManager.instance.updateSwitchHandler(HallIconType.SIGNACTIVITY, true);
       }
       
       public function get isOpen() : Boolean

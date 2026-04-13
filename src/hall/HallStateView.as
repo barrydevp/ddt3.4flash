@@ -103,6 +103,7 @@ package hall
    import wonderfulActivity.ActivityType;
    import wonderfulActivity.WonderfulActivityManager;
    import wonderfulActivity.event.WonderfulActivityEvent;
+   import signActivity.SignActivityMgr;
    
    public class HallStateView extends BaseStateView
    {
@@ -391,7 +392,7 @@ package hall
       
       private function defaultRightActivityIconShow() : void
       {
-         //this.addAccumulativeLoginAct();
+         // this.addAccumulativeLoginAct();
          this.addNoviceActivityAct();
          this.addLeftGunRoulette();
          HallIconManager.instance.updateSwitchHandler(HallIconType.WelfareCenterIcon,true);
@@ -417,6 +418,7 @@ package hall
             AvatarCollectionManager.instance.addEventListener("avatar_collection_data_complete",this.__checkAvatarCollectionTime);
          }
          ChickActivationManager.instance.checkShowIcon();
+         SignActivityMgr.instance.showIcon();
       }
       
       private function __checkAvatarCollectionTime(param1:Event) : void

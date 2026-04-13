@@ -77,7 +77,9 @@ package signActivity.view
       {
          this._itemList = new Vector.<SignActivityItem>();
          this.actId = SignActivityMgr.instance.model.actId;
+         trace("actId:" + this.actId);
          this._xmlData = WonderfulActivityManager.Instance.getActivityDataById(this.actId);
+         trace("xmlData:" + this._xmlData);
          this._giftInfoDic = WonderfulActivityManager.Instance.getActivityInitDataById(this.actId).giftInfoDic;
          this._statusArr = WonderfulActivityManager.Instance.getActivityInitDataById(this.actId).statusArr;
       }
