@@ -382,6 +382,7 @@ package bagAndInfo.info
          this._openNecklacePtetrochemicalView = ComponentFactory.Instance.creatComponentByStylename("bagAndInfo.bag.NecklacePtetrochemicalView.OpenBtn");
          if(!PathManager.NecklaceEnable)
          {
+            this._openNecklacePtetrochemicalView.visible = false;
             this._openNecklacePtetrochemicalView.x = 999;
             this._openNecklacePtetrochemicalView.y = 999;
          }
@@ -389,6 +390,7 @@ package bagAndInfo.info
          this._ringSystemBtn = ComponentFactory.Instance.creatComponentByStylename("bagAndInfo.bag.RingSystemView.OpenBtn");
          if(!PathManager.LoveRingEnable)
          {
+            this._ringSystemBtn.visible = false;
             this._ringSystemBtn.x = 999;
             this._ringSystemBtn.y = 999;
          }
@@ -454,10 +456,12 @@ package bagAndInfo.info
          if(this._showSelfOperation && this._showEquip.visible)
          {
             this._openNecklacePtetrochemicalView.visible = true;
+            this._ringSystemBtn.visible = true;
          }
          else
          {
             this._openNecklacePtetrochemicalView.visible = false;
+            this._ringSystemBtn.visible = false;
          }
          this._showCard.visible = param1;
       }
@@ -485,7 +489,6 @@ package bagAndInfo.info
          this._addFriendBtn.visible = !param1;
          if(this._info.ID == PlayerManager.Instance.Self.ID)
          {
-            this._addFriendBtn.visible = false;
             this._addFriendBtn.visible = false;
          }
       }
@@ -1473,10 +1476,12 @@ package bagAndInfo.info
          if(this._showSelfOperation && this._showEquip.visible)
          {
             this._openNecklacePtetrochemicalView.visible = true;
+            this._ringSystemBtn.visible = true;
          }
          else
          {
             this._openNecklacePtetrochemicalView.visible = false;
+            this._ringSystemBtn.visible = false;
          }
          if(StateManager.currentStateType == StateType.FIGHTING || StateManager.currentStateType == StateType.FIGHT_LIB_GAMEVIEW)
          {

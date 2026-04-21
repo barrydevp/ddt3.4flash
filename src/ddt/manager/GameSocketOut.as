@@ -152,7 +152,7 @@ package ddt.manager
          var _loc13_:uint = 0;
          while(_loc13_ < _loc12_)
          {
-            _loc11_.writeInt(param1[_loc13_]);
+            _loc11_.writeLong(param1[_loc13_]);
             _loc11_.writeInt(param2[_loc13_]);
             _loc11_.writeUTF(param3[_loc13_]);
             _loc11_.writeBoolean(param5[_loc13_]);

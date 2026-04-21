@@ -65,7 +65,7 @@ package ddt.data.analyze
                onAnalyzeComplete();
                return;
             }
-            _loc2_ = new ShopItemInfo(int(this._shoplist[this.index].@ID),int(this._shoplist[this.index].@TemplateID));
+            _loc2_ = new ShopItemInfo(Number(this._shoplist[this.index].@ID),int(this._shoplist[this.index].@TemplateID));
             ObjectUtils.copyPorpertiesByXML(_loc2_,this._shoplist[this.index]);
             this.shopinfolist.add(_loc2_.GoodsID,_loc2_);
             _loc3_++;

@@ -52,7 +52,7 @@ package ddt.command
       
       protected var _isBand:Boolean;
       
-      protected var _shopGoodsId:int;
+      protected var _shopGoodsId:Number;
       
       public function QuickBuyAlertBase()
       {
@@ -208,7 +208,7 @@ package ddt.command
          this.totalText.text = _loc1_ + " " + _loc2_;
       }
       
-      public function setData(param1:int, param2:int, param3:int) : void
+      public function setData(param1:int, param2:Number, param3:int) : void
       {
          var _loc4_:InventoryItemInfo = null;
          this._perPrice = param3;

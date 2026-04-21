@@ -63,5 +63,20 @@ package road7th.comm
          writeByte(param1.minutes);
          writeByte(param1.seconds);
       }
+
+      public function writeLong(param1:Number) : void
+      {
+         param1 = Number(param1);
+         var _loc2_:Number = Math.abs(param1);
+         var _loc3_:Number = Math.pow(2,32);
+         var _loc4_:int = int(_loc2_ / _loc3_);
+         var _loc5_:uint = uint(_loc2_ % _loc3_);
+         if(param1 < 0)
+         {
+            _loc4_ = -_loc4_;
+         }
+         writeInt(_loc4_);
+         writeUnsignedInt(_loc5_);
+      }
    }
 }

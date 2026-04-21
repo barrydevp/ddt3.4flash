@@ -143,7 +143,7 @@ package store.view.shortcutBuy
          var _loc4_:Array = [];
          var _loc5_:Array = [];
          var _loc6_:Array = [];
-         var _loc7_:int = this._view.currentShopItem.GoodsID;
+         var _loc7_:Number = this._view.currentShopItem.GoodsID;
          var _loc8_:int = this._view.totalNum;
          var _loc9_:int = 0;
          while(_loc9_ < _loc8_)

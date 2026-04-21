@@ -116,10 +116,10 @@ package ddt.manager
       
       private function __updateGoodsCount(param1:CrazyTankSocketEvent) : void
       {
-         var _loc2_:int = 0;
+         var _loc2_:Number = 0;
          var _loc3_:int = 0;
          var _loc4_:ShopItemInfo = null;
-         var _loc5_:int = 0;
+         var _loc5_:Number = 0;
          var _loc6_:int = 0;
          var _loc7_:ShopItemInfo = null;
          var _loc8_:PackageIn = param1.pkg;
@@ -128,7 +128,7 @@ package ddt.manager
          var _loc11_:int = 0;
          while(_loc11_ < _loc10_)
          {
-            _loc2_ = _loc8_.readInt();
+            _loc2_ = _loc8_.readLong();
             _loc3_ = _loc8_.readInt();
             _loc4_ = this.getShopItemByGoodsID(_loc2_);
             if(Boolean(_loc4_) && _loc9_ == 1)
@@ -142,7 +142,7 @@ package ddt.manager
          var _loc14_:int = 0;
          while(_loc14_ < _loc13_)
          {
-            _loc5_ = _loc8_.readInt();
+            _loc5_ = _loc8_.readLong();
             _loc6_ = _loc8_.readInt();
             _loc7_ = this.getShopItemByGoodsID(_loc5_);
             if(_loc7_ && _loc9_ == 2 && _loc12_ == PlayerManager.Instance.Self.ConsortiaID)
@@ -155,7 +155,7 @@ package ddt.manager
          GemstoneManager.Instance.upDataFitCount();
       }
       
-      public function getShopItemByGoodsID(param1:int) : ShopItemInfo
+      public function getShopItemByGoodsID(param1:Number) : ShopItemInfo
       {
          var _loc2_:ShopItemInfo = null;
          for each(_loc2_ in this._shopGoods)

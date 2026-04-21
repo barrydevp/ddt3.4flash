@@ -20,7 +20,7 @@ package ddt.data.goods
       
       public var ShopID:int;
       
-      public var GoodsID:int;
+      public var GoodsID:Number;
       
       public var TemplateID:int;
       

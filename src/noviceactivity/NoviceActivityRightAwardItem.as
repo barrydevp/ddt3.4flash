@@ -108,9 +108,10 @@ package noviceactivity
       
       public function refreshBtn() : void
       {
-         if(this._selfCondition >= this._condition)
+         if(this._selfCondition >= this._condition && this._subType > 0)
          {
-            if(NoviceActivityManager.instance.canGetAward(this._record,this._index))
+            // if(NoviceActivityManager.instance.canGetAward(this._record,this._index))
+            if(NoviceActivityManager.instance.canGetAward(this._record,this._subType - 1))
             {
                this._getShine.visible = true;
                this._getShine.gotoAndPlay(1);
