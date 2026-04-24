@@ -28,6 +28,10 @@ package ddt.utils
             {
                _loc4_.key = param1.readUTF();
             }
+            else
+            {
+               _loc4_.key = null;
+            }
             _loc4_.type = param3;
             _loc5_.push(_loc4_);
             _loc7_++;

@@ -802,13 +802,13 @@ package ddt.data
                   return true;
                }
             }
-            if(_loc2_.CategoryID == ARMLET || _loc2_.CategoryID == RING)
-            {
-               if(int(_loc2_.Property1) >= 3)
-               {
-                  return true;
-               }
-            }
+            // if(_loc2_.CategoryID == ARMLET || _loc2_.CategoryID == RING)
+            // {
+            //    if(int(_loc2_.Property1) >= 3)
+            //    {
+            //       return true;
+            //    }
+            // }
             return false;
          }
          return false;

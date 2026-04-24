@@ -134,7 +134,7 @@ package socialContact.copyBitmap
       
       private function _pointViewDown(param1:MouseEvent) : void
       {
-         this._mode.ponitID = this._pointViewArr.indexOf(param1.currentTarget);
+         this._mode.ponitID = this._pointViewArr.indexOf(param1.currentTarget as Sprite);
          this._nowPonitView = Sprite(param1.currentTarget);
          switch(this._mode.ponitID)
          {

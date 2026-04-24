@@ -351,7 +351,7 @@ package ddt.view.chat
             _loc2_ = this._contentField.localToGlobal(new Point(this._contentField.mouseX,this._contentField.mouseY));
             this._goodTipPos.x = _loc2_.x;
             this._goodTipPos.y = _loc2_.y;
-            if(_loc20_.key != "null")
+            if(_loc20_.key != "null" && _loc20_.key != "undefined")
             {
                if(_loc20_.type == String(20) || _loc20_.type == String(18))
                {
@@ -377,7 +377,7 @@ package ddt.view.chat
                   this.chat_system::showLinkGoodsInfo(_loc19_.templateInfo,0,_loc19_);
                }
             }
-            else if(_loc20_.key != "null")
+            else if(_loc20_.key != "null" && _loc20_.key != "undefined")
             {
                if(_loc20_.type == String(20) || _loc20_.type == String(18))
                {
